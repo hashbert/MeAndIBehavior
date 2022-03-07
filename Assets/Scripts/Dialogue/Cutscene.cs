@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Cutscene : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class Cutscene : MonoBehaviour
         int totalCharInSentence = currentSentence.Length;
 
         textBox.text = currentSentence;
-        for (int i = 0; i < totalCharInSentence; i++)
+        for (int i = 0; i <= totalCharInSentence; i++)
         {
             textBox.maxVisibleCharacters = i;
             yield return new WaitForSeconds(typingSpeed);
@@ -51,5 +52,6 @@ public class Cutscene : MonoBehaviour
     public void Continue()
     {
         continueButton.SetActive(false);
+        SceneManager.LoadScene("Level1");
     }
 }
