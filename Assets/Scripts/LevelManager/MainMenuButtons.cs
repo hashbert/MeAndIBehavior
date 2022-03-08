@@ -66,6 +66,11 @@ public class MainMenuButtons : MonoBehaviour
     }
     public void OptionsBackButton()
     {
+        GoToStartMenu();
+    }
+
+    private void GoToStartMenu()
+    {
         optionsMenu.SetActive(false);
         startMenu.SetActive(true);
         startButton.GetComponent<Button>().Select();
@@ -74,6 +79,11 @@ public class MainMenuButtons : MonoBehaviour
     #endregion
 
     public void AudioBackButton()
+    {
+        GoToOptionsMenu();
+    }
+
+    private void GoToOptionsMenu()
     {
         audioMenu.SetActive(false);
         optionsMenu.SetActive(true);
@@ -86,13 +96,11 @@ public class MainMenuButtons : MonoBehaviour
         {
             if (optionsMenu.activeSelf)
             {
-                optionsMenu.SetActive(false);
-                startMenu.SetActive(true);
+                GoToStartMenu();
             }
             else if (audioMenu.activeSelf)
             {
-                audioMenu.SetActive(false);
-                optionsMenu.SetActive(true);
+                GoToOptionsMenu();
             }
         }
 
