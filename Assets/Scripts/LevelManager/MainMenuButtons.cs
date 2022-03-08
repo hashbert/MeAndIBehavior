@@ -8,14 +8,28 @@ using UnityEngine.InputSystem;
 
 public class MainMenuButtons : MonoBehaviour
 {
-    
-    public void PlayButton()
+    [SerializeField] private GameObject startMenu;
+    [SerializeField] private GameObject startButton;
+    [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private GameObject optionsBackButton;
+    [SerializeField] private GameObject audioMenu;
+    [SerializeField] private GameObject audioButton;
+    [SerializeField] private GameObject masterSliderButton;
+
+    #region Start Menu
+    public void StartButton()
     {
         SceneManager.LoadScene("Cutscene1");
     }
-    public void SettingsButton()
+    public void OptionsButton()
     {
-        SceneManager.LoadScene("KeybindUI");
+        startMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+        audioButton.GetComponent<Button>().Select();
+    }
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("CreditsScene");
     }
     public void QuitGame()
     {
@@ -28,8 +42,59 @@ public class MainMenuButtons : MonoBehaviour
             #endif
         }
     }
-    public void CreditsButton()
+
+    #endregion
+
+    #region Options Menu
+    public void AudioButton()
     {
-        SceneManager.LoadScene("CreditsScene");
+        optionsMenu.SetActive(false);
+        audioMenu.SetActive(true);
+        masterSliderButton.GetComponent<Slider>().Select();
+    }
+    public void VisualButton()
+    {
+
+    }
+    public void ControlsButton()
+    {
+
+    }
+    public void LanguageButton()
+    {
+
+    }
+    public void OptionsBackButton()
+    {
+        optionsMenu.SetActive(false);
+        startMenu.SetActive(true);
+        startButton.GetComponent<Button>().Select();
+    }
+
+    #endregion
+
+    public void AudioBackButton()
+    {
+        audioMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+        optionsBackButton.GetComponent<Button>().Select();
+    }
+
+    public void OnBackInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (optionsMenu.activeSelf)
+            {
+                optionsMenu.SetActive(false);
+                startMenu.SetActive(true);
+            }
+            else if (audioMenu.activeSelf)
+            {
+                audioMenu.SetActive(false);
+                optionsMenu.SetActive(true);
+            }
+        }
+
     }
 }
