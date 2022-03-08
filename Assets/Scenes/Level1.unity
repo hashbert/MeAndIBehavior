@@ -456,6 +456,7 @@ MonoBehaviour:
   grabDetect: {fileID: 1977121649}
   holdPosition: {fileID: 531492746}
   animator: {fileID: 0}
+  adultScript: {fileID: 0}
   boxLayerMask:
     serializedVersion: 2
     m_Bits: 512
@@ -2390,7 +2391,19 @@ MonoBehaviour:
     m_ActionId: 49300c76-c700-413d-bef3-3ff62b53e21d
     m_ActionName: Player/Pause[/Keyboard/escape,/SwitchProControllerHID/start]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1044647171}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnRestart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: faa84110-26b1-4d90-9856-06aac9985231
     m_ActionName: Player/Restart[/Keyboard/backspace]
   m_NeverAutoSwitchControlSchemes: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -21,5 +22,10 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnRestart(InputAction.CallbackContext context)
+    {
+        SceneManager.LoadScene("Level1");
     }
 }
