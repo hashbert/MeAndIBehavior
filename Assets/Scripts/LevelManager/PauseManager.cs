@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
 using TMPro;
 
 public class PauseManager : MonoBehaviour
@@ -50,6 +51,7 @@ public class PauseManager : MonoBehaviour
             ResumeGame();
         }
     }
+
     public void QuitButton()
     {
         if (Application.isPlaying)
