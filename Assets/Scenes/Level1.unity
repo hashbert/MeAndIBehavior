@@ -2748,7 +2748,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044647171}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnRestart
+        m_MethodName: OnRestartInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
