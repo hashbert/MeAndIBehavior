@@ -9,6 +9,7 @@ public class GrabController : MonoBehaviour
     [SerializeField] private Transform grabDetect;
     [SerializeField] private Transform holdPosition;
     [SerializeField] private Animator animator;
+    [SerializeField] private Adult adultScript;
 
     //Grab Detect what layerMask and how far?
     [SerializeField] private LayerMask boxLayerMask;
@@ -24,6 +25,7 @@ public class GrabController : MonoBehaviour
         grabDetect = transform.Find("GrabDetect").transform;
         holdPosition = transform.Find("HoldPosition").transform;
         animator = gameObject.GetComponent<Animator>();
+        adultScript = gameObject.GetComponent<Adult>();
     }
 
     public void OnGrabInput(InputAction.CallbackContext context)
@@ -31,9 +33,10 @@ public class GrabController : MonoBehaviour
         if (context.started)
         {
             RaycastHit2D grabCheck = Physics2D.Raycast(grabDetect.position, Vector2.right * transform.localScale.x, rayDist, boxLayerMask);
-            if (IsHoldingBox)
+            if (IsHoldingBox && animator.GetInteger("AdultState")==8)
             {
                 Drop();
+                animator.SetInteger("AdultState", 0);
             }
             else if (CanGrab(ref grabCheck))
             {
