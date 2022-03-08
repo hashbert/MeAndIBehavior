@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
         
     }
 
-    public void OnRestart(InputAction.CallbackContext context)
+    public void OnRestartInput(InputAction.CallbackContext context)
     {
         SceneManager.LoadScene("Level1");
     }
