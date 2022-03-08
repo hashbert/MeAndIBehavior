@@ -9,10 +9,11 @@ public class Kid : MonoBehaviour
     public Rigidbody2D KidRb { get; private set; }
     public GameObject AdultRb { get; private set; }
     public Collider2D PlayerColl { get; private set; }
+    public Animator KidAnim { get; private set; }
     #endregion
 
     #region Other Variables
-    
+
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private float horizontalInput;
     [SerializeField] private float speed = 10f;
@@ -34,6 +35,7 @@ public class Kid : MonoBehaviour
         KidRb = GetComponent<Rigidbody2D>();
         PlayerColl = GetComponent<BoxCollider2D>();
         AdultRb = GameObject.Find("Adult");
+        KidAnim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -78,7 +80,7 @@ public class Kid : MonoBehaviour
     }
     public void OnTeleportInput(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && KidAnim.GetInteger("KidState")==0 && KidAnim.enabled)
         {
             AdultRb.transform.position = kidPosition + new Vector2(0,teleportHeight);
         }
