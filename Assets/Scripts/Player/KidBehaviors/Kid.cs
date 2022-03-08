@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class Kid : MonoBehaviour
 {
     #region Start() variables
-    public Rigidbody2D PlayerRb { get; private set; }
+    public Rigidbody2D KidRb { get; private set; }
+    public GameObject AdultRb { get; private set; }
     public Collider2D PlayerColl { get; private set; }
     #endregion
 
@@ -22,15 +23,17 @@ public class Kid : MonoBehaviour
     public bool SpaceHeld { get; private set; }
 
     private float boxExtensionHeight = 0.1f; //used for ground check
-
+    private Vector2 kidPosition;
+    [SerializeField] private float teleportHeight;
     #endregion
 
     #region Unity Callback Functions
 
     private void Start()
     {
-        PlayerRb = GetComponent<Rigidbody2D>();
+        KidRb = GetComponent<Rigidbody2D>();
         PlayerColl = GetComponent<BoxCollider2D>();
+        AdultRb = GameObject.Find("Adult");
     }
 
     private void Update()
@@ -39,6 +42,7 @@ public class Kid : MonoBehaviour
         Debug.DrawRay(PlayerColl.bounds.center, Vector2.down * (PlayerColl.bounds.extents.y + boxExtensionHeight), color);
         Move();
         Float();
+        kidPosition = transform.position;
     }
 
     #endregion
@@ -53,11 +57,11 @@ public class Kid : MonoBehaviour
         //Debug.Log(context.ReadValue<float>());
         if (context.started && IsGrounded())
         {
-            PlayerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            KidRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-        if (context.canceled && PlayerRb.velocity.y > 0f)
+        if (context.canceled && KidRb.velocity.y > 0f)
         {
-            PlayerRb.AddForce(new Vector2(0f, -PlayerRb.velocity.y * slowdownFraction), ForceMode2D.Impulse);
+            KidRb.AddForce(new Vector2(0f, -KidRb.velocity.y * slowdownFraction), ForceMode2D.Impulse);
         }
     }
     public void OnFloatInput(InputAction.CallbackContext context)
@@ -70,6 +74,13 @@ public class Kid : MonoBehaviour
         if (context.canceled)
         {
             SpaceHeld = false;
+        }
+    }
+    public void OnTeleportInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AdultRb.transform.position = kidPosition + new Vector2(0,teleportHeight);
         }
     }
     #endregion
@@ -97,15 +108,15 @@ public class Kid : MonoBehaviour
     #region Other Functions
     private void Move()
     {
-        PlayerRb.velocity = new Vector2(horizontalInput * speed, PlayerRb.velocity.y);
+        KidRb.velocity = new Vector2(horizontalInput * speed, KidRb.velocity.y);
         CheckIfShouldFlip();
     }
 
     private void Float()
     {
-        if (SpaceHeld && !IsGrounded() && PlayerRb.velocity.y < 0.1f)
+        if (SpaceHeld && !IsGrounded() && KidRb.velocity.y < 0.1f)
         {
-            PlayerRb.velocity = new Vector2(PlayerRb.velocity.x, -floatFallSpeed);
+            KidRb.velocity = new Vector2(KidRb.velocity.x, -floatFallSpeed);
         }
     }
 

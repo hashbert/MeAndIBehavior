@@ -2585,7 +2585,19 @@ MonoBehaviour:
     m_ActionId: 4d426f11-c7c0-4389-b0a3-3fdcd9613b0b
     m_ActionName: Player/Grab[/Keyboard/g]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1230237784}
+        m_TargetAssemblyTypeName: Kid, Assembly-CSharp
+        m_MethodName: OnTeleportInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3dc38cb6-7984-41cc-99a6-e0b04e9b92db
     m_ActionName: Player/Teleport[/Keyboard/t]
   - m_PersistentCalls:
@@ -3090,6 +3102,7 @@ MonoBehaviour:
   slowdownFraction: 0.5
   floatFallSpeed: 1
   isFacingLeft: 1
+  teleportHeight: 0.75
 --- !u!50 &1230237785
 Rigidbody2D:
   serializedVersion: 4
