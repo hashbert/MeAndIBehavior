@@ -42,14 +42,30 @@ public class PauseManager : MonoBehaviour
 
     public void OnPauseInput(InputAction.CallbackContext context)
     {
-        if (!IsPaused)
+        if (context.started)
         {
-            PauseGame();
+            if (!IsPaused)
+            {
+                PauseGame();
+            }
         }
-        else
+    }
+
+    public void OnBackInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
         {
-            ResumeGame();
+            if (pauseButtons.activeSelf)
+            {
+                ResumeGame();
+            }
+            else if (controlsPanel.activeSelf)
+            {
+                controlsPanel.SetActive(false);
+                pauseButtons.SetActive(true);
+            }
         }
+
     }
 
     public void QuitButton()
