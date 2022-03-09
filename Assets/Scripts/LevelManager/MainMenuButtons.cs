@@ -73,7 +73,6 @@ public class MainMenuButtons : MonoBehaviour
     {
         optionsMenu.SetActive(false);
         startMenu.SetActive(true);
-        startButton.GetComponent<Button>().Select();
     }
 
     #endregion
