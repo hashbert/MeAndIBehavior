@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class AnyButtonPress : MonoBehaviour
 {
     [SerializeField] private GameObject startScreen;
-    [SerializeField] private GameObject menuOptions;
-    [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject startMenu;
+    [SerializeField] private GameObject startButton;
 
     private readonly InputAction _anyKeyWait = new InputAction(binding: "/*/<button>", type: InputActionType.Button);
     private void Awake() => _anyKeyWait.performed += DoSomething;
@@ -19,7 +19,7 @@ public class AnyButtonPress : MonoBehaviour
     private void AnyKey()
     {
         startScreen.SetActive(false);
-        menuOptions.SetActive(true);
-        playButton.GetComponent<Button>().Select();
+        startMenu.SetActive(true);
     }
+
 }
