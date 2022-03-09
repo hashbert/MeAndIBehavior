@@ -75,16 +75,17 @@ public class CinemachineBehavior : MonoBehaviour
         {
             //Debug.Log("zoom in");
             //Debug.Log(zoom);
-            vCamKid.m_Lens.OrthographicSize -= .25f;
-            vCamAdult.m_Lens.OrthographicSize -= .25f;
+            vCamKid.m_Lens.OrthographicSize -= .75f;
+            vCamAdult.m_Lens.OrthographicSize -= .75f;
         }
         //zoom out
         else if (zoom.y < 0f && vCamKid.m_Lens.OrthographicSize < maxOrthographicSize)
         {
             //Debug.Log("zoom out");
             //Debug.Log(zoom);
-            vCamKid.m_Lens.OrthographicSize += .25f;
-            vCamAdult.m_Lens.OrthographicSize += .25f;
+            vCamKid.m_Lens.OrthographicSize += .75f;
+            vCamAdult.m_Lens.OrthographicSize += .75f;
         }
     }
+
 }
