@@ -16,6 +16,7 @@ public class GrabController : MonoBehaviour
 
     public bool IsHoldingBox { get; private set; }
     private GameObject boxObject;
+    [SerializeField] private float pickupHeight = 2.05f;
     public RaycastHit2D GrabCheck { get; private set; }
 
     private void Start()
@@ -35,21 +36,23 @@ public class GrabController : MonoBehaviour
                 Drop();
                 adultAnim.SetInteger("AdultState", 0);
             }
-            else if (!IsHoldingBox && GrabCheck.collider != null)
+            else if (!IsHoldingBox && GrabCheck.collider != null && adultAnim.GetInteger("AdultState") == 0)
             {
+                boxObject = GrabCheck.collider.gameObject;
+                boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                boxObject.transform.parent = holdPosition;
+                boxObject.transform.position = holdPosition.position - new Vector3(0, -pickupHeight, 0);
                 adultAnim.SetInteger("AdultState", 7);
             }
         }
     }
 
-    public void Grab(RaycastHit2D grabCheck)
+    private void Grab()
     {
-        boxObject = grabCheck.collider.gameObject;
-        boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-        boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        boxObject.transform.parent = holdPosition;
         boxObject.transform.position = holdPosition.position;
         IsHoldingBox = true;
+        adultAnim.SetInteger("AdultState", 8);
     }
 
     private void Drop()
@@ -58,10 +61,5 @@ public class GrabController : MonoBehaviour
         boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         boxObject.transform.parent = null;
         IsHoldingBox = false;
-    }
-
-    private void PickupStandState()
-    {
-        adultAnim.SetInteger("AdultState", 8);
     }
 }
