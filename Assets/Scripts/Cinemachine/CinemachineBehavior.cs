@@ -14,8 +14,8 @@ public class CinemachineBehavior : MonoBehaviour
     private bool cameraOnKid = true;
 
     //grabbing vcam orthographic size components to adjust zoom using mouse wheel
-    CinemachineVirtualCamera vCamKid;
-    CinemachineVirtualCamera vCamAdult;
+    private CinemachineVirtualCamera vCamKid;
+    private CinemachineVirtualCamera vCamAdult;
     [SerializeField] private float maxOrthographicSize = 7;
     [SerializeField] private float minOrthographicSize = 5;
 
@@ -73,16 +73,12 @@ public class CinemachineBehavior : MonoBehaviour
         //zoom in
         if (zoom.y > 0f && vCamKid.m_Lens.OrthographicSize > minOrthographicSize)
         {
-            //Debug.Log("zoom in");
-            //Debug.Log(zoom);
             vCamKid.m_Lens.OrthographicSize -= .75f;
             vCamAdult.m_Lens.OrthographicSize -= .75f;
         }
         //zoom out
         else if (zoom.y < 0f && vCamKid.m_Lens.OrthographicSize < maxOrthographicSize)
         {
-            //Debug.Log("zoom out");
-            //Debug.Log(zoom);
             vCamKid.m_Lens.OrthographicSize += .75f;
             vCamAdult.m_Lens.OrthographicSize += .75f;
         }

@@ -17,7 +17,6 @@ public class GrabController : MonoBehaviour
     public bool IsHoldingBox { get; private set; }
     private GameObject boxObject;
     [SerializeField] private float pickupHeight = 2.05f;
-    public RaycastHit2D GrabCheck { get; private set; }
 
     private void Start()
     {
@@ -30,15 +29,15 @@ public class GrabController : MonoBehaviour
     {
         if (context.started)
         {
-            GrabCheck = Physics2D.Raycast(grabDetect.position, Vector2.right * transform.localScale.x, rayDist, boxLayerMask);
+            RaycastHit2D grabCheck = Physics2D.Raycast(grabDetect.position, Vector2.right * transform.localScale.x, rayDist, boxLayerMask);
             if (IsHoldingBox && adultAnim.GetInteger("AdultState")==8)
             {
                 Drop();
                 adultAnim.SetInteger("AdultState", 0);
             }
-            else if (!IsHoldingBox && GrabCheck.collider != null && adultAnim.GetInteger("AdultState") == 0)
+            else if (!IsHoldingBox && grabCheck.collider != null && adultAnim.GetInteger("AdultState") == 0)
             {
-                boxObject = GrabCheck.collider.gameObject;
+                boxObject = grabCheck.collider.gameObject;
                 boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                 boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 boxObject.transform.parent = holdPosition;
