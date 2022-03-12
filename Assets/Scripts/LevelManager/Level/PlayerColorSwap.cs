@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerColorSwap : MonoBehaviour
 {
     [SerializeField] private bool flippedAtStart;
-    [SerializeField] float thresh;
+    [SerializeField] private float thresh;
 
     Renderer m_ObjectRenderer;
     
