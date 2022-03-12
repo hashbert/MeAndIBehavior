@@ -13,6 +13,7 @@ public class SwitchCharacter : MonoBehaviour
     private Kid kidScript;
     private BoxCollider2D kidBoxColl;
     private Animator kidAnim;
+    private PlayerColorSwap kidColorSwap;
 
     //adult
     private GameObject adult;
@@ -20,6 +21,7 @@ public class SwitchCharacter : MonoBehaviour
     private Adult adultScript;
     private BoxCollider2D adultBoxColl;
     private Animator adultAnim;
+    private PlayerColorSwap adultColorSwap;
 
     //camera background
     [SerializeField] private Camera mainCamera;
@@ -35,6 +37,7 @@ public class SwitchCharacter : MonoBehaviour
         kidBoxColl = kid.GetComponent<BoxCollider2D>();
         kidAnim = kid.GetComponent<Animator>();
         KidActive = true;
+        kidColorSwap = kid.GetComponent<PlayerColorSwap>();
 
         //adult
         adult = GameObject.Find("Adult");
@@ -42,6 +45,7 @@ public class SwitchCharacter : MonoBehaviour
         adultScript = adult.GetComponent<Adult>();
         adultBoxColl = adult.GetComponent<BoxCollider2D>();
         adultAnim = adult.GetComponent<Animator>();
+        adultColorSwap = adult.GetComponent<PlayerColorSwap>();
 
         //camera
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -63,6 +67,7 @@ public class SwitchCharacter : MonoBehaviour
         adultBoxColl.enabled = false;
         adultAnim.enabled = false;
         InputManager.playerInput.actions["Grab"].Disable();
+        adultColorSwap.Swap();
     }
     private void UnfreezeAdult()
     {
@@ -72,6 +77,7 @@ public class SwitchCharacter : MonoBehaviour
         adultBoxColl.enabled = true;
         adultAnim.enabled = true;
         InputManager.playerInput.actions["Grab"].Enable();
+        adultColorSwap.ResetSwap();
     }
     private void FreezeKid()
     {
@@ -80,6 +86,8 @@ public class SwitchCharacter : MonoBehaviour
         kidScript.enabled = false;
         kidBoxColl.enabled = false;
         kidAnim.enabled = false;
+        kidColorSwap.Swap();
+
     }
     private void UnfreezeKid()
     {
@@ -88,6 +96,7 @@ public class SwitchCharacter : MonoBehaviour
         kidScript.enabled = true;
         kidBoxColl.enabled = true;
         kidAnim.enabled = true;
+        kidColorSwap.ResetSwap();
     }
 
 
@@ -96,12 +105,10 @@ public class SwitchCharacter : MonoBehaviour
         if (mainCamera.backgroundColor == initialBackgroundColor)
         {
             mainCamera.backgroundColor = invertedBackgroundColor;
-            Debug.Log("change to inverted background color");
         }
         else
         {
             mainCamera.backgroundColor = initialBackgroundColor;
-            Debug.Log("change to initial background color");
         }
     }
 
