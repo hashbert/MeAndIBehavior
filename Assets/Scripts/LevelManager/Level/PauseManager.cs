@@ -12,6 +12,16 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject controlsPanel;
     [SerializeField] private PlayerInput playerInput;
     public bool IsPaused { get; private set; }
+
+    //changing the material to normal and back again...
+    [SerializeField] private Material invertMaterial;
+    [SerializeField] private Material plainMaterial;
+    [SerializeField] private GameObject kidObject;
+    [SerializeField] private GameObject adultObject;
+    [SerializeField] private PlayerColorSwap kidColorSwap;
+    [SerializeField] private PlayerColorSwap adultColorSwap;
+    [SerializeField] private SwitchCharacter switchCharacterScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +31,7 @@ public class PauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PauseGame()
@@ -30,6 +40,9 @@ public class PauseManager : MonoBehaviour
         playerInput.SwitchCurrentActionMap("UI");
         pausePanel.SetActive(true);
         IsPaused = true;
+        //changing the material to normal and back again...
+        adultObject.GetComponent<SpriteRenderer>().material = plainMaterial;
+        kidObject.GetComponent<SpriteRenderer>().material = plainMaterial;
     }
 
     public void ResumeGame()
@@ -38,6 +51,20 @@ public class PauseManager : MonoBehaviour
         playerInput.SwitchCurrentActionMap("Player");
         pausePanel.SetActive(false);
         IsPaused = false;
+        //changing the material to normal and back again...
+        adultObject.GetComponent<SpriteRenderer>().material = invertMaterial;
+        kidObject.GetComponent<SpriteRenderer>().material = invertMaterial;
+        if (switchCharacterScript.KidActive)
+        {
+            adultColorSwap.ResetSwap();
+            adultColorSwap.Swap();
+        }
+        else
+        {
+            kidColorSwap.ResetSwap();
+            kidColorSwap.Swap();
+        }
+
     }
 
     public void OnPauseInput(InputAction.CallbackContext context)
@@ -72,11 +99,11 @@ public class PauseManager : MonoBehaviour
     {
         if (Application.isPlaying)
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-            #else
+#else
             Application.Quit();
-            #endif
+#endif
         }
     }
 

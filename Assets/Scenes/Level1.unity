@@ -8535,6 +8535,13 @@ MonoBehaviour:
   pauseButtons: {fileID: 1464019}
   controlsPanel: {fileID: 502383773}
   playerInput: {fileID: 1044647170}
+  invertMaterial: {fileID: 2100000, guid: a4c010796d1f25f42ad3ba8deffbf84a, type: 2}
+  plainMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  kidObject: {fileID: 1230237780}
+  adultObject: {fileID: 91018638}
+  kidColorSwap: {fileID: 1230237786}
+  adultColorSwap: {fileID: 91018646}
+  switchCharacterScript: {fileID: 2090330892}
 --- !u!1 &1977121648
 GameObject:
   m_ObjectHideFlags: 0
