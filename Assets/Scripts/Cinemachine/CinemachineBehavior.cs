@@ -10,11 +10,6 @@ public class CinemachineBehavior : MonoBehaviour
     //[SerializeField] private InputAction switchAction;
 
     private Animator animator;
-    private Animator kidAnim;
-    private bool cameraOnKid = true;
-    
-    private float desiredDuration = 0.5f;
-    private float elapsedTime;
 
     //grabbing vcam orthographic size components to adjust zoom using mouse wheel
     private CinemachineVirtualCamera vCamKid;
@@ -28,7 +23,6 @@ public class CinemachineBehavior : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        kidAnim = GameObject.Find("Kid").GetComponent<Animator>();
         vCamKid = transform.Find("CM vcam Kid").GetComponent<CinemachineVirtualCamera>();
         vCamAdult = transform.Find("CM vcam Adult").GetComponent<CinemachineVirtualCamera>();
         switchCharacter = GameObject.Find("Managers").transform.Find("SwitchCharacter").GetComponent<SwitchCharacter>();
@@ -53,25 +47,6 @@ public class CinemachineBehavior : MonoBehaviour
             }
         }
     }
-    //public void OnSwitchState(InputAction.CallbackContext context)
-    //{
-    //    if (context.started)
-    //    {
-    //        if (kidAnim.GetInteger("KidState") != 0)
-    //        {
-    //            return;
-    //        }
-    //        if (cameraOnKid)
-    //        {
-    //            animator.Play("AdultCam");
-    //        }
-    //        else
-    //        {
-    //            animator.Play("KidCam");
-    //        }
-    //        cameraOnKid = !cameraOnKid;
-    //    }
-    //}
 
     // Update is called once per frame
     void Update()
