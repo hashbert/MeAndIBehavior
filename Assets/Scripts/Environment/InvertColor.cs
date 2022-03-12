@@ -5,9 +5,10 @@ using UnityEngine.InputSystem;
 
 public class InvertColor : MonoBehaviour
 {
-    private Color initialColor;
-    private Color invertedColor;
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private Color initialColor;
+    [SerializeField] private Color invertedColor;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private SwitchCharacter switchCharacter;
     [SerializeField] private InputActionReference switchCharacterAction;
 
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class InvertColor : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         initialColor = spriteRenderer.color;
         invertedColor = new Color(1f - initialColor.r, 1f - initialColor.g, 1f - initialColor.b);
+        switchCharacter = GameObject.Find("Managers").transform.Find("SwitchCharacter").GetComponent<SwitchCharacter>();
     }
 
     private void OnEnable()
@@ -27,13 +29,13 @@ public class InvertColor : MonoBehaviour
     {
         if (context.started)
         {
-            if (spriteRenderer.color == initialColor)
+            if (switchCharacter.KidActive)
             {
-                spriteRenderer.color = invertedColor;
+                spriteRenderer.color = initialColor;
             }
             else
             {
-                spriteRenderer.color = initialColor;
+                spriteRenderer.color = invertedColor;
             }
         }
     }

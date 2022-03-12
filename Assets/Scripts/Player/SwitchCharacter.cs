@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SwitchCharacter : MonoBehaviour
 {
-    private bool kidActive = true;
+    public bool KidActive { get; private set; }
 
     //kid
     private GameObject kid;
@@ -21,6 +21,11 @@ public class SwitchCharacter : MonoBehaviour
     private BoxCollider2D adultBoxColl;
     private Animator adultAnim;
 
+    //camera background
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private Color initialBackgroundColor;
+    [SerializeField] private Color invertedBackgroundColor;
+
     private void Awake()
     {
         //kid
@@ -29,6 +34,7 @@ public class SwitchCharacter : MonoBehaviour
         kidScript = kid.GetComponent<Kid>();
         kidBoxColl = kid.GetComponent<BoxCollider2D>();
         kidAnim = kid.GetComponent<Animator>();
+        KidActive = true;
 
         //adult
         adult = GameObject.Find("Adult");
@@ -36,6 +42,12 @@ public class SwitchCharacter : MonoBehaviour
         adultScript = adult.GetComponent<Adult>();
         adultBoxColl = adult.GetComponent<BoxCollider2D>();
         adultAnim = adult.GetComponent<Animator>();
+
+        //camera
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        initialBackgroundColor = mainCamera.backgroundColor;
+        invertedBackgroundColor = new Color(1f - initialBackgroundColor.r, 1f - initialBackgroundColor.g, 1f - initialBackgroundColor.b);
+
     }
     // Start is called before the first frame update
     void Start()
@@ -78,25 +90,39 @@ public class SwitchCharacter : MonoBehaviour
         kidAnim.enabled = true;
     }
 
+
+    private void SwapColor()
+    {
+        if (mainCamera.backgroundColor == initialBackgroundColor)
+        {
+            mainCamera.backgroundColor = invertedBackgroundColor;
+            Debug.Log("change to inverted background color");
+        }
+        else
+        {
+            mainCamera.backgroundColor = initialBackgroundColor;
+            Debug.Log("change to initial background color");
+        }
+    }
+
     public void OnSwitchCharacter(InputAction.CallbackContext context)
     {
-        if (kidAnim.GetInteger("KidState") != 0)
-        {
-            return;
-        }
         if (context.phase == InputActionPhase.Started)
         {
-            if (kidActive)
+            if (KidActive && kidAnim.GetInteger("KidState") == 0 && kidScript.IsOnGround())
             {
                 FreezeKid();
                 UnfreezeAdult();
+                SwapColor();
+                KidActive = !KidActive;
             }
-            else
+            else if (!KidActive)
             {
                 UnfreezeKid();
                 FreezeAdult();
+                SwapColor();
+                KidActive = !KidActive;
             }
-            kidActive = !kidActive;
         }
     }
 }

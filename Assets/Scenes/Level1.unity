@@ -2340,7 +2340,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420030}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2453,19 +2452,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a1a2de00f526224fa565d70883776f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  switchCharacterAction: {fileID: -1934039552845713043, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
 --- !u!1 &527441747 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5803015383963542701, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
@@ -4598,18 +4584,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InvertColor, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: 1ac71318-d895-426d-b53c-d5981150190e
     m_ActionName: Player/SwitchCharacterCamera[/Keyboard/q,/SwitchProControllerHID/buttonEast]
   - m_PersistentCalls:
@@ -5305,6 +5279,9 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 576
+  groundOnlyLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   horizontalInput: 0
   speed: 8
   jumpForce: 17
@@ -6206,7 +6183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1364018121796187607, guid: c99f17cb18779674f9d33179608ed14e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 70.1
+      value: 70.3
       objectReference: {fileID: 0}
     - target: {fileID: 1364018121796187607, guid: c99f17cb18779674f9d33179608ed14e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9032,6 +9009,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c544873007329144c80764586ef41a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  initialBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  invertedBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &2104915752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}

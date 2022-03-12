@@ -15,6 +15,7 @@ public class Kid : MonoBehaviour
     #region Other Variables
 
     [SerializeField] private LayerMask groundLayerMask;
+    [SerializeField] private LayerMask groundOnlyLayerMask;
     [SerializeField] private float horizontalInput;
     [SerializeField] private float speed = 10f;
     [SerializeField] private float jumpForce = 13f;
@@ -88,10 +89,15 @@ public class Kid : MonoBehaviour
     #endregion
 
     #region Check Functions
-    public bool IsGrounded()
+    public bool IsGrounded()  //can jump off of boxes and ground
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(PlayerColl.bounds.center, PlayerColl.bounds.size, 0f, Vector2.down, boxExtensionHeight, groundLayerMask);
         return raycastHit.collider != null;
+    }
+    public bool IsOnGround() //can switch to adult when on ground only
+    {
+        RaycastHit2D otherRaycastHit = Physics2D.BoxCast(PlayerColl.bounds.center, PlayerColl.bounds.size, 0f, Vector2.down, boxExtensionHeight, groundOnlyLayerMask);
+        return otherRaycastHit.collider != null;
     }
 
     private void CheckIfShouldFlip()
