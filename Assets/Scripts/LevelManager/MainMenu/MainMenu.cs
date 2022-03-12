@@ -6,16 +6,30 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
-public class MainMenuButtons : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
+    //Start Menu
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject startButton;
+
+    //Options Menu
     [SerializeField] private GameObject optionsMenu;
     [SerializeField] private GameObject optionsBackButton;
+
+    ////Audio Menu
     [SerializeField] private GameObject audioMenu;
     [SerializeField] private GameObject audioButton;
     [SerializeField] private GameObject masterSliderButton;
 
+    ////Visual Menu
+    [SerializeField] private GameObject visualMenu;
+
+    ////Controls Menu
+    [SerializeField] private GameObject controlsMenu;
+
+    ////Language Menu
+    [SerializeField] private GameObject languageMenu;
+    
     #region Start Menu
     public void StartButton()
     {
@@ -54,15 +68,18 @@ public class MainMenuButtons : MonoBehaviour
     }
     public void VisualButton()
     {
-
+        optionsMenu.SetActive(false);
+        visualMenu.SetActive(true);
     }
     public void ControlsButton()
     {
-
+        optionsMenu.SetActive(false);
+        controlsMenu.SetActive(true);
     }
     public void LanguageButton()
     {
-
+        optionsMenu.SetActive(false);
+        languageMenu.SetActive(true);
     }
     public void OptionsBackButton()
     {
@@ -98,6 +115,18 @@ public class MainMenuButtons : MonoBehaviour
                 GoToStartMenu();
             }
             else if (audioMenu.activeSelf)
+            {
+                GoToOptionsMenu();
+            }
+            else if (visualMenu.activeSelf)
+            {
+                GoToOptionsMenu();
+            }
+            else if (controlsMenu.activeSelf)
+            {
+                GoToOptionsMenu();
+            }
+            else if (languageMenu.activeSelf)
             {
                 GoToOptionsMenu();
             }
