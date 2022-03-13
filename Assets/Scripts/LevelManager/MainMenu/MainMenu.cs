@@ -26,6 +26,9 @@ public class MainMenu : MonoBehaviour
 
     ////Controls Menu
     [SerializeField] private GameObject controlsMenu;
+    [SerializeField] private GameObject gamepadPanel;
+    //[SerializeField] private GameObject keyboardPanel;
+    [SerializeField] private RebindingDisplay rebindingDisplayScript;
 
     ////Language Menu
     [SerializeField] private GameObject languageMenu;
@@ -56,7 +59,6 @@ public class MainMenu : MonoBehaviour
             #endif
         }
     }
-
     #endregion
 
     #region Options Menu
@@ -81,27 +83,51 @@ public class MainMenu : MonoBehaviour
         optionsMenu.SetActive(false);
         languageMenu.SetActive(true);
     }
-    public void OptionsBackButton()
-    {
-        GoToStartMenu();
-    }
+    #endregion
 
-    private void GoToStartMenu()
+    #region Control Menu
+    public void KeyboardControlsButton()
+    {
+        controlsMenu.SetActive(false);
+        //keyboardPanel.SetActive(true);
+    }
+    public void GamepadControlsButton()
+    {
+        controlsMenu.SetActive(false);
+        gamepadPanel.SetActive(true);
+    }
+    public void GoToControlMenu()
+    {
+        gamepadPanel.SetActive(false);
+        //keyboardPanel.SetActive(false);
+        controlsMenu.SetActive(true);
+    }
+    public void SaveAndExitBindings()
+    {
+        rebindingDisplayScript.Save();
+        gamepadPanel.SetActive(false);
+        //keyboardPanel.SetActive(false);
+        controlsMenu.SetActive(true);
+    }
+    public void RestoreDefaultsButton()
+    {
+        rebindingDisplayScript.Save();
+    }
+    #endregion
+
+    public void GoToStartMenu()
     {
         optionsMenu.SetActive(false);
         startMenu.SetActive(true);
     }
 
-    #endregion
-
-    public void AudioBackButton()
-    {
-        GoToOptionsMenu();
-    }
-
-    private void GoToOptionsMenu()
+    public void GoToOptionsMenu()
     {
         audioMenu.SetActive(false);
+        visualMenu.SetActive(false);
+        controlsMenu.SetActive(false);
+        gamepadPanel.SetActive(false);
+        languageMenu.SetActive(false);
         optionsMenu.SetActive(true);
         optionsBackButton.GetComponent<Button>().Select();
     }
@@ -130,6 +156,15 @@ public class MainMenu : MonoBehaviour
             {
                 GoToOptionsMenu();
             }
+            else if (gamepadPanel.activeSelf)
+            {
+                rebindingDisplayScript.Save();
+                GoToControlMenu();
+            }
+            //else if (keyboardPanel.activeSelf)
+            //{
+            //    GoToControlMenu();
+            //}
         }
 
     }
