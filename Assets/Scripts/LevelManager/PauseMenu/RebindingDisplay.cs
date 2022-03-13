@@ -8,6 +8,7 @@ public class RebindingDisplay : MonoBehaviour
 {
     [SerializeField] private InputActionReference jumpAction = null;
     [SerializeField] private PlayerInput playerInput = null;
+    [SerializeField] private string originalDisplayNameText;
     [SerializeField] private TMP_Text bindingDisplayNameText = null;
     [SerializeField] private GameObject startRebindObject = null;
     [SerializeField] private GameObject waitingForInputObject = null;
@@ -18,6 +19,8 @@ public class RebindingDisplay : MonoBehaviour
 
     private void Start()
     {
+        originalDisplayNameText = bindingDisplayNameText.text;
+        Debug.Log(originalDisplayNameText);
         string rebinds = PlayerPrefs.GetString(RebindsKey, string.Empty);
 
         if (string.IsNullOrEmpty(rebinds)) { return; }
@@ -43,7 +46,7 @@ public class RebindingDisplay : MonoBehaviour
         startRebindObject.SetActive(false);
         waitingForInputObject.SetActive(true);
 
-        //playerInput.SwitchCurrentActionMap("Menu");
+        playerInput.SwitchCurrentActionMap("UI");
 
         rebindingOperation = jumpAction.action.PerformInteractiveRebinding()
             .WithControlsExcluding("Mouse")
@@ -65,6 +68,13 @@ public class RebindingDisplay : MonoBehaviour
         startRebindObject.SetActive(true);
         waitingForInputObject.SetActive(false);
 
-        //playerInput.SwitchCurrentActionMap("Gameplay");
+        //playerInput.SwitchCurrentActionMap("Player");
+    }
+    public void RestoreDefaults()
+    {
+        playerInput.actions.RemoveAllBindingOverrides();
+        string rebinds = string.Empty;
+        PlayerPrefs.SetString(RebindsKey, rebinds);
+        bindingDisplayNameText.text = originalDisplayNameText;
     }
 }
