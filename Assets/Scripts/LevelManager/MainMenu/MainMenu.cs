@@ -28,6 +28,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject controlsMenu;
     [SerializeField] private GameObject gamepadPanel;
     //[SerializeField] private GameObject keyboardPanel;
+    [SerializeField] private RebindingDisplay rebindingDisplayScript;
 
     ////Language Menu
     [SerializeField] private GameObject languageMenu;
@@ -101,6 +102,17 @@ public class MainMenu : MonoBehaviour
         //keyboardPanel.SetActive(false);
         controlsMenu.SetActive(true);
     }
+    public void SaveAndExitBindings()
+    {
+        rebindingDisplayScript.Save();
+        gamepadPanel.SetActive(false);
+        //keyboardPanel.SetActive(false);
+        controlsMenu.SetActive(true);
+    }
+    public void RestoreDefaultsButton()
+    {
+        rebindingDisplayScript.Save();
+    }
     #endregion
 
     public void GoToStartMenu()
@@ -146,6 +158,7 @@ public class MainMenu : MonoBehaviour
             }
             else if (gamepadPanel.activeSelf)
             {
+                rebindingDisplayScript.Save();
                 GoToControlMenu();
             }
             //else if (keyboardPanel.activeSelf)
