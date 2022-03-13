@@ -14,6 +14,10 @@ public class CinemachineBehavior : MonoBehaviour
     //grabbing vcam orthographic size components to adjust zoom using mouse wheel
     private CinemachineVirtualCamera vCamKid;
     private CinemachineVirtualCamera vCamAdult;
+
+    //[SerializeField] private float maxOrthographicSize = 7;
+    //[SerializeField] private float minOrthographicSize = 5;
+    //private float zoomStepSize = 0.75f;
     private SwitchCharacter switchCharacter;
 
     private CinemachineVirtualCamera vCamKid1;
@@ -83,17 +87,41 @@ public class CinemachineBehavior : MonoBehaviour
 
     public void OnZoom(InputAction.CallbackContext context)
     {
+        //var zoom = context.ReadValue<Vector2>();
+        ////zoom in
+        //if (zoom.y > 0f && vCamKid.m_Lens.OrthographicSize > minOrthographicSize)
+        //{
+        //    camNum = 1;
+        //    //vCamKid.m_Lens.OrthographicSize -= zoomStepSize;
+        //    //vCamAdult.m_Lens.OrthographicSize -= zoomStepSize;
+
+        //}
+        ////zoom out
+        //else if (zoom.y < 0f && vCamKid.m_Lens.OrthographicSize < maxOrthographicSize)
+        //{
+        //    camNum = 1;
+        //    //vCamKid.m_Lens.OrthographicSize += zoomStepSize;
+        //    //vCamAdult.m_Lens.OrthographicSize += zoomStepSize;
+
+        //}
+        //zoom in
         var zoom = context.ReadValue<Vector2>();
         if (zoom.y > 0f && camNum <=3 && camNum>0)
         {
             camNum -= 1;
             PlayCorrectCamera();
+            //vCamKid.m_Lens.OrthographicSize -= zoomStepSize;
+            //vCamAdult.m_Lens.OrthographicSize -= zoomStepSize;
+
         }
         //zoom out
         else if (zoom.y < 0f && camNum >=0 && camNum<3)
         {
             camNum += 1;
             PlayCorrectCamera();
+            //vCamKid.m_Lens.OrthographicSize += zoomStepSize;
+            //vCamAdult.m_Lens.OrthographicSize += zoomStepSize;
+
         }
     }
 
