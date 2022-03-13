@@ -80,10 +80,16 @@ public class PauseManager : MonoBehaviour
         controlsPanel.SetActive(true);
         pauseButtons.SetActive(false);
     }
-
-    public void ExitToTitle()
+    public void QuitButton()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        if (Application.isPlaying)
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
     }
 
     #endregion
@@ -116,15 +122,5 @@ public class PauseManager : MonoBehaviour
 
     }
 
-//    public void QuitButton()
-//    {
-//        if (Application.isPlaying)
-//        {
-//#if UNITY_EDITOR
-//            UnityEditor.EditorApplication.isPlaying = false;
-//#else
-//            Application.Quit();
-//#endif
-//        }
-//    }
+
 }
