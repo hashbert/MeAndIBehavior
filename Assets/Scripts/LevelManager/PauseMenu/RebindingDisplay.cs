@@ -43,7 +43,7 @@ public class RebindingDisplay : MonoBehaviour
         startRebindObject.SetActive(false);
         waitingForInputObject.SetActive(true);
 
-        //playerInput.SwitchCurrentActionMap("Menu");
+        playerInput.SwitchCurrentActionMap("UI");
 
         rebindingOperation = jumpAction.action.PerformInteractiveRebinding()
             .WithControlsExcluding("Mouse")
@@ -65,6 +65,6 @@ public class RebindingDisplay : MonoBehaviour
         startRebindObject.SetActive(true);
         waitingForInputObject.SetActive(false);
 
-        //playerInput.SwitchCurrentActionMap("Gameplay");
+        playerInput.SwitchCurrentActionMap("Player");
     }
 }
