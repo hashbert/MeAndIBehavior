@@ -127,7 +127,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 04556d73c1d8ce5419d5bac63647e8a9, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -144,4 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f220cf8b8670547a9d8db8e4b75e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
+  invertedColor: {r: 0, g: 0, b: 0, a: 0}
+  spriteRenderer: {fileID: 0}
+  switchCharacter: {fileID: 0}
   switchCharacterAction: {fileID: -1934039552845713043, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
