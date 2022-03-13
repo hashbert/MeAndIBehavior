@@ -76,6 +76,5 @@ public class RebindingDisplay : MonoBehaviour
         string rebinds = string.Empty;
         PlayerPrefs.SetString(RebindsKey, rebinds);
         bindingDisplayNameText.text = originalDisplayNameText;
-
     }
 }
