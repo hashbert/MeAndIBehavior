@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Cutscene : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Cutscene : MonoBehaviour
     [SerializeField] private GameObject continueButton;
     [SerializeField] [TextArea(3, 10)] private string[] sentences;
     private int sentenceNum = 0;
+    private int lettersRevealed;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +27,19 @@ public class Cutscene : MonoBehaviour
         int totalCharInSentence = currentSentence.Length;
 
         textBox.text = currentSentence;
-        for (int i = 0; i <= totalCharInSentence; i++)
+
+        lettersRevealed = 0;
+        for (lettersRevealed = 0; lettersRevealed <= totalCharInSentence; lettersRevealed++)
         {
-            textBox.maxVisibleCharacters = i;
+            textBox.maxVisibleCharacters = lettersRevealed;
             yield return new WaitForSeconds(typingSpeed);
         }
+
+        //for (int i = 0; i <= totalCharInSentence; i++)
+        //{
+        //    textBox.maxVisibleCharacters = i;
+        //    yield return new WaitForSeconds(typingSpeed);
+        //}
 
         sentenceNum++;
 
@@ -54,4 +64,17 @@ public class Cutscene : MonoBehaviour
         continueButton.SetActive(false);
         SceneManager.LoadScene("Level1");
     }
+
+    private readonly InputAction _anyKeyWait = new InputAction(binding: "/*/<button>", type: InputActionType.Button);
+    private void Awake() => _anyKeyWait.performed += DoSomething;
+    private void OnEnable() => _anyKeyWait.Enable();
+    private void OnDisable() => _anyKeyWait.Disable();
+    private void OnDestroy() => _anyKeyWait.performed -= DoSomething;
+    private void DoSomething(InputAction.CallbackContext ctx) => AnyKey();
+    private void AnyKey()
+    {
+        lettersRevealed = 2147483646;
+        textBox.maxVisibleCharacters = lettersRevealed;
+    }
+
 }

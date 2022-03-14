@@ -28,7 +28,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ground (15)
+  m_Name: MovingGround
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
