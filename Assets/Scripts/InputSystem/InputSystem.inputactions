@@ -42,15 +42,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Float",
-                    "type": "Button",
-                    "id": "a311e86e-f19d-490d-9594-38de33a6bf28",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "SwitchCharacterCamera",
                     "type": "Button",
                     "id": "1ac71318-d895-426d-b53c-d5981150190e",
@@ -349,28 +340,6 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fbe20194-ce17-408a-9bc9-900b08b497e9",
-                    "path": "<Keyboard>/space",
-                    "interactions": "Hold(pressPoint=0.23)",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Float",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8f65ce78-1e15-4b1f-9723-6233beb194ee",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Float",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

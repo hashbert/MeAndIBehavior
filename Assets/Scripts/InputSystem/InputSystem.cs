@@ -64,15 +64,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Float"",
-                    ""type"": ""Button"",
-                    ""id"": ""a311e86e-f19d-490d-9594-38de33a6bf28"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""SwitchCharacterCamera"",
                     ""type"": ""Button"",
                     ""id"": ""1ac71318-d895-426d-b53c-d5981150190e"",
@@ -371,28 +362,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fbe20194-ce17-408a-9bc9-900b08b497e9"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": ""Hold(pressPoint=0.23)"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Float"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8f65ce78-1e15-4b1f-9723-6233beb194ee"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Float"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1202,7 +1171,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         m_Player_Grab = m_Player.FindAction("Grab", throwIfNotFound: true);
         m_Player_Teleport = m_Player.FindAction("Teleport", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_Float = m_Player.FindAction("Float", throwIfNotFound: true);
         m_Player_SwitchCharacterCamera = m_Player.FindAction("SwitchCharacterCamera", throwIfNotFound: true);
         m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
@@ -1283,7 +1251,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Grab;
     private readonly InputAction m_Player_Teleport;
     private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_Float;
     private readonly InputAction m_Player_SwitchCharacterCamera;
     private readonly InputAction m_Player_Zoom;
     private readonly InputAction m_Player_Pause;
@@ -1296,7 +1263,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         public InputAction @Grab => m_Wrapper.m_Player_Grab;
         public InputAction @Teleport => m_Wrapper.m_Player_Teleport;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @Float => m_Wrapper.m_Player_Float;
         public InputAction @SwitchCharacterCamera => m_Wrapper.m_Player_SwitchCharacterCamera;
         public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
@@ -1322,9 +1288,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Float.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFloat;
-                @Float.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFloat;
-                @Float.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFloat;
                 @SwitchCharacterCamera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchCharacterCamera;
                 @SwitchCharacterCamera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchCharacterCamera;
                 @SwitchCharacterCamera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchCharacterCamera;
@@ -1353,9 +1316,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Float.started += instance.OnFloat;
-                @Float.performed += instance.OnFloat;
-                @Float.canceled += instance.OnFloat;
                 @SwitchCharacterCamera.started += instance.OnSwitchCharacterCamera;
                 @SwitchCharacterCamera.performed += instance.OnSwitchCharacterCamera;
                 @SwitchCharacterCamera.canceled += instance.OnSwitchCharacterCamera;
@@ -1536,7 +1496,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         void OnGrab(InputAction.CallbackContext context);
         void OnTeleport(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnFloat(InputAction.CallbackContext context);
         void OnSwitchCharacterCamera(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);

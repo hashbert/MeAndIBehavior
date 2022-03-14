@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using TMPro;
 
 public class RebindingDisplay : MonoBehaviour
@@ -12,6 +13,11 @@ public class RebindingDisplay : MonoBehaviour
     [SerializeField] private TMP_Text bindingDisplayNameText = null;
     [SerializeField] private GameObject startRebindObject = null;
     [SerializeField] private GameObject waitingForInputObject = null;
+
+    [SerializeField] private GameObject jumpDropdown;
+    [SerializeField] private GameObject grabDropdown;
+    [SerializeField] private GameObject switchCharacterDropdown;
+    [SerializeField] private GameObject teleportDropdown;
 
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
 
@@ -77,5 +83,10 @@ public class RebindingDisplay : MonoBehaviour
         PlayerPrefs.SetString(RebindsKey, rebinds);
         bindingDisplayNameText.text = originalDisplayNameText;
 
+
+        jumpDropdown.GetComponent<TMP_Dropdown>().value = 0;
+        grabDropdown.GetComponent<TMP_Dropdown>().value = 0;
+        switchCharacterDropdown.GetComponent<TMP_Dropdown>().value = 0;
+        teleportDropdown.GetComponent<TMP_Dropdown>().value = 0;
     }
 }
