@@ -4354,7 +4354,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6182490341173022011}
         m_TargetAssemblyTypeName: DropdownManager, Assembly-CSharp
         m_MethodName: HandleTeleportInputData
         m_Mode: 0
@@ -14638,7 +14638,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6182490341173022011}
         m_TargetAssemblyTypeName: DropdownManager, Assembly-CSharp
         m_MethodName: HandleGrabInputData
         m_Mode: 0
@@ -15380,7 +15380,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6182490341173022011}
         m_TargetAssemblyTypeName: DropdownManager, Assembly-CSharp
         m_MethodName: HandleJumpInputData
         m_Mode: 0
@@ -15723,7 +15723,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6182490341173022011}
         m_TargetAssemblyTypeName: DropdownManager, Assembly-CSharp
         m_MethodName: HandleSwitchCharacterInputData
         m_Mode: 0

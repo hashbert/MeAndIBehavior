@@ -87,23 +87,25 @@ public class DropdownManager : MonoBehaviour
             switchCharacter.action.ApplyBindingOverride(new InputBinding
             {
                 groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonNorth"
+                overridePath = "<Gamepad>/buttonEast"
             });
+
         }
         else if (val == 1)
         {
             switchCharacter.action.ApplyBindingOverride(new InputBinding
             {
                 groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonWest"
+                overridePath = "<Gamepad>/buttonNorth"
             });
+
         }
         else if (val == 2)
         {
             switchCharacter.action.ApplyBindingOverride(new InputBinding
             {
                 groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonEast"
+                overridePath = "<Gamepad>/buttonWest"
             });
         }
         else if (val == 3)
@@ -130,7 +132,7 @@ public class DropdownManager : MonoBehaviour
             teleport.action.ApplyBindingOverride(new InputBinding
             {
                 groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonEast"
+                overridePath = "<Gamepad>/buttonNorth"
             });
         }
         else if (val == 2)
@@ -138,7 +140,7 @@ public class DropdownManager : MonoBehaviour
             teleport.action.ApplyBindingOverride(new InputBinding
             {
                 groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonNorth"
+                overridePath = "<Gamepad>/buttonWest"
             });
         }
         else if (val == 3)
@@ -146,7 +148,7 @@ public class DropdownManager : MonoBehaviour
             teleport.action.ApplyBindingOverride(new InputBinding
             {
                 groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonWest"
+                overridePath = "<Gamepad>/buttonEast"
             });
         }
     }
