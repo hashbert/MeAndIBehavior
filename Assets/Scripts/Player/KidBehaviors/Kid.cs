@@ -66,10 +66,6 @@ public class Kid : MonoBehaviour
         {
             KidRb.AddForce(new Vector2(0f, -KidRb.velocity.y * slowdownFraction), ForceMode2D.Impulse);
         }
-    }
-    public void OnFloatInput(InputAction.CallbackContext context)
-    {
-        //Debug.Log("Jump pressed");
         if (context.started)
         {
             SpaceHeld = true;
@@ -78,6 +74,18 @@ public class Kid : MonoBehaviour
         {
             SpaceHeld = false;
         }
+    }
+    public void OnFloatInput(InputAction.CallbackContext context)
+    {
+        //Debug.Log("Jump pressed");
+        //if (context.started)
+        //{
+        //    SpaceHeld = true;
+        //}
+        //if (context.canceled)
+        //{
+        //    SpaceHeld = false;
+        //}
     }
     public void OnTeleportInput(InputAction.CallbackContext context)
     {
