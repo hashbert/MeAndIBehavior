@@ -11,6 +11,7 @@ public class Cutscene : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textBox;
     [SerializeField] private GameObject downArrow;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private GameObject fader;
     [SerializeField] [TextArea(3, 10)] private string[] sentences;
     private int sentenceNum = 0;
     private int lettersRevealed;
@@ -62,7 +63,7 @@ public class Cutscene : MonoBehaviour
     public void Continue()
     {
         continueButton.SetActive(false);
-        SceneManager.LoadScene("Level1");
+        fader.SetActive(true);
     }
 
     private readonly InputAction _anyKeyWait = new InputAction(binding: "/*/<button>", type: InputActionType.Button);
