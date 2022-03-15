@@ -10,6 +10,8 @@ public class Kid : MonoBehaviour
     public GameObject AdultRb { get; private set; }
     public Collider2D PlayerColl { get; private set; }
     public Animator KidAnim { get; private set; }
+
+    private ParticleSystem teleportParticle;
     #endregion
 
     #region Other Variables
@@ -37,6 +39,7 @@ public class Kid : MonoBehaviour
         PlayerColl = GetComponent<BoxCollider2D>();
         AdultRb = GameObject.Find("Adult");
         KidAnim = GetComponent<Animator>();
+        teleportParticle = GetComponentInChildren<ParticleSystem>();
     }
 
     private void Update()
@@ -75,24 +78,20 @@ public class Kid : MonoBehaviour
             SpaceHeld = false;
         }
     }
-    public void OnFloatInput(InputAction.CallbackContext context)
-    {
-        //Debug.Log("Jump pressed");
-        //if (context.started)
-        //{
-        //    SpaceHeld = true;
-        //}
-        //if (context.canceled)
-        //{
-        //    SpaceHeld = false;
-        //}
-    }
+
     public void OnTeleportInput(InputAction.CallbackContext context)
     {
-        if (context.started && KidAnim.GetInteger("KidState")==0 && KidAnim.enabled)
+        if (context.started && KidAnim.GetInteger("KidState")==0 && KidAnim.enabled && IsOnGround())
         {
-            AdultRb.transform.position = kidPosition + new Vector2(0,teleportHeight);
+            teleportParticle.Play();
+            KidAnim.SetInteger("KidState", 5);
         }
+    }
+
+    private void TeleportAdult()
+    {
+        AdultRb.transform.position = kidPosition + new Vector2(0, teleportHeight);
+        KidAnim.SetInteger("KidState", 0);
     }
     #endregion
 
@@ -102,7 +101,7 @@ public class Kid : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.BoxCast(PlayerColl.bounds.center, PlayerColl.bounds.size, 0f, Vector2.down, boxExtensionHeight, groundLayerMask);
         return raycastHit.collider != null;
     }
-    public bool IsOnGround() //can switch to adult when on ground only
+    public bool IsOnGround() //can switch to adult or teleport when on ground only
     {
         RaycastHit2D otherRaycastHit = Physics2D.BoxCast(PlayerColl.bounds.center, PlayerColl.bounds.size, 0f, Vector2.down, boxExtensionHeight, groundOnlyLayerMask);
         return otherRaycastHit.collider != null;
