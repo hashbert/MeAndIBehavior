@@ -11,15 +11,15 @@ public class DropdownManager : MonoBehaviour
     [SerializeField] private InputActionReference switchCharacter;
     [SerializeField] private InputActionReference teleport;
 
-    [SerializeField] private GameObject jumpDropdown;
-    [SerializeField] private GameObject grabDropdown;
-    [SerializeField] private GameObject switchCharacterDropdown;
-    [SerializeField] private GameObject teleportDropdown;
+    [SerializeField] private GameObject northDropdown;
+    [SerializeField] private GameObject westDropdown;
+    [SerializeField] private GameObject eastDropdown;
+    [SerializeField] private GameObject southDropdown;
 
-    private int jumpVal;
-    private int grabVal;
-    private int switchVal;
-    private int teleportVal;
+    private int upVal;
+    private int westVal;
+    private int eastVal;
+    private int southVal;
 
     private void OnEnable()
     {
@@ -33,78 +33,78 @@ public class DropdownManager : MonoBehaviour
             InputControlPath.HumanReadableStringOptions.None);
         if (jumpBinding.Equals("Button North [Gamepad]"))
         {
-            jumpVal = 0;
+            upVal = 0;
         }
         else if (jumpBinding.Equals("Button West [Gamepad]"))
         {
-            jumpVal = 1;
+            westVal = 0;
         }
         else if (jumpBinding.Equals("Button East [Gamepad]"))
         {
-            jumpVal = 2;
+            eastVal = 0;
         }
         else if (jumpBinding.Equals("Button South [Gamepad]"))
         {
-            jumpVal = 3;
+            southVal = 0;
         }
 
-        if (grabBinding.Equals("Button West [Gamepad]"))
+        if (grabBinding.Equals("Button North [Gamepad]"))
         {
-            grabVal = 0;
+            upVal = 1;
         }
-        else if (grabBinding.Equals("Button North [Gamepad]"))
+        else if (grabBinding.Equals("Button West [Gamepad]"))
         {
-            grabVal = 1;
+            westVal = 1;
         }
         else if (grabBinding.Equals("Button East [Gamepad]"))
         {
-            grabVal = 2;
+            eastVal = 1;
         }
         else if (grabBinding.Equals("Button South [Gamepad]"))
         {
-            grabVal = 3;
+            southVal = 1;
         }
 
-        if (switchBinding.Equals("Button East [Gamepad]"))
+        if (switchBinding.Equals("Button North [Gamepad]"))
         {
-            switchVal = 0;
-        }
-        else if (switchBinding.Equals("Button North [Gamepad]"))
-        {
-            switchVal = 1;
+            upVal = 2;
         }
         else if (switchBinding.Equals("Button West [Gamepad]"))
         {
-            switchVal = 2;
+            westVal = 2;
+        }
+        else if (switchBinding.Equals("Button East [Gamepad]"))
+        {
+            eastVal = 2;
         }
         else if (switchBinding.Equals("Button South [Gamepad]"))
         {
-            switchVal = 3;
+            southVal = 2;
         }
 
-        if (teleportBinding.Equals("Button South [Gamepad]"))
+        if (teleportBinding.Equals("Button North [Gamepad]"))
         {
-            teleportVal = 0;
-        }
-        else if (teleportBinding.Equals("Button North [Gamepad]"))
-        {
-            teleportVal = 1;
+            upVal = 3;
         }
         else if (teleportBinding.Equals("Button West [Gamepad]"))
         {
-            teleportVal = 2;
+            westVal = 3;
         }
         else if (teleportBinding.Equals("Button East [Gamepad]"))
         {
-            teleportVal = 3;
+            eastVal = 3;
+        }
+        else if (teleportBinding.Equals("Button South [Gamepad]"))
+        {
+            southVal = 3;
         }
 
-        jumpDropdown.GetComponent<TMP_Dropdown>().value = jumpVal;
-        grabDropdown.GetComponent<TMP_Dropdown>().value = grabVal;
-        switchCharacterDropdown.GetComponent<TMP_Dropdown>().value = switchVal;
-        teleportDropdown.GetComponent<TMP_Dropdown>().value = teleportVal;
+        northDropdown.GetComponent<TMP_Dropdown>().value = upVal;
+        westDropdown.GetComponent<TMP_Dropdown>().value = westVal;
+        eastDropdown.GetComponent<TMP_Dropdown>().value = eastVal;
+        southDropdown.GetComponent<TMP_Dropdown>().value = southVal;
     }
-    public void HandleJumpInputData(int val)
+    public void HandleNorthInputData(int val)
     {
         if (val == 0)
         {
@@ -112,41 +112,6 @@ public class DropdownManager : MonoBehaviour
             {
                 groups = "Gamepad",
                 overridePath = "<Gamepad>/buttonNorth"
-            });
-        }
-        else if (val == 1)
-        {
-            jump.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonWest"
-            });
-        }
-        else if (val == 2)
-        {
-            jump.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonEast"
-            });
-        }
-        else if (val == 3)
-        {
-            jump.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonSouth"
-            });
-        }
-    }
-    public void HandleGrabInputData(int val)
-    {
-        if (val == 0)
-        {
-            grab.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonWest"
             });
         }
         else if (val == 1)
@@ -159,82 +124,82 @@ public class DropdownManager : MonoBehaviour
         }
         else if (val == 2)
         {
-            grab.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonEast"
-            });
-        }
-        else if (val == 3)
-        {
-            grab.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonSouth"
-            });
-        }
-    }
-    public void HandleSwitchCharacterInputData(int val)
-    {
-        if (val == 0)
-        {
-            switchCharacter.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonEast"
-            });
-
-        }
-        else if (val == 1)
-        {
             switchCharacter.action.ApplyBindingOverride(new InputBinding
             {
                 groups = "Gamepad",
                 overridePath = "<Gamepad>/buttonNorth"
+            });
+        }
+        else if (val == 3)
+        {
+            teleport.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonNorth"
+            });
+        }
+    }
+    public void HandleWestInputData(int val)
+    {
+        if (val == 0)
+        {
+            jump.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonWest"
+            });
+        }
+        else if (val == 1)
+        {
+            grab.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonWest"
+            });
+        }
+        else if (val == 2)
+        {
+            switchCharacter.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonWest"
+            });
+        }
+        else if (val == 3)
+        {
+            teleport.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonWest"
+            });
+        }
+    }
+    public void HandleEastInputData(int val)
+    {
+        if (val == 0)
+        {
+            jump.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonEast"
             });
 
         }
-        else if (val == 2)
-        {
-            switchCharacter.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonWest"
-            });
-        }
-        else if (val == 3)
-        {
-            switchCharacter.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonSouth"
-            });
-        }
-    }
-    public void HandleTeleportInputData(int val)
-    {
-        if (val == 0)
-        {
-            teleport.action.ApplyBindingOverride(new InputBinding
-            {
-                groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonSouth"
-            });
-        }
         else if (val == 1)
         {
-            teleport.action.ApplyBindingOverride(new InputBinding
+            grab.action.ApplyBindingOverride(new InputBinding
             {
                 groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonNorth"
+                overridePath = "<Gamepad>/buttonEast"
             });
+
         }
         else if (val == 2)
         {
-            teleport.action.ApplyBindingOverride(new InputBinding
+            switchCharacter.action.ApplyBindingOverride(new InputBinding
             {
                 groups = "Gamepad",
-                overridePath = "<Gamepad>/buttonWest"
+                overridePath = "<Gamepad>/buttonEast"
             });
         }
         else if (val == 3)
@@ -243,6 +208,41 @@ public class DropdownManager : MonoBehaviour
             {
                 groups = "Gamepad",
                 overridePath = "<Gamepad>/buttonEast"
+            });
+        }
+    }
+    public void HandleSouthInputData(int val)
+    {
+        if (val == 0)
+        {
+            jump.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonSouth"
+            });
+        }
+        else if (val == 1)
+        {
+            grab.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonSouth"
+            });
+        }
+        else if (val == 2)
+        {
+            switchCharacter.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonSouth"
+            });
+        }
+        else if (val == 3)
+        {
+            teleport.action.ApplyBindingOverride(new InputBinding
+            {
+                groups = "Gamepad",
+                overridePath = "<Gamepad>/buttonSouth"
             });
         }
     }

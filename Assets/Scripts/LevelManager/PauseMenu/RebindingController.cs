@@ -8,10 +8,10 @@ using TMPro;
 public class RebindingController : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
-    [SerializeField] private GameObject jumpDropdown;
-    [SerializeField] private GameObject grabDropdown;
-    [SerializeField] private GameObject switchCharacterDropdown;
-    [SerializeField] private GameObject teleportDropdown;
+    [SerializeField] private GameObject northDropdown;
+    [SerializeField] private GameObject westDropdown;
+    [SerializeField] private GameObject eastDropdown;
+    [SerializeField] private GameObject southDropdown;
 
     private const string RebindsKey = "rebinds";
 
@@ -36,9 +36,9 @@ public class RebindingController : MonoBehaviour
         string rebinds = string.Empty;
         PlayerPrefs.SetString(RebindsKey, rebinds);
 
-        jumpDropdown.GetComponent<TMP_Dropdown>().value = 0;
-        grabDropdown.GetComponent<TMP_Dropdown>().value = 0;
-        switchCharacterDropdown.GetComponent<TMP_Dropdown>().value = 0;
-        teleportDropdown.GetComponent<TMP_Dropdown>().value = 0;
+        northDropdown.GetComponent<TMP_Dropdown>().value = 0;
+        westDropdown.GetComponent<TMP_Dropdown>().value = 1;
+        eastDropdown.GetComponent<TMP_Dropdown>().value = 2;
+        southDropdown.GetComponent<TMP_Dropdown>().value = 3;
     }
 }
