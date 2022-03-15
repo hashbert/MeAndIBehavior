@@ -21172,6 +21172,10 @@ MonoBehaviour:
   grab: {fileID: 3254151945050621394, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
   switchCharacter: {fileID: -1934039552845713043, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
   teleport: {fileID: -7015084892914633879, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
+  jumpDropdown: {fileID: 1709516744}
+  grabDropdown: {fileID: 1524974489}
+  switchCharacterDropdown: {fileID: 1744600377}
+  teleportDropdown: {fileID: 709987570}
 --- !u!222 &6182490341971339690
 CanvasRenderer:
   m_ObjectHideFlags: 0
