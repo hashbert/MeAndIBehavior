@@ -286,6 +286,7 @@ Transform:
   m_Children:
   - {fileID: 1937403407}
   - {fileID: 1861061411}
+  - {fileID: 1218405196}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3039,8 +3040,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6182490341173022008}
-        m_TargetAssemblyTypeName: RebindingDisplay, Assembly-CSharp
+      - m_Target: {fileID: 1218405197}
+        m_TargetAssemblyTypeName: RebindingController, Assembly-CSharp
         m_MethodName: RestoreDefaults
         m_Mode: 1
         m_Arguments:
@@ -6859,6 +6860,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147023850}
   m_CullTransparentMesh: 1
+--- !u!1 &1218405195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218405196}
+  - component: {fileID: 1218405197}
+  m_Layer: 0
+  m_Name: RebindManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1218405196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218405195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 25036792}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1218405197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218405195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9244742a47452845b6c09b6c3c059e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 1861061412}
+  jumpDropdown: {fileID: 1709516744}
+  grabDropdown: {fileID: 1524974489}
+  switchCharacterDropdown: {fileID: 1744600377}
+  teleportDropdown: {fileID: 709987570}
 --- !u!1 &1223845135
 GameObject:
   m_ObjectHideFlags: 0
@@ -17087,10 +17136,6 @@ MonoBehaviour:
     m_ActionName: Player/Jump[/Keyboard/space,/SwitchProControllerHID/buttonNorth]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: a311e86e-f19d-490d-9594-38de33a6bf28
-    m_ActionName: Player/Float[/Keyboard/space,/SwitchProControllerHID/buttonNorth]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 1ac71318-d895-426d-b53c-d5981150190e
     m_ActionName: Player/SwitchCharacterCamera[/Keyboard/q,/SwitchProControllerHID/buttonEast]
   - m_PersistentCalls:
@@ -17414,7 +17459,7 @@ MonoBehaviour:
   visualMenu: {fileID: 5819248327417830728}
   controlsMenu: {fileID: 615668523536730582}
   gamepadPanel: {fileID: 6182490341173022010}
-  rebindingDisplayScript: {fileID: 6182490341173022008}
+  rebindingDisplayScript: {fileID: 1218405197}
   languageMenu: {fileID: 141003224957620744}
 --- !u!4 &1937403407
 Transform:
@@ -21069,28 +21114,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6182490341173022008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6182490341173022010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43df41aea63a36148a5653872cea08a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpAction: {fileID: -4222187747311746522, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
-  playerInput: {fileID: 1861061412}
-  originalDisplayNameText: 
-  bindingDisplayNameText: {fileID: 6182490341971339691}
-  startRebindObject: {fileID: 6182490343218196281}
-  waitingForInputObject: {fileID: 6182490342167625426}
-  jumpDropdown: {fileID: 1709516744}
-  grabDropdown: {fileID: 1524974489}
-  switchCharacterDropdown: {fileID: 1744600377}
-  teleportDropdown: {fileID: 709987570}
 --- !u!224 &6182490341173022009
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21125,7 +21148,6 @@ GameObject:
   - component: {fileID: 6182490341173022009}
   - component: {fileID: 6182490341173021990}
   - component: {fileID: 6182490341173021991}
-  - component: {fileID: 6182490341173022008}
   - component: {fileID: 6182490341173022011}
   m_Layer: 5
   m_Name: GamepadPanel
@@ -21634,7 +21656,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6182490341173022008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RebindingDisplay, Assembly-CSharp
         m_MethodName: StartRebinding
         m_Mode: 1

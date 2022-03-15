@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject controlsMenu;
     [SerializeField] private GameObject gamepadPanel;
     //[SerializeField] private GameObject keyboardPanel;
-    [SerializeField] private RebindingDisplay rebindingDisplayScript;
+    [SerializeField] private RebindingController rebindingDisplayScript;
 
     ////Language Menu
     [SerializeField] private GameObject languageMenu;

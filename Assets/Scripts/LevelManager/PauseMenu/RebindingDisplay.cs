@@ -23,7 +23,7 @@ public class RebindingDisplay : MonoBehaviour
 
     private const string RebindsKey = "rebinds";
 
-    private void Start()
+    private void Awake()
     {
         originalDisplayNameText = bindingDisplayNameText.text;
         Debug.Log(originalDisplayNameText);
