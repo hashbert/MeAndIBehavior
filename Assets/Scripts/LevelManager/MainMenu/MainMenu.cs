@@ -166,6 +166,5 @@ public class MainMenu : MonoBehaviour
                 GoToControlMenu();
             }
         }
-
     }
 }
