@@ -56,7 +56,6 @@ public class GrabController : MonoBehaviour
 
     private void Drop()
     {
-        
         boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         boxObject.transform.parent = null;
         IsHoldingBox = false;

@@ -192,7 +192,6 @@ public class DropdownManager : MonoBehaviour
                 groups = "Gamepad",
                 overridePath = "<Gamepad>/buttonEast"
             });
-
         }
         else if (val == 2)
         {

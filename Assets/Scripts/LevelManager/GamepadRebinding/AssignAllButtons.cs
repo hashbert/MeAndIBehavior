@@ -4,13 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class AnyButtonPress : MonoBehaviour
+public class AssignAllButtons : MonoBehaviour
 {
-    [SerializeField] private GameObject startScreen;
-    [SerializeField] private GameObject startMenu;
-    [SerializeField] private GameObject startButton;
-    [SerializeField] private GameObject backSelectPanel;
-
     private readonly InputAction _anyKeyWait = new InputAction(binding: "/*/<button>", type: InputActionType.Button);
     private void Awake() => _anyKeyWait.performed += DoSomething;
     private void OnEnable() => _anyKeyWait.Enable();
@@ -19,9 +14,6 @@ public class AnyButtonPress : MonoBehaviour
     private void DoSomething(InputAction.CallbackContext ctx) => AnyKey();
     private void AnyKey()
     {
-        startScreen.SetActive(false);
-        startMenu.SetActive(true);
-        backSelectPanel.SetActive(true);
+        gameObject.SetActive(false);
     }
-
 }
