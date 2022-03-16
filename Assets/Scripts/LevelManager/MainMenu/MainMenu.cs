@@ -16,21 +16,29 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject optionsMenu;
     [SerializeField] private GameObject optionsBackButton;
 
-    ////Audio Menu
+    //Audio Menu
     [SerializeField] private GameObject audioMenu;
     [SerializeField] private GameObject audioButton;
     [SerializeField] private GameObject masterSliderButton;
 
-    ////Visual Menu
+    //Visual Menu
     [SerializeField] private GameObject visualMenu;
 
-    ////Controls Menu
+    //Controls Menu
     [SerializeField] private GameObject controlsMenu;
     [SerializeField] private GameObject gamepadPanel;
     [SerializeField] private GameObject keyboardPanel;
     [SerializeField] private RebindingController rebindingDisplayScript;
 
-    ////Language Menu
+    // //GamepadPanels
+    [SerializeField] private GameObject gamepadPanelNorth;
+    [SerializeField] private GameObject gamepadPanelEast;
+    [SerializeField] private GameObject gamepadPanelSouth;
+    [SerializeField] private GameObject gamepadPanelWest;
+    [SerializeField] private GameObject assignAllButtonsPanel;
+    [SerializeField] private Button doneButton;
+
+    //Language Menu
     [SerializeField] private GameObject languageMenu;
     
     #region Start Menu
@@ -104,14 +112,30 @@ public class MainMenu : MonoBehaviour
     }
     public void SaveAndExitBindings()
     {
-        rebindingDisplayScript.Save();
-        gamepadPanel.SetActive(false);
-        keyboardPanel.SetActive(false);
-        controlsMenu.SetActive(true);
+        if (gamepadPanel.GetComponent<GamepadPanel>().AllButtonsAssigned())
+        {
+            rebindingDisplayScript.Save();
+            gamepadPanel.SetActive(false);
+            keyboardPanel.SetActive(false);
+            controlsMenu.SetActive(true);
+        }
+        else
+        {
+            assignAllButtonsPanel.SetActive(true);
+        }
+            
     }
     public void RestoreDefaultsButton()
     {
         rebindingDisplayScript.Save();
+    }
+    public void GoToGamepadMenu()
+    {
+        gamepadPanelNorth.SetActive(false);
+        gamepadPanelEast.SetActive(false);
+        gamepadPanelSouth.SetActive(false);
+        gamepadPanelWest.SetActive(false);
+        doneButton.Select();
     }
     #endregion
 
@@ -156,15 +180,28 @@ public class MainMenu : MonoBehaviour
             {
                 GoToOptionsMenu();
             }
+            else if (gamepadPanelNorth.activeSelf || gamepadPanelEast.activeSelf ||
+    gamepadPanelSouth.activeSelf || gamepadPanelWest.activeSelf)
+            {
+                GoToGamepadMenu();
+            }
             else if (gamepadPanel.activeSelf)
             {
-                rebindingDisplayScript.Save();
-                GoToControlMenu();
+                if (gamepadPanel.GetComponent<GamepadPanel>().AllButtonsAssigned())
+                {
+                    rebindingDisplayScript.Save();
+                    GoToControlMenu();
+                }
+                else
+                {
+                    assignAllButtonsPanel.SetActive(true);
+                }
             }
             else if (keyboardPanel.activeSelf)
             {
                 GoToControlMenu();
             }
+
         }
     }
 }

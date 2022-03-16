@@ -2865,11 +2865,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 157.99
+      value: 161.1
       objectReference: {fileID: 0}
     - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.06
+      value: -1.51
       objectReference: {fileID: 0}
     - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2921,7 +2921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803015383580662170, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_text
-      value: 
+      value: (if you get stuck)
       objectReference: {fileID: 0}
     - target: {fileID: 5803015383963542701, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_Name
@@ -2933,11 +2933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803015383963542702, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.99
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: 5803015383963542703, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_text
-      value: RESTART LEVEL
+      value: RESTART
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
@@ -3185,6 +3185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Float
       objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633912, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6876a3dcdff570b4b91acb085073e801, type: 3}
     - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.6400002
@@ -3426,7 +3430,7 @@ PrefabInstance:
     - target: {fileID: 5803015383281633912, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 58dc8af625027f34691c874dd8eff953, type: 3}
+      objectReference: {fileID: 21300000, guid: 35b6622bf6fcf154f9057ffd5c0eea5b, type: 3}
     - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.65
@@ -5925,7 +5929,7 @@ PrefabInstance:
     - target: {fileID: 5803015383281633912, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 35b6622bf6fcf154f9057ffd5c0eea5b, type: 3}
+      objectReference: {fileID: 21300000, guid: 58dc8af625027f34691c874dd8eff953, type: 3}
     - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.65
@@ -7789,7 +7793,7 @@ PrefabInstance:
     - target: {fileID: 5803015383281633912, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 58dc8af625027f34691c874dd8eff953, type: 3}
+      objectReference: {fileID: 21300000, guid: 35b6622bf6fcf154f9057ffd5c0eea5b, type: 3}
     - target: {fileID: 5803015383281633912, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -7844,8 +7848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803015383580662170, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_text
-      value: WHILE AS THE ADULT, SWITCH CHARACTERS WHILE IN THE AIR TO FREEZE THE
-        ADULT!
+      value: THE ADULT FREEZES WHILE HOLDING BOXES OR EVEN IN THE AIR!
       objectReference: {fileID: 0}
     - target: {fileID: 5803015383580662170, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_fontSize
@@ -9180,7 +9183,7 @@ PrefabInstance:
     - target: {fileID: 5803015383281633912, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6876a3dcdff570b4b91acb085073e801, type: 3}
+      objectReference: {fileID: 21300000, guid: 5e127715a7692444399b186bab016ff3, type: 3}
     - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.459999
@@ -10579,6 +10582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jump
       objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633912, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6876a3dcdff570b4b91acb085073e801, type: 3}
     - target: {fileID: 5803015383580662168, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_Name
       value: JumpHowText

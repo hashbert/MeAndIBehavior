@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class GamepadNorthPanel : MonoBehaviour
 {
-    [SerializeField] private InputActionReference jump;
-    [SerializeField] private InputActionReference grab;
     [SerializeField] private InputActionReference teleport;
+    [SerializeField] private InputActionReference grab;
+    [SerializeField] private InputActionReference jump;
     [SerializeField] private InputActionReference switchCharacter;
     // Start is called before the first frame update
     void Start()
