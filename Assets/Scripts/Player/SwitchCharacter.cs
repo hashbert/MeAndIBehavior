@@ -63,6 +63,7 @@ public class SwitchCharacter : MonoBehaviour
     void Start()
     {
         FreezeAdult();
+        F_MusicPlayer.instance.SetMusicParameter(0f);
     }
 
     private void FreezeAdult()
@@ -131,6 +132,8 @@ public class SwitchCharacter : MonoBehaviour
                 UnfreezeAdult();
                 SwapColor();
                 KidActive = !KidActive;
+                F_MusicPlayer.instance.SetMusicParameter(6f);
+
             }
             else if (!KidActive)
             {
@@ -138,6 +141,7 @@ public class SwitchCharacter : MonoBehaviour
                 FreezeAdult();
                 SwapColor();
                 KidActive = !KidActive;
+                F_MusicPlayer.instance.SetMusicParameter(0f);
             }
         }
     }

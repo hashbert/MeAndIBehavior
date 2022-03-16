@@ -4,20 +4,45 @@ using FMOD.Studio;
 
 public class F_VoiceOver : MonoBehaviour
 {
-    private EventInstance _voiceOverEvent;
+    private EventInstance dialogueEvent;
+    private EventInstance dialoguePlaying;
 
     [SerializeField]
-    private string _eventPath;
+    private string eventPath;
 
-    private
+    private PLAYBACK_STATE pb;
 
     void Start()
     {
-        _voiceOverEvent = RuntimeManager.CreateInstance("event:/Dialogue/" + _eventPath);
-        _voiceOverEvent.start();
+        dialogueEvent = RuntimeManager.CreateInstance("event:/Dialogue/" + eventPath);
+        dialogueEvent.start();
+        dialoguePlaying = RuntimeManager.CreateInstance("snapshot:/Dialogue Over Music");
     }
 
-    private void OnDestroy() {
-        _voiceOverEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    private void Update()
+    {
+        dialogueEvent.getPlaybackState(out pb);
+        if (pb == PLAYBACK_STATE.STARTING)
+            dialoguePlaying.start();
+        else if (pb == PLAYBACK_STATE.STOPPED || pb == PLAYBACK_STATE.STOPPING)
+            dialoguePlaying.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void ContinueVO()
+    {
+        if (pb == PLAYBACK_STATE.PLAYING)
+        {
+            dialogueEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            dialogueEvent.start();
+        } else
+            dialogueEvent.start();
+    }
+
+    private void OnDestroy()
+    {
+        dialogueEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        dialoguePlaying.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        dialogueEvent.release();
+        dialoguePlaying.release();
     }
 }
