@@ -18,12 +18,6 @@ public class LoadLevelPanel : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ResetLevels()
     {
         PlayerPrefs.SetInt("Level", 0);

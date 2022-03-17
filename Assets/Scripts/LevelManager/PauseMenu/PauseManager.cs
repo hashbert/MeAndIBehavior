@@ -8,10 +8,23 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
+    [SerializeField] private PlayerInput playerInput;
+
+    //pause menu
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject pauseButtons;
-    [SerializeField] private GameObject controlsPanel;
-    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private GameObject optionsMenu;
+
+    //options menu
+    [SerializeField] private GameObject audioMenu;
+    [SerializeField] private GameObject visualMenu;
+    [SerializeField] private GameObject controlsMenu;
+    [SerializeField] private GameObject languageMenu;
+
+    //controls
+    [SerializeField] private GameObject gamepadPanel;
+    [SerializeField] private GameObject keyboardPanel;
+
     public bool IsPaused { get; private set; }
 
     //changing the material to normal and back again...
@@ -73,23 +86,62 @@ public class PauseManager : MonoBehaviour
             kidColorSwap.Swap();
             photoColorSwap.ResetSwap();
         }
+    }
+    public void OptionsButton()
+    {
+        pauseButtons.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
 
+    //options buttons
+
+    public void AudioButton()
+    {
+        audioMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+    }
+    public void VisualsButton()
+    {
+        visualMenu.SetActive(true);
+        optionsMenu.SetActive(false);
     }
     public void ControlsButton()
     {
-        controlsPanel.SetActive(true);
-        pauseButtons.SetActive(false);
+        controlsMenu.SetActive(true);
+        optionsMenu.SetActive(false);
     }
-    public void QuitButton()
+    public void LanguageButton()
     {
-        if (Application.isPlaying)
-        {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
-        }
+        languageMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+    }
+
+    //controls menu
+    public void GoToGamepadRebinding()
+    {
+        gamepadPanel.SetActive(true);
+        controlsMenu.SetActive(false);
+    }
+    public void GoToKeyboardRebinding()
+    {
+        keyboardPanel.SetActive(true);
+        controlsMenu.SetActive(false);
+    }
+    //    public void QuitButton()
+    //    {
+    //        if (Application.isPlaying)
+    //        {
+    //#if UNITY_EDITOR
+    //            UnityEditor.EditorApplication.isPlaying = false;
+    //#else
+    //            Application.Quit();
+    //#endif
+    //        }
+    //    }
+
+    public void ExitToTitle()
+    {
+        SceneManager.LoadScene("MainMenuScene");
     }
 
     #endregion
@@ -113,14 +165,56 @@ public class PauseManager : MonoBehaviour
             {
                 ResumeGame();
             }
-            else if (controlsPanel.activeSelf)
+            else if (optionsMenu.activeSelf)
             {
-                controlsPanel.SetActive(false);
-                pauseButtons.SetActive(true);
+                GoToPauseButtons();
+            }
+            else if (audioMenu.activeSelf)
+            {
+                GoToOptionsMenu();
+            }
+            else if (visualMenu.activeSelf)
+            {
+                GoToOptionsMenu();
+            }
+            else if (controlsMenu.activeSelf)
+            {
+                GoToOptionsMenu();
+            }
+            else if (languageMenu.activeSelf)
+            {
+                GoToOptionsMenu();
+            }
+            else if (gamepadPanel.activeSelf)
+            {
+                GoToControlsMenu();
+            }
+            else if (keyboardPanel.activeSelf)
+            {
+                GoToControlsMenu();
             }
         }
-
     }
 
+    public void GoToControlsMenu()
+    {
+        keyboardPanel.SetActive(false);
+        gamepadPanel.SetActive(false);
+        controlsMenu.SetActive(true);
+    }
 
+    public void GoToOptionsMenu()
+    {
+        audioMenu.SetActive(false);
+        visualMenu.SetActive(false);
+        controlsMenu.SetActive(false);
+        languageMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void GoToPauseButtons()
+    {
+        optionsMenu.SetActive(false);
+        pauseButtons.SetActive(true);
+    }
 }
