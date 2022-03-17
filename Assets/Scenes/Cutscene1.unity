@@ -198,6 +198,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127541252}
   m_CullTransparentMesh: 1
+--- !u!1 &215615991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215615993}
+  - component: {fileID: 215615992}
+  m_Layer: 0
+  m_Name: MusicPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &215615992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215615991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8673cd4b0d646d39ca393af42287e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuMusic:
+    Guid:
+      Data1: 684798277
+      Data2: 1228975766
+      Data3: -1212316262
+      Data4: 1519007545
+    Path: event:/Music/Menu Music
+  _gameplayMusic:
+    Guid:
+      Data1: -854116438
+      Data2: 1103411665
+      Data3: 1605396874
+      Data4: 1866510253
+    Path: event:/Music/Gameplay Music
+--- !u!4 &215615993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215615991}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 167.01881, y: 2.0493321, z: -1.536541}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &287367209
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,6 +904,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8968521476116351802, guid: d1ef8a211d22bb745a8dffb87cc9dc07, type: 3}
   m_PrefabInstance: {fileID: 1474910311}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1606602715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1606602717}
+  - component: {fileID: 1606602716}
+  m_Layer: 0
+  m_Name: SceneMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1606602716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606602715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c5144c61ead4678af4cbc4d8ba9eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: 2
+--- !u!4 &1606602717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606602715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 167.01881, y: 2.0493321, z: -1.536541}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1674023075
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +1054,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2042269789}
         m_TargetAssemblyTypeName: Cutscene1, Assembly-CSharp
         m_MethodName: NextSentence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2062328251}
+        m_TargetAssemblyTypeName: F_NewVoiceOver, Assembly-CSharp
+        m_MethodName: ContinueVO
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1256,10 +1369,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2062328250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee43b2914954c433f96f701da254ae2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 05e06e728702c447ca3265095a1d765d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventPath: Intro PT1
+  _vOLine:
+    Guid:
+      Data1: -155257751
+      Data2: 1194971666
+      Data3: -894393212
+      Data4: -231995163
+    Path: event:/Dialogue/Intro Pt1
 --- !u!4 &2062328252
 Transform:
   m_ObjectHideFlags: 0
