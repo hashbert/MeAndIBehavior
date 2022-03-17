@@ -18,7 +18,6 @@ Fmod_editor.log
 fmod_editor.log
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
