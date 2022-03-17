@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject startMenu;
     [SerializeField] private GameObject startButton;
 
+    //Load Level Menu
+    [SerializeField] private GameObject loadLevelPanel;
+
     //Options Menu
     [SerializeField] private GameObject optionsMenu;
     [SerializeField] private GameObject optionsBackButton;
@@ -45,6 +48,11 @@ public class MainMenu : MonoBehaviour
     public void StartButton()
     {
         SceneManager.LoadScene("Cutscene1");
+    }
+    public void LoadLevelButton()
+    {
+        startMenu.SetActive(false);
+        loadLevelPanel.SetActive(true);
     }
     public void OptionsButton()
     {
@@ -141,6 +149,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToStartMenu()
     {
+        loadLevelPanel.SetActive(false);
         optionsMenu.SetActive(false);
         startMenu.SetActive(true);
     }
@@ -160,7 +169,11 @@ public class MainMenu : MonoBehaviour
     {
         if (context.started)
         {
-            if (optionsMenu.activeSelf)
+            if (loadLevelPanel.activeSelf)
+            {
+                GoToStartMenu();
+            }
+            else if (optionsMenu.activeSelf)
             {
                 GoToStartMenu();
             }

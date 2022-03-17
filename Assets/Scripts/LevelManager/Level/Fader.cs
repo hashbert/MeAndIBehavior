@@ -17,4 +17,9 @@ public class Fader : MonoBehaviour
     {
         SceneManager.LoadScene(nextSceneName);
     }
+
+    public void SetNextSceneName(string level)
+    {
+        nextSceneName = level;
+    }
 }
