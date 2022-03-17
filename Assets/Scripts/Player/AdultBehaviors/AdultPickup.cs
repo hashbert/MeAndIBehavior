@@ -5,14 +5,14 @@ using UnityEngine.InputSystem;
 
 public class AdultPickup : StateMachineBehaviour
 {
-    //[SerializeField] private Adult adult;
+    [SerializeField] private Adult adult;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //adult = GameObject.FindGameObjectWithTag("Adult").GetComponent<Adult>();
-        //adult.enabled = false;
-        InputManager.playerInput.DeactivateInput();
+        adult = GameObject.FindGameObjectWithTag("Adult").GetComponent<Adult>();
+        adult.enabled = false;
+        InputManager.playerInput.actions["Jump"].Disable();
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -24,8 +24,8 @@ public class AdultPickup : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //adult.enabled = true;
-        InputManager.playerInput.ActivateInput();
+        adult.enabled = true;
+        InputManager.playerInput.actions["Jump"].Enable();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

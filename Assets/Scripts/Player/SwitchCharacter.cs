@@ -14,6 +14,7 @@ public class SwitchCharacter : MonoBehaviour
     private BoxCollider2D kidBoxColl;
     private Animator kidAnim;
     private PlayerColorSwap kidColorSwap;
+    [SerializeField] private InputActionReference teleport;
 
     //adult
     private GameObject adult;
@@ -22,6 +23,7 @@ public class SwitchCharacter : MonoBehaviour
     private BoxCollider2D adultBoxColl;
     private Animator adultAnim;
     private PlayerColorSwap adultColorSwap;
+    [SerializeField] private InputActionReference grab;
 
     //camera background
     [SerializeField] private Camera mainCamera;
@@ -75,6 +77,7 @@ public class SwitchCharacter : MonoBehaviour
         InputManager.playerInput.actions["Grab"].Disable();
         adultColorSwap.Swap();
         goal.Swap();
+        //grab.action.Disable();
     }
     private void UnfreezeAdult()
     {
@@ -86,6 +89,7 @@ public class SwitchCharacter : MonoBehaviour
         InputManager.playerInput.actions["Grab"].Enable();
         adultColorSwap.ResetSwap();
         goal.ResetSwap();
+        //grab.action.Enable();
     }
     private void FreezeKid()
     {

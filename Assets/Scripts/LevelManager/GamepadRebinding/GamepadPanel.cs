@@ -30,10 +30,15 @@ public class GamepadPanel : MonoBehaviour
     [SerializeField] private GameObject remapSouthButtonPanel;
     [SerializeField] private GameObject remapWestButtonPanel;
 
-    private string northString;
-    private string eastString;
-    private string southString;
-    private string westString;
+    public string CurrentButtonNorthAction { get; private set; }
+    public string CurrentButtonEastAction { get; private set; }
+    public string CurrenButtonSouthAction { get; private set; }
+    public string CurrentButtonWestAction { get; private set; }
+
+    public string TeleportBoundTo { get; private set; }
+    public string GrabBoundTo { get; private set; }
+    public string JumpBoundTo { get; private set; }
+    public string SwitchBoundTo { get; private set; }
 
     private void OnEnable()
     {
@@ -84,6 +89,12 @@ public class GamepadPanel : MonoBehaviour
         //Input Binding:    path: "<Gamepad>/buttonSouth"
         //    ------------------------
 
+        RefreshCurrentButtonMappings();
+
+    }
+
+    public void RefreshCurrentButtonMappings()
+    {
         var teleportControllerIndex = teleport.action.GetBindingIndex(InputBinding.MaskByGroup("Gamepad"));
         var teleportBinding = InputControlPath.ToHumanReadableString(teleport.action.bindings[teleportControllerIndex].effectivePath,
             InputControlPath.HumanReadableStringOptions.OmitDevice);
@@ -103,81 +114,85 @@ public class GamepadPanel : MonoBehaviour
         Debug.Log("grab binding is: " + grabBinding);
         Debug.Log("jump binding is: " + jumpBinding);
         Debug.Log("switch binding is: " + switchBinding);
-            
+
 
         if (teleportBinding.Equals("Button North"))
         {
-            northString = "TELEPORT";
+            CurrentButtonNorthAction = "TELEPORT";
         }
         else if (teleportBinding.Equals("Button East"))
         {
-            eastString = "TELEPORT";
+            CurrentButtonEastAction = "TELEPORT";
         }
         else if (teleportBinding.Equals("Button South"))
         {
-            southString = "TELEPORT";
+            CurrenButtonSouthAction = "TELEPORT";
         }
         else if (teleportBinding.Equals("Button West"))
         {
-            westString = "TELEPORT";
+            CurrentButtonWestAction = "TELEPORT";
         }
 
         if (grabBinding.Equals("Button North"))
         {
-            northString = "GRAB";
+            CurrentButtonNorthAction = "GRAB";
         }
         else if (grabBinding.Equals("Button East"))
         {
-            eastString = "GRAB";
+            CurrentButtonEastAction = "GRAB";
         }
         else if (grabBinding.Equals("Button South"))
         {
-            southString = "GRAB";
+            CurrenButtonSouthAction = "GRAB";
         }
         else if (grabBinding.Equals("Button West"))
         {
-            westString = "GRAB";
+            CurrentButtonWestAction = "GRAB";
         }
 
         if (jumpBinding.Equals("Button North"))
         {
-            northString = "JUMP";
+            CurrentButtonNorthAction = "JUMP";
         }
         else if (jumpBinding.Equals("Button East"))
         {
-            eastString = "JUMP";
+            CurrentButtonEastAction = "JUMP";
         }
         else if (jumpBinding.Equals("Button South"))
         {
-            southString = "JUMP";
+            CurrenButtonSouthAction = "JUMP";
         }
         else if (jumpBinding.Equals("Button West"))
         {
-            westString = "JUMP";
+            CurrentButtonWestAction = "JUMP";
         }
 
         if (switchBinding.Equals("Button North"))
         {
-            northString = "SWITCH CHARACTER";
+            CurrentButtonNorthAction = "SWITCH CHARACTER";
         }
         else if (switchBinding.Equals("Button East"))
         {
-            eastString = "SWITCH CHARACTER";
+            CurrentButtonEastAction = "SWITCH CHARACTER";
         }
         else if (switchBinding.Equals("Button South"))
         {
-            southString = "SWITCH CHARACTER";
+            CurrenButtonSouthAction = "SWITCH CHARACTER";
         }
         else if (switchBinding.Equals("Button West"))
         {
-            westString = "SWITCH CHARACTER";
+            CurrentButtonWestAction = "SWITCH CHARACTER";
         }
-        northToggleText.text = northString;
-        eastToggleText.text = eastString;
-        southToggleText.text = southString;
-        westToggleText.text = westString;
-        
+        northToggleText.text = CurrentButtonNorthAction;
+        eastToggleText.text = CurrentButtonEastAction;
+        southToggleText.text = CurrenButtonSouthAction;
+        westToggleText.text = CurrentButtonWestAction;
+        TeleportBoundTo = teleportBinding;
+        GrabBoundTo = grabBinding;
+        JumpBoundTo = jumpBinding;
+        SwitchBoundTo = switchBinding;
     }
+
     public void NorthToggleClicked()
     {
         remapNorthButtonPanel.SetActive(true);
@@ -228,4 +243,5 @@ public class GamepadPanel : MonoBehaviour
         }
         else return true;
     }
+
 }

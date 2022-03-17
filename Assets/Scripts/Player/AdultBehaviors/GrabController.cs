@@ -13,6 +13,7 @@ public class GrabController : MonoBehaviour
     //Grab Detect what layerMask and how far?
     [SerializeField] private LayerMask boxLayerMask;
     [SerializeField] private float rayDist;
+    [SerializeField] private GameObject boxCollider;
 
     public bool IsHoldingBox { get; private set; }
     private GameObject boxObject;
@@ -51,6 +52,7 @@ public class GrabController : MonoBehaviour
     {
         boxObject.transform.position = holdPosition.position;
         IsHoldingBox = true;
+        boxCollider.SetActive(true);
         adultAnim.SetInteger("AdultState", 8);
     }
 
@@ -59,5 +61,6 @@ public class GrabController : MonoBehaviour
         boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         boxObject.transform.parent = null;
         IsHoldingBox = false;
+        boxCollider.SetActive(false);
     }
 }

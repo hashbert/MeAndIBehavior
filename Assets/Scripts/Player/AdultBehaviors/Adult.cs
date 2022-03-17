@@ -18,16 +18,18 @@ public class Adult : MonoBehaviour
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private float slowdownFraction = .5f;
     [SerializeField] private bool isFacingRight = true;
+    //[SerializeField] private InputActionReference grab;
 
     private float boxExtensionHeight = 0.1f;
     #endregion
 
     #region Unity Callback Functions
 
-    private void Start()
+    private void Awake()
     {
         PlayerRb = GetComponent<Rigidbody2D>();
         PlayerColl = GetComponent<Collider2D>();
+        //grab.action.Disable();
     }
     private void Update()
     {
