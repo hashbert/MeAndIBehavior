@@ -13,6 +13,11 @@ public class RebindingController : MonoBehaviour
     [SerializeField] private TMP_Text southToggle;
     [SerializeField] private TMP_Text westToggle;
 
+    [SerializeField] private TMP_Text teleportBindingText;
+    [SerializeField] private TMP_Text grabBindingText;
+    [SerializeField] private TMP_Text jumpBindingText;
+    [SerializeField] private TMP_Text switchBindingText;
+
     private const string RebindsKey = "rebinds";
 
     private void Start()
@@ -40,5 +45,10 @@ public class RebindingController : MonoBehaviour
         eastToggle.text = "GRAB";
         southToggle.text = "JUMP";
         westToggle.text = "SWITCH CHARACTER";
+
+        teleportBindingText.text="T";
+        grabBindingText.text="G";
+        jumpBindingText.text="Space";
+        switchBindingText.text="C";
     }
 }
