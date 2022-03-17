@@ -24,6 +24,7 @@ public class Kid : MonoBehaviour
     [SerializeField] private float slowdownFraction = .5f;
     [SerializeField] private float floatFallSpeed = 1f;
     [SerializeField] private bool isFacingLeft = true;
+    [SerializeField] private InputActionReference jump;
     public bool SpaceHeld { get; private set; }
 
     private float boxExtensionHeight = 0.1f; //used for ground check
@@ -50,7 +51,17 @@ public class Kid : MonoBehaviour
         Float();
         kidPosition = transform.position;
     }
+    private void OnEnable()
+    {
+        jump.action.started += OnJumpInput;
+        jump.action.canceled += OnJumpInput;
+    }
 
+    private void OnDisable()
+    {
+        jump.action.started -= OnJumpInput;
+        jump.action.canceled -= OnJumpInput;
+    }
     #endregion
 
     #region Player Input Abilities
@@ -58,7 +69,7 @@ public class Kid : MonoBehaviour
     {
         horizontalInput = context.ReadValue<Vector2>().x;
     }
-    public void OnJumpInput(InputAction.CallbackContext context)
+    private void OnJumpInput(InputAction.CallbackContext context)
     {
         //Debug.Log(context.ReadValue<float>());
         if (context.started && IsGrounded())

@@ -12,7 +12,7 @@ public class AdultPickup : StateMachineBehaviour
     {
         adult = GameObject.FindGameObjectWithTag("Adult").GetComponent<Adult>();
         adult.enabled = false;
-        InputManager.playerInput.actions["Jump"].Disable();
+        //InputManager.playerInput.actions["Jump"].Disable();
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -25,7 +25,7 @@ public class AdultPickup : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         adult.enabled = true;
-        InputManager.playerInput.actions["Jump"].Enable();
+        //InputManager.playerInput.actions["Jump"].Enable();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

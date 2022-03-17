@@ -1028,6 +1028,7 @@ MonoBehaviour:
   jumpForce: 8
   slowdownFraction: 0.5
   isFacingRight: 1
+  jump: {fileID: -4222187747311746522, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
 --- !u!4 &91018645
 Transform:
   m_ObjectHideFlags: 0
@@ -5330,31 +5331,7 @@ MonoBehaviour:
     m_ActionId: 3dc38cb6-7984-41cc-99a6-e0b04e9b92db
     m_ActionName: Player/Teleport[/Keyboard/t]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1230237784}
-        m_TargetAssemblyTypeName: Kid, Assembly-CSharp
-        m_MethodName: OnJumpInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 91018644}
-        m_TargetAssemblyTypeName: Adult, Assembly-CSharp
-        m_MethodName: OnJumpInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 0a040a8f-b4eb-4b2d-8f48-f0b77f03020e
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -6219,6 +6196,7 @@ MonoBehaviour:
   slowdownFraction: 0.5
   floatFallSpeed: 1
   isFacingLeft: 1
+  jump: {fileID: -4222187747311746522, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
   teleportHeight: 0.75
 --- !u!50 &1230237785
 Rigidbody2D:
