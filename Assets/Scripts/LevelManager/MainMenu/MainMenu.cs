@@ -53,7 +53,7 @@ public class MainMenu : MonoBehaviour
     public void StartButton()
     {
         fader.SetActive(true);
-        fader.GetComponent<Fader>().SetNextSceneName("Cutscene1");
+        fader.GetComponent<Fader>().SetNextSceneName("Cutscene01");
     }
     public void LoadLevelButton()
     {
