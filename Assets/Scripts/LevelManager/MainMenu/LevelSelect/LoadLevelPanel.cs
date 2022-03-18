@@ -34,6 +34,13 @@ public class LoadLevelPanel : MonoBehaviour
     public void LevelChosen(int level)
     {
         fader.SetActive(true);
-        fader.GetComponent<Fader>().SetNextSceneName("Level" + level);
+        if (level <= 9)
+        {
+            fader.GetComponent<Fader>().SetNextSceneName("Level0" + level);
+        }
+        else
+        {
+            fader.GetComponent<Fader>().SetNextSceneName("Level" + level);
+        }
     }
 }
