@@ -43,11 +43,17 @@ public class MainMenu : MonoBehaviour
 
     //Language Menu
     [SerializeField] private GameObject languageMenu;
-    
+
+    //make look nice
+    [SerializeField] private GameObject fader;
+    //play particles
+    [SerializeField] private ParticleSystem particles;
+
     #region Start Menu
     public void StartButton()
     {
-        SceneManager.LoadScene("Cutscene1");
+        fader.SetActive(true);
+        fader.GetComponent<Fader>().SetNextSceneName("Cutscene1");
     }
     public void LoadLevelButton()
     {
@@ -216,5 +222,10 @@ public class MainMenu : MonoBehaviour
             }
 
         }
+    }
+
+    private void OnEnable()
+    {
+        particles.Play();
     }
 }

@@ -12987,6 +12987,8 @@ MonoBehaviour:
   assignAllButtonsPanel: {fileID: 1355248255}
   doneButton: {fileID: 308745798}
   languageMenu: {fileID: 141003224957620744}
+  fader: {fileID: 1378459329}
+  particles: {fileID: 1325030277}
 --- !u!4 &1937403407
 Transform:
   m_ObjectHideFlags: 0
