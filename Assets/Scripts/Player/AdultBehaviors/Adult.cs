@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Adult : MonoBehaviour
 {
-    #region Start() variables
+    #region Awake() variables
     public Rigidbody2D PlayerRb { get; private set; }
     public Collider2D PlayerColl { get; private set; }
     #endregion
@@ -18,6 +18,7 @@ public class Adult : MonoBehaviour
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private float slowdownFraction = .5f;
     [SerializeField] private bool isFacingRight = true;
+    [SerializeField] private InputActionReference jump;
     //[SerializeField] private InputActionReference grab;
 
     private float boxExtensionHeight = 0.1f;
@@ -38,6 +39,18 @@ public class Adult : MonoBehaviour
         Move();
     }
 
+    private void OnEnable()
+    {
+        jump.action.started += OnJumpInput;
+        jump.action.canceled += OnJumpInput;
+    }
+
+    private void OnDisable()
+    {
+        jump.action.started -= OnJumpInput;
+        jump.action.canceled -= OnJumpInput;
+    }
+
     #endregion
 
     #region Player Input Abilities
@@ -46,7 +59,7 @@ public class Adult : MonoBehaviour
         horizontalInput = context.ReadValue<Vector2>().x;
     }
 
-    public void OnJumpInput(InputAction.CallbackContext context)
+    private void OnJumpInput(InputAction.CallbackContext context)
     {
         if (context.started && IsGrounded())
         {

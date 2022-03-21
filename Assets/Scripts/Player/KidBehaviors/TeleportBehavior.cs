@@ -13,7 +13,7 @@ public class TeleportBehavior : StateMachineBehaviour
         kid = GameObject.FindGameObjectWithTag("Kid").GetComponent<Kid>();
         kid.enabled = false;
         //groundCheck = GameObject.FindGameObjectWithTag("Kid").transform.Find("GroundCheck").GetComponent<GroundCheck>();
-        InputManager.playerInput.actions["Jump"].Disable();
+        //InputManager.playerInput.actions["Jump"].Disable();
         InputManager.playerInput.actions["Teleport"].Disable();
     }
 
@@ -27,7 +27,7 @@ public class TeleportBehavior : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         kid.enabled = true;
-        InputManager.playerInput.actions["Jump"].Enable();
+        //InputManager.playerInput.actions["Jump"].Enable();
         InputManager.playerInput.actions["Teleport"].Enable();
     }
 

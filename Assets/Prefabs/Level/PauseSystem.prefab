@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1567199710767027723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567199710767027722}
+  - component: {fileID: 1567199710767027725}
+  m_Layer: 0
+  m_Name: PauseSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1567199710767027722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567199710767027723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567199710767027725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567199710767027723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade7fbc139e1a384b82f8fe4d45ab684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
+  rebindingController: {fileID: 0}
+  pausePanel: {fileID: 0}
+  pauseButtons: {fileID: 0}
+  optionsMenu: {fileID: 0}
+  optionsBackButton: {fileID: 0}
+  resumeButton: {fileID: 0}
+  audioButton: {fileID: 0}
+  audioMenu: {fileID: 0}
+  visualMenu: {fileID: 0}
+  controlsMenu: {fileID: 0}
+  controlBackButton: {fileID: 0}
+  languageMenu: {fileID: 0}
+  gamepadButton: {fileID: 0}
+  gamepadPanel: {fileID: 0}
+  gamepadDoneButton: {fileID: 0}
+  keyboardPanel: {fileID: 0}
+  gamepadPanelNorth: {fileID: 0}
+  gamepadPanelEast: {fileID: 0}
+  gamepadPanelSouth: {fileID: 0}
+  gamepadPanelWest: {fileID: 0}
+  assignAllButtonsPanel: {fileID: 0}
+  invertMaterial: {fileID: 2100000, guid: a4c010796d1f25f42ad3ba8deffbf84a, type: 2}
+  plainMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  kidObject: {fileID: 0}
+  adultObject: {fileID: 0}
+  photoObject: {fileID: 0}
+  kidColorSwap: {fileID: 0}
+  adultColorSwap: {fileID: 0}
+  photoColorSwap: {fileID: 0}
+  switchCharacterScript: {fileID: 0}

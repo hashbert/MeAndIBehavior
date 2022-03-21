@@ -11,7 +11,7 @@ public class AutoSelectButton : MonoBehaviour
     }
     private IEnumerator Wait()
     {
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSecondsRealtime(0.01f);
         gameObject.GetComponent<Button>().Select();
     }
 }
