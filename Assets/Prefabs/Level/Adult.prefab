@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7707951616046130119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 1.6, z: 0}
+  m_LocalPosition: {x: -1.23, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7707951616486463963}
@@ -89,7 +89,6 @@ MonoBehaviour:
   speed: 5
   jumpForce: 8
   slowdownFraction: 0.5
-  isFacingRight: 1
   jump: {fileID: -4222187747311746522, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
 --- !u!212 &7707951616486463964
 SpriteRenderer:
@@ -228,6 +227,7 @@ MonoBehaviour:
     m_Bits: 512
   rayDist: 0.1
   boxCollider: {fileID: 7707951617491459606}
+  adult: {fileID: 7707951616486463962}
   pickupHeight: -2.06
 --- !u!114 &7707951616486463960
 MonoBehaviour:
