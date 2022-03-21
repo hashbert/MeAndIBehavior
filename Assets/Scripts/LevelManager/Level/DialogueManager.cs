@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private string nextSceneName;
 
     [SerializeField] [TextArea(3, 10)] private string[] sentences;
+    [Tooltip("Kid Talking should be the same number of elements as Sentences array above")]
     [SerializeField] private bool[] kidTalking;
 
     [SerializeField] private Animator kidAnim;

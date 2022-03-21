@@ -34,7 +34,6 @@ public class GrabController : MonoBehaviour
             if (IsHoldingBox && adultAnim.GetInteger("AdultState")==8)
             {
                 Drop();
-                adultAnim.SetInteger("AdultState", 0);
             }
             else if (!IsHoldingBox && grabCheck.collider != null && adultAnim.GetInteger("AdultState") == 0)
             {
@@ -62,5 +61,6 @@ public class GrabController : MonoBehaviour
         boxObject.transform.parent = null;
         IsHoldingBox = false;
         boxCollider.SetActive(false);
+        adultAnim.SetInteger("AdultState", 0);
     }
 }
