@@ -17,17 +17,20 @@ public class Adult : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private float slowdownFraction = .5f;
-    [SerializeField] private bool isFacingRight = true;
+    
     [SerializeField] private InputActionReference jump;
+    public bool IsFacingRight { get; private set; }
     //[SerializeField] private InputActionReference grab;
 
-    private float boxExtensionHeight = 0.1f;
+    private float boxExtensionHeight = 0.1f; //raycast for checking if grounded
+    
     #endregion
 
     #region Unity Callback Functions
 
     private void Awake()
     {
+        IsFacingRight = true;
         PlayerRb = GetComponent<Rigidbody2D>();
         PlayerColl = GetComponent<Collider2D>();
         //grab.action.Disable();
@@ -80,11 +83,11 @@ public class Adult : MonoBehaviour
     }
     private void CheckIfShouldFlip()
     {
-        if (isFacingRight && horizontalInput < 0f)
+        if (IsFacingRight && horizontalInput < 0f)
         {
             Flip();
         }
-        else if (!isFacingRight && horizontalInput > 0f)
+        else if (!IsFacingRight && horizontalInput > 0f)
         {
             Flip();
         }
@@ -100,7 +103,7 @@ public class Adult : MonoBehaviour
 
     private void Flip()
     {
-        isFacingRight = !isFacingRight;
+        IsFacingRight = !IsFacingRight;
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
     #endregion

@@ -15,9 +15,11 @@ public class GrabController : MonoBehaviour
     [SerializeField] private float rayDist;
     [SerializeField] private GameObject boxCollider;
 
+    //where to put the box after grabbing
+    [SerializeField] private Adult adult;
     public bool IsHoldingBox { get; private set; }
     private GameObject boxObject;
-    [SerializeField] private float pickupHeight = 2.05f;
+    //[SerializeField] private float pickupHeight = 2.05f;
 
     private void Start()
     {
@@ -41,7 +43,7 @@ public class GrabController : MonoBehaviour
                 boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                 boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 boxObject.transform.parent = holdPosition;
-                boxObject.transform.position = holdPosition.position - new Vector3(0, -pickupHeight, 0);
+                //boxObject.transform.position = holdPosition.position - new Vector3(0, -pickupHeight, 0);
                 adultAnim.SetInteger("AdultState", 7);
             }
         }
@@ -49,7 +51,10 @@ public class GrabController : MonoBehaviour
 
     private void Grab()
     {
-        boxObject.transform.position = holdPosition.position;
+        var right = adult.IsFacingRight ? 1 : -1;
+        var xShift = boxObject.GetComponent<Collider2D>().bounds.size.x / 2f;
+        var yShift = boxObject.GetComponent<Collider2D>().bounds.size.y / 2f;
+        boxObject.transform.position = holdPosition.position + new Vector3(xShift * right, yShift, 0);
         IsHoldingBox = true;
         boxCollider.SetActive(true);
         adultAnim.SetInteger("AdultState", 8);
