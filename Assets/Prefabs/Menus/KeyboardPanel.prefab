@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7804171570747080116}
   - component: {fileID: 7804171570747080117}
   - component: {fileID: 7804171570747080122}
+  - component: {fileID: 7317774019336781636}
   m_Layer: 5
   m_Name: JumpButton
   m_TagString: Untagged
@@ -146,6 +147,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7317774019336781636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804171570747080119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7804171570756608391
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +592,7 @@ GameObject:
   - component: {fileID: 7804171570810338421}
   - component: {fileID: 7804171570810338422}
   - component: {fileID: 7804171570810338423}
+  - component: {fileID: 664238173}
   m_Layer: 5
   m_Name: RestoreDefaults
   m_TagString: Untagged
@@ -753,6 +784,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &664238173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804171570810338417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7804171570866643970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1170,7 @@ GameObject:
   - component: {fileID: 7804171571017614216}
   - component: {fileID: 7804171571017614217}
   - component: {fileID: 7804171571017614218}
+  - component: {fileID: 2045071431}
   m_Layer: 5
   m_Name: DoneButton
   m_TagString: Untagged
@@ -1313,6 +1374,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1528fdc9556767408c7f6345b637f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2045071431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804171571017614212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7804171571071947385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +2051,7 @@ GameObject:
   - component: {fileID: 7804171571303959003}
   - component: {fileID: 7804171571303958996}
   - component: {fileID: 7804171571303959001}
+  - component: {fileID: 5193156043463250792}
   m_Layer: 5
   m_Name: SwitchButton
   m_TagString: Untagged
@@ -2094,6 +2185,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5193156043463250792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804171571303958998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7804171571371908365
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,6 +2897,7 @@ GameObject:
   - component: {fileID: 7804171571586400364}
   - component: {fileID: 7804171571586400365}
   - component: {fileID: 7804171571586400369}
+  - component: {fileID: 3047775806563917910}
   m_Layer: 5
   m_Name: TeleportButton
   m_TagString: Untagged
@@ -2910,6 +3031,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3047775806563917910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804171571586400366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7804171571734592903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2923,6 +3073,7 @@ GameObject:
   - component: {fileID: 7804171571734592901}
   - component: {fileID: 7804171571734592902}
   - component: {fileID: 7804171571734592906}
+  - component: {fileID: 1417045685618674999}
   m_Layer: 5
   m_Name: GrabButton
   m_TagString: Untagged
@@ -3056,6 +3207,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1417045685618674999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804171571734592903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7804171571756504259
 GameObject:
   m_ObjectHideFlags: 0
@@ -4222,7 +4402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7804171572633650458
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4230,7 +4410,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7804171572633650459}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
