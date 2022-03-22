@@ -852,10 +852,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -21.648506, y: 14.78127}
+    - - {x: -21.703964, y: 17.665234}
       - {x: -21.718224, y: -6.5352397}
       - {x: 37.211395, y: -6.624067}
-      - {x: 37.2052, y: 14.802213}
+      - {x: 37.260666, y: 17.575254}
 --- !u!1 &790050058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7671835188094377957, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
