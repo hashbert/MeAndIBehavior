@@ -82,7 +82,10 @@ public class MainMenu : MonoBehaviour
         }
     }
     #endregion
-
+    public void LoadLevelBackButton()
+    {
+        GoToStartMenu();
+    }
     #region Options Menu
     public void AudioButton()
     {
