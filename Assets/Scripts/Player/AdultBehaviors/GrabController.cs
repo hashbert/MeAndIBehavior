@@ -57,10 +57,14 @@ public class GrabController : MonoBehaviour
         boxObject.transform.position = holdPosition.position + new Vector3(xShift * right, yShift, 0);
         IsHoldingBox = true;
         boxCollider.SetActive(true);
+
+        boxCollider.GetComponent<BoxCollider2D>().size = boxObject.GetComponent<Collider2D>().bounds.size*2;
+        boxCollider.GetComponent<BoxCollider2D>().offset = new Vector2(holdPosition.localPosition.x - xShift*2, holdPosition.localPosition.y  + yShift*2);
+
         adultAnim.SetInteger("AdultState", 8);
     }
 
-    private void Drop()
+    public void Drop()
     {
         boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         boxObject.transform.parent = null;

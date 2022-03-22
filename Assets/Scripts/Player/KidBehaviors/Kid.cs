@@ -109,12 +109,15 @@ public class Kid : MonoBehaviour
     #region Check Functions
     public bool IsGrounded()  //can jump off of boxes and ground
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(PlayerColl.bounds.center, PlayerColl.bounds.size, 0f, Vector2.down, boxExtensionHeight, groundLayerMask);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(PlayerColl.bounds.center - new Vector3(0, PlayerColl.bounds.extents.y, 0), 
+            new Vector2(PlayerColl.bounds.size.x, boxExtensionHeight), 0f, Vector2.down, boxExtensionHeight / 2, groundLayerMask);
         return raycastHit.collider != null;
     }
     public bool IsOnGround() //can switch to adult or teleport when on ground only
     {
-        RaycastHit2D otherRaycastHit = Physics2D.BoxCast(PlayerColl.bounds.center, PlayerColl.bounds.size, 0f, Vector2.down, boxExtensionHeight, groundOnlyLayerMask);
+        //RaycastHit2D otherRaycastHit = Physics2D.BoxCast(PlayerColl.bounds.center, PlayerColl.bounds.size, 0f, Vector2.down, boxExtensionHeight, groundOnlyLayerMask);
+        RaycastHit2D otherRaycastHit = Physics2D.BoxCast(PlayerColl.bounds.center - new Vector3(0, PlayerColl.bounds.extents.y, 0), 
+            new Vector2(PlayerColl.bounds.size.x, boxExtensionHeight), 0f, Vector2.down, boxExtensionHeight/2, groundOnlyLayerMask);
         return otherRaycastHit.collider != null;
     }
 
