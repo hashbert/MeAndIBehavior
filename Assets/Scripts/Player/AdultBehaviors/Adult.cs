@@ -67,6 +67,7 @@ public class Adult : MonoBehaviour
         if (context.started && IsGrounded())
         {
             PlayerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/Old/Jump", gameObject);
         }
         if (context.canceled && PlayerRb.velocity.y > 0f)
         {
