@@ -177,7 +177,7 @@ public class RebindingDisplay : MonoBehaviour
                 waitingForInputObjectSwitch.SetActive(false);
                 break;
         }
-
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/UI/Rebind Received", gameObject);
 
         //playerInput.SwitchCurrentActionMap("Player");
     }
