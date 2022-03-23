@@ -10,7 +10,8 @@ public class F_NewVoiceOver : MonoBehaviour
     [SerializeField]
     private EventReference _vOLine;
 
-    private PLAYBACK_STATE pb;
+    private PLAYBACK_STATE _VoPb;
+    private PLAYBACK_STATE _MusicEffectPb;
 
     void Start()
     {
@@ -21,16 +22,17 @@ public class F_NewVoiceOver : MonoBehaviour
 
     private void Update()
     {
-        dialogueEvent.getPlaybackState(out pb);
-        if (pb == PLAYBACK_STATE.STARTING)
+        dialogueEvent.getPlaybackState(out _VoPb);
+        dialoguePlaying.getPlaybackState(out _MusicEffectPb);
+        if (_VoPb == PLAYBACK_STATE.STARTING && _MusicEffectPb != PLAYBACK_STATE.PLAYING)
             dialoguePlaying.start();
-        else if (pb == PLAYBACK_STATE.STOPPED || pb == PLAYBACK_STATE.STOPPING)
+        else if (_VoPb == PLAYBACK_STATE.STOPPED)
             dialoguePlaying.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void ContinueVO()
     {
-        if (pb == PLAYBACK_STATE.PLAYING)
+        if (_VoPb == PLAYBACK_STATE.PLAYING)
         {
             dialogueEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             dialogueEvent.start();
