@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3134916554520639940}
   - component: {fileID: 3134916554520639941}
   - component: {fileID: 3134916554520639937}
+  - component: {fileID: 1884772524}
+  - component: {fileID: 1884772523}
   m_Layer: 6
   m_Name: Ground
   m_TagString: Ground
@@ -26,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3134916554520639930}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.14, y: -2.938317, z: 10.931484}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children: []
@@ -127,3 +129,48 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   switchCharacter: {fileID: 0}
   switchCharacterAction: {fileID: -1934039552845713043, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
+--- !u!61 &1884772524
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134916554520639930}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0009432286, y: 0.021379888}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9526049, y: 1.0427594}
+  m_EdgeRadius: 0
+--- !u!114 &1884772523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134916554520639930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f34c554ac12404a9b0b3cbf2884b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
+  boxLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  grabController: {fileID: 0}

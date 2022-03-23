@@ -15,9 +15,11 @@ public class GrabController : MonoBehaviour
     [SerializeField] private float rayDist;
     [SerializeField] private GameObject boxCollider;
 
+    //where to put the box after grabbing
+    [SerializeField] private Adult adult;
     public bool IsHoldingBox { get; private set; }
     private GameObject boxObject;
-    [SerializeField] private float pickupHeight = 2.05f;
+    //[SerializeField] private float pickupHeight = 2.05f;
 
     private void Start()
     {
@@ -34,7 +36,6 @@ public class GrabController : MonoBehaviour
             if (IsHoldingBox && adultAnim.GetInteger("AdultState")==8)
             {
                 Drop();
-                adultAnim.SetInteger("AdultState", 0);
             }
             else if (!IsHoldingBox && grabCheck.collider != null && adultAnim.GetInteger("AdultState") == 0)
             {
@@ -42,7 +43,7 @@ public class GrabController : MonoBehaviour
                 boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                 boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 boxObject.transform.parent = holdPosition;
-                boxObject.transform.position = holdPosition.position - new Vector3(0, -pickupHeight, 0);
+                //boxObject.transform.position = holdPosition.position - new Vector3(0, -pickupHeight, 0);
                 adultAnim.SetInteger("AdultState", 7);
             }
         }
@@ -50,17 +51,25 @@ public class GrabController : MonoBehaviour
 
     private void Grab()
     {
-        boxObject.transform.position = holdPosition.position;
+        var right = adult.IsFacingRight ? 1 : -1;
+        var xShift = boxObject.GetComponent<Collider2D>().bounds.size.x / 2f;
+        var yShift = boxObject.GetComponent<Collider2D>().bounds.size.y / 2f;
+        boxObject.transform.position = holdPosition.position + new Vector3(xShift * right, yShift, 0);
         IsHoldingBox = true;
         boxCollider.SetActive(true);
+
+        boxCollider.GetComponent<BoxCollider2D>().size = boxObject.GetComponent<Collider2D>().bounds.size*2;
+        boxCollider.GetComponent<BoxCollider2D>().offset = new Vector2(holdPosition.localPosition.x - xShift*2, holdPosition.localPosition.y  + yShift*2);
+
         adultAnim.SetInteger("AdultState", 8);
     }
 
-    private void Drop()
+    public void Drop()
     {
         boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         boxObject.transform.parent = null;
         IsHoldingBox = false;
         boxCollider.SetActive(false);
+        adultAnim.SetInteger("AdultState", 0);
     }
 }

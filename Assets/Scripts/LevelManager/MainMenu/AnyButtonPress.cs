@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class AnyButtonPress : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class AnyButtonPress : MonoBehaviour
         startScreen.SetActive(false);
         startMenu.SetActive(true);
         backSelectPanel.SetActive(true);
+        RuntimeManager.PlayOneShotAttached("event:/SFX/UI/Game Start", gameObject);
     }
 
 }
