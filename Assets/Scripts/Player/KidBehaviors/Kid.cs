@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
 
 public class Kid : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Kid : MonoBehaviour
     public Collider2D PlayerColl { get; private set; }
     public Animator KidAnim { get; private set; }
 
-    private ParticleSystem teleportParticle;
+    private ParticleSystem teleportParticle; 
     #endregion
 
     #region Other Variables
@@ -75,6 +76,7 @@ public class Kid : MonoBehaviour
         if (context.started && IsGrounded())
         {
             KidRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            RuntimeManager.PlayOneShotAttached("event:/SFX/Young/Jump", gameObject);
         }
         if (context.canceled && KidRb.velocity.y > 0f)
         {
@@ -96,6 +98,7 @@ public class Kid : MonoBehaviour
         {
             teleportParticle.Play();
             KidAnim.SetInteger("KidState", 5);
+            RuntimeManager.PlayOneShotAttached("event:/SFX/Young/Teleport", gameObject);
         }
     }
 

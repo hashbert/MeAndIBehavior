@@ -14,21 +14,6 @@ public class F_GameplaySfx : MonoBehaviour
         RuntimeManager.PlayOneShotAttached("event:/SFX/Old/Footsteps", gameObject);
     }
 
-    public void PlayJumpChildSfx()
-    {
-        RuntimeManager.PlayOneShotAttached("event:/SFX/Young/Jump", gameObject);
-    }
-
-    public void PlayJumpAdultSfx()
-    {
-        RuntimeManager.PlayOneShotAttached("event:/SFX/Old/Jump", gameObject);
-    }
-
-    public void PlayTeleportSfx()
-    {
-        RuntimeManager.PlayOneShotAttached("event:/SFX/Young,Teleport", gameObject);
-    }
-
     public void PlayCratePickupSfx()
     {
         RuntimeManager.PlayOneShotAttached("event:/SFX/Interactables/Crate Pickup", gameObject);
