@@ -174,3 +174,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   grabController: {fileID: 0}
+  adultAnim: {fileID: 0}

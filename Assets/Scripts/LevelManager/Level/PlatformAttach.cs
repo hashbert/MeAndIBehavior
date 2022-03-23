@@ -8,10 +8,12 @@ public class PlatformAttach : MonoBehaviour
     [SerializeField] private LayerMask playerLayerMask;
     [SerializeField] private LayerMask boxLayerMask;
     [SerializeField] private GrabController grabController;
+    [SerializeField] private Animator adultAnim;
 
     private void Start()
     {
         grabController = GameObject.Find("Adult").GetComponent<GrabController>();
+        adultAnim = GameObject.FindGameObjectWithTag("Adult").GetComponent<Animator>();
     }
     //float platformExtensionHeight = 0.2f;
 
@@ -29,7 +31,7 @@ public class PlatformAttach : MonoBehaviour
         {
             collision.transform.SetParent(transform);
         }
-        if ((boxLayerMask.value & (1 << collision.transform.gameObject.layer)) > 0)
+        if ((boxLayerMask.value & (1 << collision.transform.gameObject.layer)) > 0 && adultAnim.GetInteger("AdultState")!=7)
         {
             if (grabController.IsHoldingBox)
             {
