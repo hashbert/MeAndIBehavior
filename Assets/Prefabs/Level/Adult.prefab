@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7707951616486463937}
   - component: {fileID: 7707951616486463965}
   - component: {fileID: 7707951616486463960}
+  - component: {fileID: 5192817151910686276}
   m_Layer: 7
   m_Name: Adult
   m_TagString: Adult
@@ -242,6 +243,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flippedAtStart: 1
   thresh: 0
+--- !u!114 &5192817151910686276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707951616486463936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717e1bfc8343a450196d96cf80cd20b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7707951617491459606
 GameObject:
   m_ObjectHideFlags: 0
