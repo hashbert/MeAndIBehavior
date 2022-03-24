@@ -48,3 +48,7 @@ MonoBehaviour:
   eastToggle: {fileID: 0}
   southToggle: {fileID: 0}
   westToggle: {fileID: 0}
+  teleportBindingText: {fileID: 0}
+  grabBindingText: {fileID: 0}
+  jumpBindingText: {fileID: 0}
+  switchBindingText: {fileID: 0}
