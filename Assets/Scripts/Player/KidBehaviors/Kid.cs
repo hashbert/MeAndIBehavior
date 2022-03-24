@@ -19,7 +19,7 @@ public class Kid : MonoBehaviour
 
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private LayerMask groundOnlyLayerMask;
-    [SerializeField] private float horizontalInput;
+    [SerializeField] private float horizontalInput; //value between -1 and 1 inclusive
     [SerializeField] private float speed = 10f;
     [SerializeField] private float jumpForce = 13f;
     [SerializeField] private float slowdownFraction = .5f;
@@ -140,8 +140,20 @@ public class Kid : MonoBehaviour
     #region Other Functions
     private void Move()
     {
-        KidRb.velocity = new Vector2(horizontalInput * speed, KidRb.velocity.y);
-        CheckIfShouldFlip();
+        if (SpaceHeld) //when jumping, move normally
+        {
+            KidRb.velocity = new Vector2(horizontalInput * speed, KidRb.velocity.y);
+        }
+        else if(KidRb.velocity.y>0.1f) //when going up a slope, slow max speed up ramp
+        {
+            var moveVector = new Vector2(horizontalInput * speed, KidRb.velocity.y);
+            KidRb.velocity = Vector2.ClampMagnitude(moveVector, speed);
+        }
+        else //move normally
+        {
+            KidRb.velocity = new Vector2(horizontalInput * speed, KidRb.velocity.y);
+        }
+            CheckIfShouldFlip();
     }
 
     private void Float()

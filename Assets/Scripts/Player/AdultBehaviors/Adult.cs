@@ -20,6 +20,7 @@ public class Adult : MonoBehaviour
     
     [SerializeField] private InputActionReference jump;
     public bool IsFacingRight { get; private set; }
+    public bool SpaceHeld { get; private set; }
     //[SerializeField] private InputActionReference grab;
 
     private float boxExtensionHeight = 0.1f; //raycast for checking if grounded
@@ -73,6 +74,14 @@ public class Adult : MonoBehaviour
         {
             PlayerRb.AddForce(new Vector2(0f, -PlayerRb.velocity.y * slowdownFraction), ForceMode2D.Impulse);
         }
+        if (context.started)
+        {
+            SpaceHeld = true;
+        }
+        if (context.canceled)
+        {
+            SpaceHeld = false;
+        }
     }
     #endregion
 
@@ -98,7 +107,19 @@ public class Adult : MonoBehaviour
     #region Other Functions
     private void Move()
     {
-        PlayerRb.velocity = new Vector2(horizontalInput * speed, PlayerRb.velocity.y);
+        if (SpaceHeld) //when jumping, move normally
+        {
+            PlayerRb.velocity = new Vector2(horizontalInput * speed, PlayerRb.velocity.y);
+        }
+        else if (PlayerRb.velocity.y > 0.1f) //when going up a slope, slow max speed up ramp
+        {
+            var moveVector = new Vector2(horizontalInput * speed, PlayerRb.velocity.y);
+            PlayerRb.velocity = Vector2.ClampMagnitude(moveVector, speed);
+        }
+        else //move normally
+        {
+            PlayerRb.velocity = new Vector2(horizontalInput * speed, PlayerRb.velocity.y);
+        }
         CheckIfShouldFlip();
     }
 
