@@ -7240,9 +7240,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1961605236}
+    - target: {fileID: 7671835188513423996, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UISelect
+      objectReference: {fileID: 0}
     - target: {fileID: 7671835188580875324, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671835188701657136, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UISelect
       objectReference: {fileID: 0}
     - target: {fileID: 7887164918773547059, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
       propertyPath: m_IsActive
