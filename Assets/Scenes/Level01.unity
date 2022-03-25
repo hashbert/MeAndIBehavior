@@ -7256,6 +7256,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7887164918852498390, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1961605236}
+    - target: {fileID: 7887164918852498390, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AudioButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887164918858874839, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1961605236}
+    - target: {fileID: 7887164918858874839, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VisualsButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887164919614759404, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1961605236}
+    - target: {fileID: 7887164919614759404, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoBackToPauseButtons
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887164919658652219, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1961605236}
+    - target: {fileID: 7887164919658652219, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ControlsButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887164919712609750, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1961605236}
+    - target: {fileID: 7887164919712609750, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LanguageButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
 --- !u!1001 &7707951616443157582
