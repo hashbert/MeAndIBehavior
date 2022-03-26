@@ -48,12 +48,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject fader;
     //play particles
     [SerializeField] private ParticleSystem particles;
+    [SerializeField] private PlayerInput playerInput;
 
     #region Start Menu
     public void StartButton()
     {
         fader.SetActive(true);
         fader.GetComponent<Fader>().SetNextSceneName("Cutscene01");
+        playerInput.DeactivateInput();
     }
     public void LoadLevelButton()
     {

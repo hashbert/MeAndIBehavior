@@ -17,5 +17,6 @@ public class TriggerFader : MonoBehaviour
         kidObject.GetComponent<SpriteRenderer>().material = plainMaterial;
         GetComponent<SpriteRenderer>().material = plainMaterial;
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/SFX/In Game/Level Complete", gameObject);
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 }

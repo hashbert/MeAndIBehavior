@@ -1810,6 +1810,10 @@ PrefabInstance:
       value: PauseSystem
       objectReference: {fileID: 0}
     - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 84948366}
+    - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
       propertyPath: audioMenu
       value: 
       objectReference: {fileID: 2002866966}

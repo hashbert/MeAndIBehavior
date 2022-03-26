@@ -1301,12 +1301,12 @@ Transform:
   - {fileID: 1322056803}
   - {fileID: 2106907395}
   - {fileID: 1572808446}
-  - {fileID: 1259492218}
   - {fileID: 1021931350}
+  - {fileID: 1259492218}
   - {fileID: 829007757}
   - {fileID: 1755016136}
-  - {fileID: 999891826}
   - {fileID: 794875410}
+  - {fileID: 999891826}
   m_Father: {fileID: 770252867}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2405,6 +2405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 84948366}
     - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
       propertyPath: audioMenu
       value: 
