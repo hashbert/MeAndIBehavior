@@ -61,7 +61,7 @@ public class F_MusicPlayer : MonoBehaviour
         if (currentMusicType == nextSceneMusic) return;
         StopCurrentMusic();
         EventInstance musicToStart;
-        if (newScene.name == "MainMenuScene") {
+        if (newScene.name == "MainMenuScene" || newScene.name == "CreditsScene") {
             MenuMusicInst = RuntimeManager.CreateInstance(_menuMusic);
             musicToStart = MenuMusicInst;
             currentMusicType = MusicType.MainMenu;
