@@ -30,16 +30,14 @@ public class F_MusicPlayer : MonoBehaviour
         if (_instance == null) {
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
-            Debug.Log("music player created");
         } else {
             Destroy(this.gameObject);
-            Debug.Log("music player destroyed");
         }
     }
 
     void Start() {
-        MenuMusicInst = RuntimeManager.CreateInstance(_menuMusic);
-        GameplayMusicInst = RuntimeManager.CreateInstance(_gameplayMusic);
+        //MenuMusicInst = RuntimeManager.CreateInstance(_menuMusic);
+        //GameplayMusicInst = RuntimeManager.CreateInstance(_gameplayMusic);
         Scene currentScene = SceneManager.GetActiveScene();
         PlayMusicForCurrentScene(currentScene, currentScene);
         SceneManager.activeSceneChanged += PlayMusicForCurrentScene;
@@ -57,26 +55,25 @@ public class F_MusicPlayer : MonoBehaviour
     private MusicType currentMusicType;
     private void PlayMusicForCurrentScene(Scene oldScene, Scene newScene) {
         sceneMusicData = FindObjectOfType<SceneMusicData>();
-        Debug.Log("gimme a break");
         if (sceneMusicData == null) return;
 
         MusicType nextSceneMusic = sceneMusicData.music;
-        Debug.Log("hasn't been cut off yet");
         if (currentMusicType == nextSceneMusic) return;
-        Debug.Log("hasn't been cut off yet1");
         StopCurrentMusic();
-        Debug.Log("hasn't been cut off yet2");
         EventInstance musicToStart;
         if (newScene.name == "MainMenuScene") {
+            MenuMusicInst = RuntimeManager.CreateInstance(_menuMusic);
             musicToStart = MenuMusicInst;
             currentMusicType = MusicType.MainMenu;
             Debug.Log("This is the MainMenuScene");
         } else if (SceneManager.GetActiveScene().name.Contains("Cutscene")) {
             instance.SetMusicParameter(3f);
+            GameplayMusicInst = RuntimeManager.CreateInstance(_gameplayMusic);
             musicToStart = GameplayMusicInst;
             currentMusicType = MusicType.Gameplay;
             Debug.Log("This is a Cutscene");
         } else {
+            GameplayMusicInst = RuntimeManager.CreateInstance(_gameplayMusic);
             musicToStart = GameplayMusicInst;
             currentMusicType = MusicType.Gameplay;
             Debug.Log("This is any other level");
@@ -86,15 +83,12 @@ public class F_MusicPlayer : MonoBehaviour
 
     private void StopCurrentMusic() {
         CurrentMusicInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        //CurrentMusicInst.release();
-        Debug.Log("Stop music called");
     }
 
     private void StartMusic(EventInstance music) {
         music.start();
-        //music.release();
+        music.release();
         CurrentMusicInst = music;
-        Debug.Log("Start Music called");
     }
 
     public void SetMusicParameter(float value) {
