@@ -1162,10 +1162,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -21.621063, y: 29.022867}
-      - {x: -21.718224, y: -6.5352397}
-      - {x: 37.211395, y: -6.624067}
-      - {x: 37.177765, y: 28.932888}
+    - - {x: -21.450115, y: 28.68097}
+      - {x: -21.43982, y: -6.423878}
+      - {x: 37.059624, y: -6.387975}
+      - {x: 37.046494, y: 28.748777}
 --- !u!1 &790050058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7671835188094377957, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
@@ -3027,6 +3027,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783725975530752489, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
+      propertyPath: m_UpdateMethod
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752491, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
