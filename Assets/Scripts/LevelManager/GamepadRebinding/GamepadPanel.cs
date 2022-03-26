@@ -196,20 +196,32 @@ public class GamepadPanel : MonoBehaviour
     public void NorthToggleClicked()
     {
         remapNorthButtonPanel.SetActive(true);
+        remapEastButtonPanel.SetActive(false);
+        remapSouthButtonPanel.SetActive(false);
+        remapWestButtonPanel.SetActive(false);
     }
 
     public void EastToggleClicked()
     {
+        remapNorthButtonPanel.SetActive(false);
         remapEastButtonPanel.SetActive(true);
+        remapSouthButtonPanel.SetActive(false);
+        remapWestButtonPanel.SetActive(false);
     }
 
     public void SouthToggleClicked()
     {
+        remapNorthButtonPanel.SetActive(false);
+        remapEastButtonPanel.SetActive(false);
         remapSouthButtonPanel.SetActive(true);
+        remapWestButtonPanel.SetActive(false);
     }
 
     public void WestToggleClicked()
     {
+        remapNorthButtonPanel.SetActive(false);
+        remapEastButtonPanel.SetActive(false);
+        remapSouthButtonPanel.SetActive(false);
         remapWestButtonPanel.SetActive(true);
     }
 
