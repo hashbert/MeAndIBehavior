@@ -743,10 +743,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -36.91599, y: 30.530247}
-      - {x: -37.031673, y: -10.911076}
-      - {x: 13.318665, y: -10.879185}
-      - {x: 13.2868805, y: 30.508772}
+    - - {x: -36.743626, y: 30.444065}
+      - {x: -36.657467, y: -10.25629}
+      - {x: 12.827881, y: -10.265781}
+      - {x: 12.836136, y: 30.418623}
 --- !u!1 &790050058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7671835188094377957, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
@@ -2850,7 +2850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1010.4166
+      value: 1010.4205
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.y

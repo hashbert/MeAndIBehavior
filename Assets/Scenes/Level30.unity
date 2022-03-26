@@ -847,10 +847,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -21.703964, y: 17.665234}
-      - {x: -21.718224, y: -6.5352397}
-      - {x: 37.211395, y: -6.624067}
-      - {x: 37.260666, y: 17.575254}
+    - - {x: -21.305809, y: 17.532513}
+      - {x: -21.286917, y: -6.477732}
+      - {x: 37.081867, y: -6.429772}
+      - {x: 37.008064, y: 17.480074}
 --- !u!1 &790050058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7671835188094377957, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
@@ -2325,11 +2325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.869543
+      value: -13.44414
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6530738
+      value: 0.72519207
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2361,6 +2361,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783725975530752489, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
+      propertyPath: m_UpdateMethod
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752491, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
