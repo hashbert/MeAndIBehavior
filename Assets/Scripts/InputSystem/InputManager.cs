@@ -15,7 +15,10 @@ public class InputManager : MonoBehaviour
 
     public void OnRestartInput(InputAction.CallbackContext _)
     {
-        SceneManager.LoadScene(sceneName);
+        if (_.started)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 
     private void Awake()

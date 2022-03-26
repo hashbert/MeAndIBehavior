@@ -58,6 +58,9 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private PlayerColorSwap photoColorSwap;
     [SerializeField] private SwitchCharacter switchCharacterScript;
 
+    //make pretty
+    [SerializeField] private GameObject fader;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,7 +119,9 @@ public class PauseManager : MonoBehaviour
     }
     public void ExitToTitle()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        fader.SetActive(true);
+        fader.GetComponent<Fader>().SetNextSceneName("MainMenuScene");
+        ResumeGame();
     }
     //options buttons
 

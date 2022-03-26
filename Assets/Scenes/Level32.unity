@@ -2379,6 +2379,10 @@ PrefabInstance:
       value: PauseSystem
       objectReference: {fileID: 0}
     - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 84948366}
+    - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
       propertyPath: audioMenu
       value: 
       objectReference: {fileID: 2002866966}
@@ -2650,11 +2654,11 @@ PrefabInstance:
       objectReference: {fileID: 1230237783}
     - target: {fileID: 2333194341103846471, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.494356
+      value: -10.755644
       objectReference: {fileID: 0}
     - target: {fileID: 2333194341103846471, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.540769
+      value: -4.8792315
       objectReference: {fileID: 0}
     - target: {fileID: 2333194341362245208, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_Follow
@@ -2991,11 +2995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.17
+      value: -13.597037
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.17
+      value: 0.7753496
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.z
