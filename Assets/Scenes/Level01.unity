@@ -7248,6 +7248,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: UISelect
       objectReference: {fileID: 0}
+    - target: {fileID: 7671835188530388863, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
+      propertyPath: nextSceneName
+      value: Level10
+      objectReference: {fileID: 0}
     - target: {fileID: 7671835188580875324, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
       propertyPath: m_IsActive
       value: 1
