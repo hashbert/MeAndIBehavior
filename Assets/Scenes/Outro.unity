@@ -1105,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 612898320}
     - target: {fileID: 6752731670384895235, guid: 18a270561a53ef343b451b399742354c, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6752731670384895235, guid: 18a270561a53ef343b451b399742354c, type: 3}
       propertyPath: sentences.Array.data[0]
@@ -1114,12 +1114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6752731670384895235, guid: 18a270561a53ef343b451b399742354c, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: My sweet boy. He has to learn to rely on himself for this. But I just
-        know he can do it.
+      value: My sweet boy. He has to learn to rely on himself for this.
       objectReference: {fileID: 0}
     - target: {fileID: 6752731670384895235, guid: 18a270561a53ef343b451b399742354c, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 
+      value: But I just know he can do it.
       objectReference: {fileID: 0}
     - target: {fileID: 6752731670384895236, guid: 18a270561a53ef343b451b399742354c, type: 3}
       propertyPath: m_Pivot.x
