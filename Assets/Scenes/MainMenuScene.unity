@@ -2559,7 +2559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1587d72ab63cb994eb80cd1ae7441bea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f9dc45fc49e99d49ac826e1cf27401f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11024,7 +11024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 932949855870070234, guid: eff49388b6b82e74ea32f29286d39ef0, type: 3}
       propertyPath: nextSceneName
-      value: Level01
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff49388b6b82e74ea32f29286d39ef0, type: 3}
@@ -11856,6 +11856,7 @@ MonoBehaviour:
   - {fileID: 451094258}
   - {fileID: 1061978052}
   fader: {fileID: 1378459329}
+  playerInput: {fileID: 830315048}
 --- !u!1 &1682523247
 GameObject:
   m_ObjectHideFlags: 0
@@ -12293,7 +12294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1587d72ab63cb994eb80cd1ae7441bea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57d51831796ffae4fb58688859f076e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12785,7 +12786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1587d72ab63cb994eb80cd1ae7441bea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6a6c82c79f2cad4198c1ecc41b7de3c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
