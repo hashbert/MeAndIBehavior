@@ -511,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 932949855870070234, guid: eff49388b6b82e74ea32f29286d39ef0, type: 3}
       propertyPath: nextSceneName
-      value: Level01
+      value: Teaser
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff49388b6b82e74ea32f29286d39ef0, type: 3}
@@ -1103,6 +1103,25 @@ PrefabInstance:
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 612898320}
+    - target: {fileID: 6752731670384895235, guid: 18a270561a53ef343b451b399742354c, type: 3}
+      propertyPath: sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752731670384895235, guid: 18a270561a53ef343b451b399742354c, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: "It seems to be working. It\u2019s a tough road for both of them, and
+        I want to help more than anything, but I won\u2019t be here for long. My
+        sweet boy. He has to learn to rely on himself for this. But I just know he
+        can do it."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752731670384895235, guid: 18a270561a53ef343b451b399742354c, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752731670384895235, guid: 18a270561a53ef343b451b399742354c, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6752731670384895236, guid: 18a270561a53ef343b451b399742354c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

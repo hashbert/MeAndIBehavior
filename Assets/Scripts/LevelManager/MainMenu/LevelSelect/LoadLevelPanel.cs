@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class LoadLevelPanel : MonoBehaviour
 {
     [SerializeField] private GameObject[] levels;
     [SerializeField] private GameObject[] questions;
     [SerializeField] private GameObject fader;
+    [SerializeField] private PlayerInput playerInput;
     void OnEnable()
     {
         var level = PlayerPrefs.GetInt("Level");
@@ -42,5 +44,6 @@ public class LoadLevelPanel : MonoBehaviour
         {
             fader.GetComponent<Fader>().SetNextSceneName("Level" + level);
         }
+        playerInput.DeactivateInput();
     }
 }

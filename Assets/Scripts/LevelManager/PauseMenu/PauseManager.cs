@@ -121,7 +121,8 @@ public class PauseManager : MonoBehaviour
     {
         fader.SetActive(true);
         fader.GetComponent<Fader>().SetNextSceneName("MainMenuScene");
-        ResumeGame();
+        Time.timeScale = 1;
+        playerInput.DeactivateInput();
     }
     //options buttons
 

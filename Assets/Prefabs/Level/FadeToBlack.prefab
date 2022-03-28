@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 932949855870070232}
   - component: {fileID: 932949855870070235}
   - component: {fileID: 932949855870070234}
-  - component: {fileID: 932949855870070213}
+  - component: {fileID: 1549231972}
   m_Layer: 5
-  m_Name: Fader
+  m_Name: FadeToBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42b39793d742fe4988cf87700771015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Level1
---- !u!95 &932949855870070213
+  nextSceneName: CreditsScene
+--- !u!95 &1549231972
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -100,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 932949855870070212}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5b9d3a8f23d87a046bf11cbd3fdf980a, type: 2}
+  m_Controller: {fileID: 9100000, guid: c265681ef1a1f3a4e82d532ff1d62292, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
