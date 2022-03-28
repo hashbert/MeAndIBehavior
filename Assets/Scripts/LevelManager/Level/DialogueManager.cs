@@ -7,7 +7,7 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private string nextSceneName;
+    //[SerializeField] private string nextSceneName;
 
     [SerializeField] [TextArea(3, 10)] private string[] sentences;
     [Tooltip("Kid Talking should be the same number of elements as Sentences array above")]
@@ -91,7 +91,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentenceNum >= sentences.Length)
         {
-            fader.GetComponent<Fader>().SetNextSceneName(nextSceneName);
+            //fader.GetComponent<Fader>().SetNextSceneName(nextSceneName);
             fader.SetActive(true);
         }
         else if (lettersRevealed < totalCharInSentence)

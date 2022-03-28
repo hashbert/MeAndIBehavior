@@ -1072,7 +1072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 932949855870070234, guid: eff49388b6b82e74ea32f29286d39ef0, type: 3}
       propertyPath: nextSceneName
-      value: Level02
+      value: Level03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff49388b6b82e74ea32f29286d39ef0, type: 3}
@@ -1316,7 +1316,7 @@ PrefabInstance:
       objectReference: {fileID: 512306287}
     - target: {fileID: 6079778747595214188, guid: 57724461f64c0534ebb13656d6f18ecc, type: 3}
       propertyPath: nextSceneName
-      value: Level02
+      value: Level03
       objectReference: {fileID: 0}
     - target: {fileID: 6079778747595214188, guid: 57724461f64c0534ebb13656d6f18ecc, type: 3}
       propertyPath: kidSpeechBubble
@@ -1328,7 +1328,7 @@ PrefabInstance:
       objectReference: {fileID: 1739177702}
     - target: {fileID: 6079778747595214189, guid: 57724461f64c0534ebb13656d6f18ecc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6079778747595214189, guid: 57724461f64c0534ebb13656d6f18ecc, type: 3}
       propertyPath: m_LocalPosition.x
