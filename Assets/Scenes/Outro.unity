@@ -1217,6 +1217,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7828943408056497240, guid: 16f1986881f768643945f62060f11d70, type: 3}
+      propertyPath: _vOLine.Path
+      value: event:/Dialogue/Demo Outro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828943408056497240, guid: 16f1986881f768643945f62060f11d70, type: 3}
+      propertyPath: _vOLine.Guid.Data1
+      value: 1997684576
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828943408056497240, guid: 16f1986881f768643945f62060f11d70, type: 3}
+      propertyPath: _vOLine.Guid.Data2
+      value: 1207881441
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828943408056497240, guid: 16f1986881f768643945f62060f11d70, type: 3}
+      propertyPath: _vOLine.Guid.Data3
+      value: 600900500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828943408056497240, guid: 16f1986881f768643945f62060f11d70, type: 3}
+      propertyPath: _vOLine.Guid.Data4
+      value: -733890104
+      objectReference: {fileID: 0}
     - target: {fileID: 7828943408056497241, guid: 16f1986881f768643945f62060f11d70, type: 3}
       propertyPath: m_Name
       value: F_VoiceOverObject
