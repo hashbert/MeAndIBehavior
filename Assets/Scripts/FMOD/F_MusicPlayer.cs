@@ -73,7 +73,9 @@ public class F_MusicPlayer : MonoBehaviour
             currentMusicType = MusicType.Gameplay;
             Debug.Log("This is a Cutscene");
         } else {
+            //Should be dialogue scene and both instruments play
             GameplayMusicInst = RuntimeManager.CreateInstance(_gameplayMusic);
+            instance.SetMusicParameter(3f);
             musicToStart = GameplayMusicInst;
             currentMusicType = MusicType.Gameplay;
             Debug.Log("This is any other level");
@@ -93,5 +95,6 @@ public class F_MusicPlayer : MonoBehaviour
 
     public void SetMusicParameter(float value) {
         GameplayMusicInst.setParameterByID(ParamDes.id, value);
+        //Debug.Log(value);
     }
 }
