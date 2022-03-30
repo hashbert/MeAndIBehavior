@@ -31,7 +31,7 @@ public class PlatformAttach : MonoBehaviour
         {
             collision.transform.SetParent(transform);
         }
-        if ((boxLayerMask.value & (1 << collision.transform.gameObject.layer)) > 0 && adultAnim.GetInteger("AdultState")!=7)
+        if ((boxLayerMask.value & (1 << collision.transform.gameObject.layer)) > 0 && adultAnim.GetInteger("AdultState")!=7 && collision.gameObject.transform.parent !=null)
         {
             if (grabController.IsHoldingBox)
             {
