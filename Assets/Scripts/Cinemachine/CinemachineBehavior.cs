@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class CinemachineBehavior : MonoBehaviour
 {
@@ -13,12 +14,19 @@ public class CinemachineBehavior : MonoBehaviour
     private int camNum = 0;
     private float wholeLevelShownTime = 2f;
     private float transitionToKidTime = 2f;
-    private float switchCameraTime = .75f;
+    private float switchCameraTime = 1f;
     private void Awake()
     {
         animator = GetComponent<Animator>();
         switchCharacter = GameObject.Find("Managers").transform.Find("SwitchCharacter").GetComponent<SwitchCharacter>();
-        StartCoroutine(BeginLevel());
+        if (SceneManager.GetActiveScene().name != "Level01")
+        {
+            StartCoroutine(BeginLevel());
+        }
+        else
+        {
+            animator.Play("KidCam0");
+        }
     }
 
     private IEnumerator BeginLevel()
