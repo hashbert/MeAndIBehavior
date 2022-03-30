@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class CinemachineBehavior : MonoBehaviour
 {
@@ -11,18 +12,26 @@ public class CinemachineBehavior : MonoBehaviour
     private SwitchCharacter switchCharacter; //to find which character is active
     private Animator animator;
     private int camNum = 0;
-    private float wholeLevelShownTime = 3f;
+    private float wholeLevelShownTime = 2f;
     private float transitionToKidTime = 2f;
-    private float switchCameraTime = .75f;
+    private float switchCameraTime = 1f;
     private void Awake()
     {
         animator = GetComponent<Animator>();
         switchCharacter = GameObject.Find("Managers").transform.Find("SwitchCharacter").GetComponent<SwitchCharacter>();
-        StartCoroutine(BeginLevel());
+        if (SceneManager.GetActiveScene().name != "Level01")
+        {
+            StartCoroutine(BeginLevel());
+        }
+        else
+        {
+            animator.Play("KidCam0");
+        }
     }
 
     private IEnumerator BeginLevel()
     {
+        InputManager.playerInput.DeactivateInput();
         animator.Play("Level");
         animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time = transitionToKidTime;
         Debug.Log(animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time);
@@ -30,6 +39,7 @@ public class CinemachineBehavior : MonoBehaviour
         SwitchCamera();
         yield return new WaitForSeconds(transitionToKidTime);
         animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time = switchCameraTime;
+        InputManager.playerInput.ActivateInput();
     }
     // Start is called before the first frame update
     void Start()
