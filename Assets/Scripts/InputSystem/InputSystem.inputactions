@@ -533,6 +533,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "64a82b60-94c3-4343-b2d8-630ca36ef5be",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Cancel",
                     "type": "Button",
                     "id": "8be89603-b95d-4a0a-aaec-7b71d6200c05",
@@ -1074,6 +1083,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77172a36-67eb-4bcd-b329-41f3fcfc7956",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a3b98752-f9ca-4baf-9a66-c3ddb9981fe1",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

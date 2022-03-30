@@ -931,7 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pause: {fileID: 7357714995044082551, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
   menu: {fileID: -561566443053410288, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
-  restart: {fileID: 3361343222614192647, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
+  restart: {fileID: 844480301155062480, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
   anim: {fileID: 1474174620}
 --- !u!4 &1070031763
 Transform:
