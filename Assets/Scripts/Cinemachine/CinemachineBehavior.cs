@@ -20,11 +20,9 @@ public class CinemachineBehavior : MonoBehaviour
 
     private IEnumerator BeginLevel()
     {
-        InputManager.playerInput.DeactivateInput();
         animator.Play("Level");
         yield return new WaitForSeconds(5);
         SwitchCamera();
-        InputManager.playerInput.ActivateInput();
     }
     // Start is called before the first frame update
     void Start()
