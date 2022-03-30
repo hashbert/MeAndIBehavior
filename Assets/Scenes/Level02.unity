@@ -2124,6 +2124,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1256819239}
     m_Modifications:
+    - target: {fileID: 1803109238, guid: 6735be48cf08646458833a825f606487, type: 3}
+      propertyPath: flippedAtStart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2566587903823209072, guid: 6735be48cf08646458833a825f606487, type: 3}
       propertyPath: m_Name
       value: Goal
@@ -2170,6 +2174,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2566587903823209078, guid: 6735be48cf08646458833a825f606487, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566587903823209079, guid: 6735be48cf08646458833a825f606487, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0fd201501b6fd3a408f0da5e443d317e, type: 3}
+    - target: {fileID: 2566587903823209079, guid: 6735be48cf08646458833a825f606487, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566587903823209079, guid: 6735be48cf08646458833a825f606487, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566587903823209079, guid: 6735be48cf08646458833a825f606487, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4933960532590076427, guid: 6735be48cf08646458833a825f606487, type: 3}
