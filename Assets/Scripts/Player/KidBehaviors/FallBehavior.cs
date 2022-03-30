@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
 
 public class FallBehavior : StateMachineBehaviour
 {
@@ -24,6 +25,7 @@ public class FallBehavior : StateMachineBehaviour
         if (kid.IsGrounded())
         {
             animator.SetInteger("KidState", 0);
+            RuntimeManager.PlayOneShot("event:/SFX/Young/Footsteps");
         }
         else if (kidRb.velocity.y < 0.1f && kid.SpaceHeld)
         {

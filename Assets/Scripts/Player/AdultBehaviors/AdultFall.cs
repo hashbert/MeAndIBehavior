@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class AdultFall : StateMachineBehaviour
 {
@@ -18,10 +19,13 @@ public class AdultFall : StateMachineBehaviour
         if (adult.IsGrounded() && Mathf.Abs(adultRb.velocity.x) < .1f)
         {
             animator.SetInteger("AdultState", 0);
+            RuntimeManager.PlayOneShot("event:/SFX/Old/Footsteps");
+
         }
         else if (adult.IsGrounded() && Mathf.Abs(adultRb.velocity.x) > .1f)
         {
             animator.SetInteger("AdultState", 1);
+            RuntimeManager.PlayOneShot("event:/SFX/Old/Footsteps");
         }
     }
 

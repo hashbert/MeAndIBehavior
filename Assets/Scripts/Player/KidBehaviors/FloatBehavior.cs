@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class FloatBehavior : StateMachineBehaviour
 {
@@ -23,6 +24,7 @@ public class FloatBehavior : StateMachineBehaviour
         if (kid.IsGrounded())
         {
             animator.SetInteger("KidState", 0);
+            RuntimeManager.PlayOneShot("event:/SFX/Young/Footsteps");
         }
         else if (kidRb.velocity.y < 0.1f && !kid.SpaceHeld)
         {
