@@ -7,22 +7,27 @@ using UnityEngine.InputSystem;
 public class CreditsController : MonoBehaviour
 {
     [SerializeField] private InputActionReference pause;
-    [SerializeField] private InputActionReference back;
+    [SerializeField] private InputActionReference menu;
+    [SerializeField] private InputActionReference restart;
     [SerializeField] private Animator anim;
 
     private void OnEnable() 
     {
         pause.action.Enable();
         pause.action.performed += PauseCredits;
-        back.action.Enable();
-        back.action.started += BackToMainMenu;
+        menu.action.Enable();
+        menu.action.started += BackToMainMenu;
+        restart.action.Enable();
+        restart.action.started += Restart;
     }
     private void OnDisable() 
     {
         pause.action.Disable();
         pause.action.performed -= PauseCredits;
-        back.action.Disable();
-        back.action.started -= BackToMainMenu;
+        menu.action.Disable();
+        menu.action.started -= BackToMainMenu;
+        restart.action.Disable();
+        restart.action.started -= Restart;
     }
 
     private void PauseCredits(InputAction.CallbackContext context)
@@ -45,6 +50,14 @@ public class CreditsController : MonoBehaviour
         if (context.started)
         {
             SceneManager.LoadScene("MainMenuScene");
+        }
+    }
+
+    private void Restart(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            SceneManager.LoadScene("CreditsScene");
         }
     }
 }
