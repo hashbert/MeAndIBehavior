@@ -213,8 +213,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 355757756115403646, guid: 4e56a50614b7a69478220ca610cc959f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.8197474
+      objectReference: {fileID: 0}
+    - target: {fileID: 355757756115403646, guid: 4e56a50614b7a69478220ca610cc959f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.2161
+      value: 18.6261
       objectReference: {fileID: 0}
     - target: {fileID: 355757756115403646, guid: 4e56a50614b7a69478220ca610cc959f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5756,8 +5760,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -32.119556, y: 27.440268}
       - {x: -32.269417, y: -6.5508676}
-      - {x: 21.86602, y: -6.599748}
-      - {x: 21.841917, y: 27.48748}
+      - {x: 26.21136, y: -6.599748}
+      - {x: 26.170385, y: 27.465656}
 --- !u!1 &790050058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7671835188094377957, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
@@ -6104,9 +6108,9 @@ Transform:
   - {fileID: 1582697339}
   - {fileID: 1322056803}
   - {fileID: 2106907395}
-  - {fileID: 1021931350}
-  - {fileID: 1259492218}
   - {fileID: 1572808446}
+  - {fileID: 1259492218}
+  - {fileID: 1021931350}
   - {fileID: 829007757}
   - {fileID: 1755016136}
   - {fileID: 794875410}
@@ -6442,7 +6446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalScale.x
@@ -6450,15 +6454,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 33.375
+      value: 34.376247
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.35911
+      value: 28.39
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.957499
+      value: 10.4574995
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7407,6 +7411,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 770252867}
+    - target: {fileID: 1391171662430626020, guid: b69d320fd1325254695e925963f65aa7, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 17.12
+      objectReference: {fileID: 0}
     - target: {fileID: 2333194340220052393, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_Follow
       value: 
@@ -7850,11 +7858,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.2598495
+      value: -4.0956173
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.656623
+      value: 12.645711
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7890,7 +7898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752488, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: orthographic size
-      value: 17.1
+      value: 17.12
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752491, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_Name

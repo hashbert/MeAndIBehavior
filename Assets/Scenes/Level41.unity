@@ -3545,6 +3545,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1391171662430626020, guid: b69d320fd1325254695e925963f65aa7, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 770252867}
+    - target: {fileID: 1391171662430626020, guid: b69d320fd1325254695e925963f65aa7, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 20.37
+      objectReference: {fileID: 0}
     - target: {fileID: 2333194340220052393, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_Follow
       value: 
@@ -3988,11 +3996,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1003.196
+      value: 994.01984
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 591.12
+      value: 593.9912
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4025,6 +4033,10 @@ PrefabInstance:
     - target: {fileID: 6783725975530752279, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783725975530752488, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
+      propertyPath: orthographic size
+      value: 20.37
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752489, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_UpdateMethod
