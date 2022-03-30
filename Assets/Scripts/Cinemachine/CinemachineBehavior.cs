@@ -34,7 +34,6 @@ public class CinemachineBehavior : MonoBehaviour
         InputManager.playerInput.DeactivateInput();
         animator.Play("Level");
         animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time = transitionToKidTime;
-        Debug.Log(animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time);
         yield return new WaitForSeconds(wholeLevelShownTime);
         SwitchCamera();
         yield return new WaitForSeconds(transitionToKidTime);
