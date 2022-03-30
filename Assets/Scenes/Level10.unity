@@ -6207,9 +6207,9 @@ Transform:
   - {fileID: 1582697339}
   - {fileID: 1322056803}
   - {fileID: 2106907395}
-  - {fileID: 1572808446}
   - {fileID: 1021931350}
   - {fileID: 1259492218}
+  - {fileID: 1572808446}
   - {fileID: 829007757}
   - {fileID: 1755016136}
   - {fileID: 794875410}
@@ -7619,12 +7619,16 @@ PrefabInstance:
       value: -4.1709156
       objectReference: {fileID: 0}
     - target: {fileID: 2333194340299278461, guid: b69d320fd1325254695e925963f65aa7, type: 3}
+      propertyPath: m_DefaultBlend.m_Time
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333194340299278461, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_ParentHash.Array.size
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2333194340299278461, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_ChildCameras.Array.size
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2333194340299278461, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_Instructions.Array.size

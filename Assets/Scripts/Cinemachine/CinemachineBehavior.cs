@@ -11,6 +11,9 @@ public class CinemachineBehavior : MonoBehaviour
     private SwitchCharacter switchCharacter; //to find which character is active
     private Animator animator;
     private int camNum = 0;
+    private float wholeLevelShownTime = 3f;
+    private float transitionToKidTime = 2f;
+    private float switchCameraTime = .75f;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -21,8 +24,12 @@ public class CinemachineBehavior : MonoBehaviour
     private IEnumerator BeginLevel()
     {
         animator.Play("Level");
-        yield return new WaitForSeconds(5);
+        animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time = transitionToKidTime;
+        Debug.Log(animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time);
+        yield return new WaitForSeconds(wholeLevelShownTime);
         SwitchCamera();
+        yield return new WaitForSeconds(transitionToKidTime);
+        animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time = switchCameraTime;
     }
     // Start is called before the first frame update
     void Start()
