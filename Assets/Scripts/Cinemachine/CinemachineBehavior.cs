@@ -15,6 +15,16 @@ public class CinemachineBehavior : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         switchCharacter = GameObject.Find("Managers").transform.Find("SwitchCharacter").GetComponent<SwitchCharacter>();
+        StartCoroutine(BeginLevel());
+    }
+
+    private IEnumerator BeginLevel()
+    {
+        InputManager.playerInput.DeactivateInput();
+        animator.Play("Level");
+        yield return new WaitForSeconds(5);
+        SwitchCamera();
+        InputManager.playerInput.ActivateInput();
     }
     // Start is called before the first frame update
     void Start()
