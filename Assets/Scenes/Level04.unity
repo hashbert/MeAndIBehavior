@@ -1715,17 +1715,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1256819239}
     m_Modifications:
+    - target: {fileID: 6394398626593497182, guid: 50aacfdd205388b4bb32b526c9b718f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394398626593497182, guid: 50aacfdd205388b4bb32b526c9b718f9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394398626593497182, guid: 50aacfdd205388b4bb32b526c9b718f9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394398626593497182, guid: 50aacfdd205388b4bb32b526c9b718f9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394398626593497182, guid: 50aacfdd205388b4bb32b526c9b718f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 6394398628636027412, guid: 50aacfdd205388b4bb32b526c9b718f9, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6394398628636027412, guid: 50aacfdd205388b4bb32b526c9b718f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.033898
+      value: 31.9
       objectReference: {fileID: 0}
     - target: {fileID: 6394398628636027412, guid: 50aacfdd205388b4bb32b526c9b718f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.758317
+      value: 9.9
       objectReference: {fileID: 0}
     - target: {fileID: 6394398628636027412, guid: 50aacfdd205388b4bb32b526c9b718f9, type: 3}
       propertyPath: m_LocalPosition.z
