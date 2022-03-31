@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2566587903823209078}
   - component: {fileID: 2566587903823209079}
-  - component: {fileID: 1803109238}
   - component: {fileID: 1803109239}
   - component: {fileID: 4933960532590076427}
+  - component: {fileID: 1803109240}
   m_Layer: 0
   m_Name: photo
   m_TagString: Untagged
@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4c010796d1f25f42ad3ba8deffbf84a, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 174a237587a95e347a7ff845441017bb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0fd201501b6fd3a408f0da5e443d317e, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1803109238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2566587903823209072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98445814671ab284abcb46822a3c5eb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flippedAtStart: 0
-  thresh: 0
 --- !u!61 &1803109239
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,3 +127,20 @@ MonoBehaviour:
   plainMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   kidObject: {fileID: 0}
   adultObject: {fileID: 0}
+--- !u!114 &1803109240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566587903823209072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f220cf8b8670547a9d8db8e4b75e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
+  invertedColor: {r: 0, g: 0, b: 0, a: 0}
+  spriteRenderer: {fileID: 0}
+  switchCharacter: {fileID: 0}
+  switchCharacterAction: {fileID: -1934039552845713043, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
