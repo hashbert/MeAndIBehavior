@@ -31,7 +31,7 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] private Color invertedBackgroundColor;
 
     //photo
-    private PlayerColorSwap goal;
+    //private PlayerColorSwap goal;
 
     private void Awake()
     {
@@ -58,7 +58,7 @@ public class SwitchCharacter : MonoBehaviour
         invertedBackgroundColor = new Color(1f - initialBackgroundColor.r, 1f - initialBackgroundColor.g, 1f - initialBackgroundColor.b);
 
         //picture
-        goal = GameObject.Find("Goal").GetComponent<PlayerColorSwap>();
+        //goal = GameObject.Find("Goal").GetComponent<PlayerColorSwap>();
 
     }
     // Start is called before the first frame update
@@ -77,7 +77,7 @@ public class SwitchCharacter : MonoBehaviour
         adultAnim.enabled = false;
         InputManager.playerInput.actions["Grab"].Disable();
         adultColorSwap.Swap();
-        goal.Swap();
+        //goal.Swap();
         //grab.action.Disable();
     }
     private void UnfreezeAdult()
@@ -89,7 +89,7 @@ public class SwitchCharacter : MonoBehaviour
         adultAnim.enabled = true;
         InputManager.playerInput.actions["Grab"].Enable();
         adultColorSwap.ResetSwap();
-        goal.ResetSwap();
+        //goal.ResetSwap();
         //grab.action.Enable();
     }
     private void FreezeKid()
@@ -100,7 +100,7 @@ public class SwitchCharacter : MonoBehaviour
         kidBoxColl.enabled = false;
         kidAnim.enabled = false;
         kidColorSwap.Swap();
-        goal.Swap();
+        //goal.Swap();
     }
     private void UnfreezeKid()
     {
@@ -110,7 +110,7 @@ public class SwitchCharacter : MonoBehaviour
         kidBoxColl.enabled = true;
         kidAnim.enabled = true;
         kidColorSwap.ResetSwap();
-        goal.ResetSwap();
+        //goal.ResetSwap();
     }
 
 

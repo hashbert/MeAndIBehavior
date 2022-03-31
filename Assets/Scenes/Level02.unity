@@ -1363,17 +1363,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2566587903823209072, guid: 6735be48cf08646458833a825f606487, type: 3}
   m_PrefabInstance: {fileID: 2566587904546251011}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1803109236 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1803109238, guid: 6735be48cf08646458833a825f606487, type: 3}
-  m_PrefabInstance: {fileID: 2566587904546251011}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803109235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98445814671ab284abcb46822a3c5eb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1803109237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2566587903823209078, guid: 6735be48cf08646458833a825f606487, type: 3}
@@ -1876,7 +1865,7 @@ PrefabInstance:
     - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
       propertyPath: photoColorSwap
       value: 
-      objectReference: {fileID: 1803109236}
+      objectReference: {fileID: 0}
     - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
       propertyPath: gamepadPanelEast
       value: 
