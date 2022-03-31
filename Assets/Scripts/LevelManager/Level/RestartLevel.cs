@@ -9,7 +9,6 @@ public class RestartLevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("triggered");
         fader.GetComponent<Fader>().SetNextSceneName(SceneManager.GetActiveScene().name);
         fader.SetActive(true);
     }
