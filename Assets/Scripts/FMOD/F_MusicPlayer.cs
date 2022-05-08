@@ -67,8 +67,8 @@ public class F_MusicPlayer : MonoBehaviour
             currentMusicType = MusicType.MainMenu;
             Debug.Log("This is the MainMenuScene");
         } else if (SceneManager.GetActiveScene().name.Contains("Cutscene")) {
-            instance.SetMusicParameter(3f);
             GameplayMusicInst = RuntimeManager.CreateInstance(_gameplayMusic);
+            instance.SetMusicParameter(3f);
             musicToStart = GameplayMusicInst;
             currentMusicType = MusicType.Gameplay;
             Debug.Log("This is a Cutscene");
