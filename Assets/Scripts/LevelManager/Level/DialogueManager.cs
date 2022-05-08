@@ -45,6 +45,7 @@ public class DialogueManager : MonoBehaviour
 
         if (kidTalking[sentenceNum])
         {
+            F_MusicPlayer.instance.SetMusicParameter(0f);
             adultSpeechBubble.SetActive(false);
             adultAnim.enabled = false;
             kidSpeechBubble.SetActive(true);
@@ -61,6 +62,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (!kidTalking[sentenceNum])
         {
+            F_MusicPlayer.instance.SetMusicParameter(6f);
             adultSpeechBubble.SetActive(true);
             adultAnim.enabled = true;
             kidSpeechBubble.SetActive(false);

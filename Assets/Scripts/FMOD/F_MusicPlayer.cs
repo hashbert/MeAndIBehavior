@@ -10,6 +10,8 @@ public class F_MusicPlayer : MonoBehaviour
     public EventInstance MenuMusicInst;
     public EventInstance GameplayMusicInst;
     private EventInstance CurrentMusicInst;
+    public string CurrentSceneName { get; private set; }
+    public bool SceneRepeated { get; private set; }
 
     private static F_MusicPlayer _instance;
     public static F_MusicPlayer instance {
@@ -33,13 +35,14 @@ public class F_MusicPlayer : MonoBehaviour
         } else {
             Destroy(this.gameObject);
         }
+        SceneRepeated = false;
     }
 
-    void Start() {
+    void OnEnable() {
         //MenuMusicInst = RuntimeManager.CreateInstance(_menuMusic);
         //GameplayMusicInst = RuntimeManager.CreateInstance(_gameplayMusic);
-        Scene currentScene = SceneManager.GetActiveScene();
-        PlayMusicForCurrentScene(currentScene, currentScene);
+        //currentScene = SceneManager.GetActiveScene();
+        //PlayMusicForCurrentScene(currentScene, currentScene);
         SceneManager.activeSceneChanged += PlayMusicForCurrentScene;
 
         EventDes = RuntimeManager.GetEventDescription("event:/Music/Gameplay Music");
@@ -54,6 +57,7 @@ public class F_MusicPlayer : MonoBehaviour
     private SceneMusicData sceneMusicData;
     private MusicType currentMusicType;
     private void PlayMusicForCurrentScene(Scene oldScene, Scene newScene) {
+        IsSceneRepeated();
         sceneMusicData = FindObjectOfType<SceneMusicData>();
         if (sceneMusicData == null) return;
 
@@ -83,6 +87,21 @@ public class F_MusicPlayer : MonoBehaviour
         StartMusic(musicToStart);
     }
 
+    private void IsSceneRepeated()
+    {
+        Debug.Log(CurrentSceneName);
+        Debug.Log(SceneManager.GetActiveScene().name);
+        if (CurrentSceneName == SceneManager.GetActiveScene().name)
+        {
+            SceneRepeated = true;
+        }
+        else
+        {
+            SceneRepeated = false;
+        }
+        CurrentSceneName = SceneManager.GetActiveScene().name;
+        Debug.Log(SceneRepeated);
+    }
     private void StopCurrentMusic() {
         CurrentMusicInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }

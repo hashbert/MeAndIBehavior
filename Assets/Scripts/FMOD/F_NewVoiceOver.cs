@@ -15,6 +15,7 @@ public class F_NewVoiceOver : MonoBehaviour
 
     void Start()
     {
+        if (F_MusicPlayer.instance.SceneRepeated) return;
         dialogueEvent = RuntimeManager.CreateInstance(_vOLine);
         dialogueEvent.start();
         dialoguePlaying = RuntimeManager.CreateInstance("snapshot:/Dialogue Over Music");
