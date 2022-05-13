@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class InvertColorUI : MonoBehaviour
+public class InvertColorImage : MonoBehaviour
 {
     [SerializeField] private Color initialColor;
     [SerializeField] private Color invertedColor;
