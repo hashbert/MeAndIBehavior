@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class Adult : MonoBehaviour
 {
@@ -19,13 +20,17 @@ public class Adult : MonoBehaviour
     [SerializeField] private float slowdownFraction = .5f;
     
     [SerializeField] private InputActionReference jump;
+    [SerializeField] private InputActionReference teleport;
     public bool IsFacingRight { get; private set; }
     public bool SpaceHeld { get; private set; }
     //[SerializeField] private InputActionReference grab;
 
     private float boxExtensionHeight = 0.1f; //raycast for checking if grounded
-    
+
     #endregion
+
+    //actions
+    public static event Action OnTeleportNotAllowed;
 
     #region Unity Callback Functions
 
@@ -47,12 +52,14 @@ public class Adult : MonoBehaviour
     {
         jump.action.started += OnJumpInput;
         jump.action.canceled += OnJumpInput;
+        teleport.action.started += OnTeleportInput;
     }
 
     private void OnDisable()
     {
         jump.action.started -= OnJumpInput;
         jump.action.canceled -= OnJumpInput;
+        teleport.action.started -= OnTeleportInput;
     }
 
     #endregion
@@ -81,6 +88,13 @@ public class Adult : MonoBehaviour
         if (context.canceled)
         {
             SpaceHeld = false;
+        }
+    }
+    public void OnTeleportInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnTeleportNotAllowed?.Invoke();
         }
     }
     #endregion
