@@ -45,7 +45,7 @@ public class F_NewVoiceOver : MonoBehaviour
     private void OnDestroy()
     {
         //dialogueEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        //dialoguePlaying.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        dialoguePlaying.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         dialogueEvent.release();
         dialoguePlaying.release();
     }
