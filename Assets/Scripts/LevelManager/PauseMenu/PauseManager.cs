@@ -55,7 +55,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject photoObject;
     [SerializeField] private PlayerColorSwap kidColorSwap;
     [SerializeField] private PlayerColorSwap adultColorSwap;
-    [SerializeField] private PlayerColorSwap photoColorSwap;
+    //[SerializeField] private PlayerColorSwap photoColorSwap;
     [SerializeField] private SwitchCharacter switchCharacterScript;
 
     //make pretty
@@ -83,7 +83,7 @@ public class PauseManager : MonoBehaviour
         //changing the material to normal and back again...
         adultObject.GetComponent<SpriteRenderer>().material = plainMaterial;
         kidObject.GetComponent<SpriteRenderer>().material = plainMaterial;
-        photoObject.GetComponent<SpriteRenderer>().material = plainMaterial;
+        //photoObject.GetComponent<SpriteRenderer>().material = plainMaterial;
     }
 
     #region Pause Menu
@@ -96,19 +96,19 @@ public class PauseManager : MonoBehaviour
         //changing the material to normal and back again...
         adultObject.GetComponent<SpriteRenderer>().material = invertMaterial;
         kidObject.GetComponent<SpriteRenderer>().material = invertMaterial;
-        photoObject.GetComponent<SpriteRenderer>().material = invertMaterial;
+        //photoObject.GetComponent<SpriteRenderer>().material = invertMaterial;
         if (switchCharacterScript.KidActive)
         {
             adultColorSwap.ResetSwap();
             adultColorSwap.Swap();
-            photoColorSwap.ResetSwap();
-            photoColorSwap.Swap();
+            //photoColorSwap.ResetSwap();
+            //photoColorSwap.Swap();
         }
         else
         {
             kidColorSwap.ResetSwap();
             kidColorSwap.Swap();
-            photoColorSwap.ResetSwap();
+            //photoColorSwap.ResetSwap();
         }
     }
     public void OptionsButton()
