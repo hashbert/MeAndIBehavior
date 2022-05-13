@@ -91,6 +91,7 @@ MonoBehaviour:
   jumpForce: 8
   slowdownFraction: 0.5
   jump: {fileID: -4222187747311746522, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
+  teleport: {fileID: -7015084892914633879, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
 --- !u!212 &7707951616486463964
 SpriteRenderer:
   m_ObjectHideFlags: 0
