@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class SwitchCharacter : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] private Color initialBackgroundColor;
     [SerializeField] private Color invertedBackgroundColor;
 
+    //actions
+    public static event Action OnSwitchNotAllowed;
+
     //photo
     //private PlayerColorSwap goal;
 
@@ -56,7 +60,7 @@ public class SwitchCharacter : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         initialBackgroundColor = mainCamera.backgroundColor;
         invertedBackgroundColor = new Color(1f - initialBackgroundColor.r, 1f - initialBackgroundColor.g, 1f - initialBackgroundColor.b);
-
+        
         //picture
         //goal = GameObject.Find("Goal").GetComponent<PlayerColorSwap>();
 
@@ -130,6 +134,10 @@ public class SwitchCharacter : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
+            if (KidActive && kidAnim.GetInteger("KidState") == 0 && !kidScript.IsOnGround())
+            {
+                OnSwitchNotAllowed?.Invoke();
+            }
             if (KidActive && kidAnim.GetInteger("KidState") == 0 && kidScript.IsOnGround())
             {
                 FreezeKid();
@@ -137,7 +145,8 @@ public class SwitchCharacter : MonoBehaviour
                 SwapColor();
                 KidActive = !KidActive;
                 F_MusicPlayer.instance.SetMusicParameter(6f);
-            } else if (!KidActive)
+            } 
+            else if (!KidActive)
             {
                 UnfreezeKid();
                 FreezeAdult();

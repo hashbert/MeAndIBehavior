@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FMODUnity;
+using System;
 
 public class Kid : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class Kid : MonoBehaviour
     private Vector2 kidPosition;
     [SerializeField] private float teleportHeight;
     #endregion
+
+    //actions
+    public static event Action OnTeleportNotAllowed;
 
     #region Unity Callback Functions
 
@@ -94,6 +98,10 @@ public class Kid : MonoBehaviour
 
     public void OnTeleportInput(InputAction.CallbackContext context)
     {
+        if (context.started && KidAnim.GetInteger("KidState") == 0 && KidAnim.enabled && !IsOnGround())
+        {
+            OnTeleportNotAllowed?.Invoke();
+        }
         if (context.started && KidAnim.GetInteger("KidState")==0 && KidAnim.enabled && IsOnGround())
         {
             teleportParticle.Play();

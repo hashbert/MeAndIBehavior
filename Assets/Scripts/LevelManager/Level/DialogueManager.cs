@@ -95,6 +95,7 @@ public class DialogueManager : MonoBehaviour
         {
             //fader.GetComponent<Fader>().SetNextSceneName(nextSceneName);
             fader.SetActive(true);
+            F_MusicPlayer.instance.SetMusicParameter(3f);
         }
         else if (lettersRevealed < totalCharInSentence)
         {

@@ -127,6 +127,7 @@ MonoBehaviour:
   plainMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   kidObject: {fileID: 0}
   adultObject: {fileID: 0}
+  slowMotionFraction: 0.15
 --- !u!114 &1803109240
 MonoBehaviour:
   m_ObjectHideFlags: 0

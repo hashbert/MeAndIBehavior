@@ -57,12 +57,19 @@ public class F_MusicPlayer : MonoBehaviour
     private SceneMusicData sceneMusicData;
     private MusicType currentMusicType;
     private void PlayMusicForCurrentScene(Scene oldScene, Scene newScene) {
+        Debug.Log("Active Scene : " + SceneManager.GetActiveScene().name);
         IsSceneRepeated();
         sceneMusicData = FindObjectOfType<SceneMusicData>();
-        if (sceneMusicData == null) return;
-
+        if (sceneMusicData == null)
+        {
+            return;
+        }
         MusicType nextSceneMusic = sceneMusicData.music;
-        if (currentMusicType == nextSceneMusic) return;
+
+        if (currentMusicType == nextSceneMusic)
+        {
+            return;
+        }
         StopCurrentMusic();
         EventInstance musicToStart;
         if (newScene.name == "MainMenuScene" || newScene.name == "CreditsScene") {
