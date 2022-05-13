@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Dialogue02.unity
     guid: 4f24d8917a3b66b4894276fa52ac1760
   - enabled: 1
-    path: Assets/Scenes/Outro.unity
+    path: Assets/Scenes/Cutscene02.unity
     guid: e90a9e365212db34588ca93049a5077f
   - enabled: 1
     path: Assets/Scenes/Teaser.unity
