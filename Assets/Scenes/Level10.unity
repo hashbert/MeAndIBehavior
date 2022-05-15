@@ -274,35 +274,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
   m_PrefabInstance: {fileID: 1113252906}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &370714517 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 355757756115403523, guid: 4e56a50614b7a69478220ca610cc959f, type: 3}
-  m_PrefabInstance: {fileID: 183830544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &370714518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 355757756115403646, guid: 4e56a50614b7a69478220ca610cc959f, type: 3}
   m_PrefabInstance: {fileID: 183830544}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &370714519
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370714517}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 81c6284aec1cf1e40b9b63b742a69b52, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &386312854 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1925871597636573762, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
@@ -5439,7 +5415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1364018121796187607, guid: c99f17cb18779674f9d33179608ed14e, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1364018121796187607, guid: c99f17cb18779674f9d33179608ed14e, type: 3}
       propertyPath: m_LocalScale.x
@@ -6195,7 +6171,7 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: 04556d73c1d8ce5419d5bac63647e8a9, type: 2}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalScale.x
@@ -6278,7 +6254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalScale.x
@@ -6446,7 +6422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalScale.x
@@ -6511,17 +6487,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2566587903823209072, guid: 6735be48cf08646458833a825f606487, type: 3}
   m_PrefabInstance: {fileID: 2566587904546251011}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1803109236 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1803109238, guid: 6735be48cf08646458833a825f606487, type: 3}
-  m_PrefabInstance: {fileID: 2566587904546251011}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803109235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98445814671ab284abcb46822a3c5eb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1803109237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2566587903823209078, guid: 6735be48cf08646458833a825f606487, type: 3}
@@ -6552,7 +6517,7 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: 04556d73c1d8ce5419d5bac63647e8a9, type: 2}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalScale.x
@@ -6941,7 +6906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalScale.x
@@ -7296,7 +7261,7 @@ PrefabInstance:
     - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
       propertyPath: photoColorSwap
       value: 
-      objectReference: {fileID: 1803109236}
+      objectReference: {fileID: 0}
     - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
       propertyPath: gamepadPanelEast
       value: 
