@@ -8,6 +8,7 @@ TagManager:
   - Adult
   - Ground
   - Box
+  - CheckpointManager
   layers:
   - Default
   - TransparentFX

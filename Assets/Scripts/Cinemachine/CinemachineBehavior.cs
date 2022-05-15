@@ -15,7 +15,12 @@ public class CinemachineBehavior : MonoBehaviour
     private float wholeLevelShownTime = 2f;
     private float transitionToKidTime = 2f;
     private float switchCameraTime = 1f;
+    private CinemachineStateDrivenCamera stateCamera;
     private void Awake()
+    {
+        stateCamera = GetComponent<CinemachineStateDrivenCamera>();
+    }
+    private void OnEnable()
     {
         animator = GetComponent<Animator>();
         switchCharacter = GameObject.Find("Managers").transform.Find("SwitchCharacter").GetComponent<SwitchCharacter>();
@@ -25,7 +30,10 @@ public class CinemachineBehavior : MonoBehaviour
         }
         else
         {
+            stateCamera.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
             animator.Play("KidCam0");
+            stateCamera.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
+            stateCamera.m_DefaultBlend.m_Time = 0.75f;
         }
     }
 
