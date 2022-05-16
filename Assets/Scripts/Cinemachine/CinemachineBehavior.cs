@@ -8,19 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class CinemachineBehavior : MonoBehaviour
 {
-    //[SerializeField] private InputAction switchAction;
     private SwitchCharacter switchCharacter; //to find which character is active
     private Animator animator;
     private int camNum = 0;
     private float wholeLevelShownTime = 2f;
     private float transitionToKidTime = 2f;
     private float switchCameraTime = 1f;
-    private CinemachineStateDrivenCamera stateCamera;
-    private void Awake()
-    {
-        stateCamera = GetComponent<CinemachineStateDrivenCamera>();
-    }
-    private void OnEnable()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         switchCharacter = GameObject.Find("Managers").transform.Find("SwitchCharacter").GetComponent<SwitchCharacter>();
@@ -30,10 +24,8 @@ public class CinemachineBehavior : MonoBehaviour
         }
         else
         {
-            stateCamera.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
+            transform.position = CheckpointManager.instance.checkpointKidPosition + new Vector3(0,0,-10);
             animator.Play("KidCam0");
-            stateCamera.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
-            stateCamera.m_DefaultBlend.m_Time = 0.75f;
         }
     }
 
@@ -43,15 +35,11 @@ public class CinemachineBehavior : MonoBehaviour
         animator.Play("Level");
         animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time = transitionToKidTime;
         yield return new WaitForSeconds(wholeLevelShownTime);
+        transform.position = CheckpointManager.instance.checkpointKidPosition + new Vector3(0, 0, -10);
         SwitchCamera();
         yield return new WaitForSeconds(transitionToKidTime);
         animator.gameObject.GetComponent<CinemachineStateDrivenCamera>().m_DefaultBlend.m_Time = switchCameraTime;
         InputManager.playerInput.ActivateInput();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        //switchAction.performed += context => SwitchState();
     }
 
     public void OnSwitchState(InputAction.CallbackContext context)
@@ -73,21 +61,6 @@ public class CinemachineBehavior : MonoBehaviour
             animator.Play("AdultCam" + camNum);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    //private void OnEnable()
-    //{
-    //    switchAction.Enable();
-    //}
-    //private void OnDisable()
-    //{
-    //    switchAction.Disable();
-    //}
 
     public void OnZoom(InputAction.CallbackContext context)
     {
