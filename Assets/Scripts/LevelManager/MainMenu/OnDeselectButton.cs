@@ -6,6 +6,6 @@ public class OnDeselectButton : MonoBehaviour
 {
     public void OnDeselect()
     {
-        Debug.Log("Button Deselected");
+        //Debug.Log("Button Deselected");
     }
 }
