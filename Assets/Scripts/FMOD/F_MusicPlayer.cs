@@ -39,10 +39,6 @@ public class F_MusicPlayer : MonoBehaviour
     }
 
     void OnEnable() {
-        //MenuMusicInst = RuntimeManager.CreateInstance(_menuMusic);
-        //GameplayMusicInst = RuntimeManager.CreateInstance(_gameplayMusic);
-        //currentScene = SceneManager.GetActiveScene();
-        //PlayMusicForCurrentScene(currentScene, currentScene);
         SceneManager.activeSceneChanged += PlayMusicForCurrentScene;
 
         EventDes = RuntimeManager.GetEventDescription("event:/Music/Gameplay Music");
@@ -96,8 +92,6 @@ public class F_MusicPlayer : MonoBehaviour
 
     private void IsSceneRepeated()
     {
-        Debug.Log(CurrentSceneName);
-        Debug.Log(SceneManager.GetActiveScene().name);
         if (CurrentSceneName == SceneManager.GetActiveScene().name)
         {
             SceneRepeated = true;
@@ -107,7 +101,6 @@ public class F_MusicPlayer : MonoBehaviour
             SceneRepeated = false;
         }
         CurrentSceneName = SceneManager.GetActiveScene().name;
-        Debug.Log(SceneRepeated);
     }
     private void StopCurrentMusic() {
         CurrentMusicInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
