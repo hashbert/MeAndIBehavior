@@ -6,6 +6,13 @@ public class KidPosition : MonoBehaviour
 {
     void Start()
     {
-        transform.position = CheckpointManager.instance.KidTransform.position;
+        if (CheckpointManager.instance.checkpointKidPosition != null)
+        {
+            transform.position = CheckpointManager.instance.checkpointKidPosition;
+        }
+        else
+        {
+            transform.position = CheckpointManager.instance.initialKidTransform.position;
+        }
     }
 }
