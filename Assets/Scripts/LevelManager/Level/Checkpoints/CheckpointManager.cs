@@ -8,11 +8,11 @@ public class CheckpointManager : MonoBehaviour
 {
     private string nameOfScene;
 
-    public Transform initialAdultTransform;
-    public Transform initialKidTransform;
+    public Transform initialAdultTransform = null;
+    public Transform initialKidTransform = null;
 
-    public Transform AdultTransform;
-    public Transform KidTransform;
+    public Vector3 checkpointAdultPosition;
+    public Vector3 checkpointKidPosition;
 
     public static CheckpointManager instance;
     private void Awake()
@@ -47,10 +47,16 @@ public class CheckpointManager : MonoBehaviour
     }
     private void CheckIfSameLastScene(Scene arg0, Scene arg1)
     {
+        if (initialAdultTransform == null)
+        {
+            nameOfScene = SceneManager.GetActiveScene().name;
+            return;
+        }
+        
         if (nameOfScene != SceneManager.GetActiveScene().name)
         {
-            AdultTransform = initialAdultTransform;
-            KidTransform = initialKidTransform;
+            checkpointAdultPosition = initialAdultTransform.position;
+            checkpointKidPosition = initialKidTransform.position;
         }
 
         nameOfScene = SceneManager.GetActiveScene().name;

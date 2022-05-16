@@ -6,6 +6,13 @@ public class AdultPosition : MonoBehaviour
 {
     void Start()
     {
-        transform.position = CheckpointManager.instance.AdultTransform.position;
+        if (CheckpointManager.instance.checkpointAdultPosition != null)
+        {
+            transform.position = CheckpointManager.instance.checkpointAdultPosition;
+        }
+        else
+        {
+            transform.position = CheckpointManager.instance.initialAdultTransform.position;
+        }
     }
 }

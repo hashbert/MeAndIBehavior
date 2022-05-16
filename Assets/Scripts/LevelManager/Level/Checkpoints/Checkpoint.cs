@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    [SerializeField] private Transform KidPosition;
-    [SerializeField] private Transform AdultPosition;
-
+    [SerializeField] private Transform AdultSpawnPosition;
+    [SerializeField] private Transform KidSpawnPosition;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Kid") || collision.CompareTag("Adult"))
         {
-            CheckpointManager.instance.KidTransform = KidPosition;
-            CheckpointManager.instance.AdultTransform = AdultPosition;
+            CheckpointManager.instance.checkpointAdultPosition = AdultSpawnPosition.position;
+            CheckpointManager.instance.checkpointKidPosition = KidSpawnPosition.position;
         }
     }
 }
