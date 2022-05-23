@@ -1340,6 +1340,7 @@ GameObject:
   - component: {fileID: 2336894239901581590}
   - component: {fileID: 2336894239901581589}
   - component: {fileID: 2336894239901581588}
+  - component: {fileID: 87925615688695613}
   m_Layer: 5
   m_Name: PauseText
   m_TagString: Untagged
@@ -1534,6 +1535,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &87925615688695613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2336894239901581594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2078816389358063288, guid: 2cab5f7b7b00f6c46b5da5796766e2ba, type: 3}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
+          m_TargetAssemblyTypeName: F_UISfx, Assembly-CSharp
+          m_MethodName: UISelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2336894239912273916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,6 +4041,7 @@ GameObject:
   - component: {fileID: 2336894240233613765}
   - component: {fileID: 2336894240233613767}
   - component: {fileID: 2336894240233613766}
+  - component: {fileID: 7133941216525247556}
   m_Layer: 5
   m_Name: GenericButtons
   m_TagString: Untagged
@@ -4126,6 +4169,47 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7133941216525247556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2336894240233613764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2078816389358063288, guid: 2cab5f7b7b00f6c46b5da5796766e2ba, type: 3}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
+          m_TargetAssemblyTypeName: F_UISfx, Assembly-CSharp
+          m_MethodName: UISelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2336894240238658708
 GameObject:
   m_ObjectHideFlags: 0
@@ -4354,7 +4438,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 2336894240183210105}
-    m_SelectOnDown: {fileID: 2336894241268202310}
+    m_SelectOnDown: {fileID: 2336894240982315454}
     m_SelectOnLeft: {fileID: 2336894240588581578}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -7534,6 +7618,7 @@ GameObject:
   - component: {fileID: 2336894240739045014}
   - component: {fileID: 2336894240739045013}
   - component: {fileID: 2336894240739045015}
+  - component: {fileID: 7889867362556300712}
   m_Layer: 5
   m_Name: ZoomOutText
   m_TagString: Untagged
@@ -7728,6 +7813,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7889867362556300712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2336894240739045017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2078816389358063288, guid: 2cab5f7b7b00f6c46b5da5796766e2ba, type: 3}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
+          m_TargetAssemblyTypeName: F_UISfx, Assembly-CSharp
+          m_MethodName: UISelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2336894240746997058
 GameObject:
   m_ObjectHideFlags: 0
@@ -9258,6 +9384,7 @@ GameObject:
   - component: {fileID: 2336894241026481320}
   - component: {fileID: 2336894241026481327}
   - component: {fileID: 2336894241026481321}
+  - component: {fileID: 1248974188258849753}
   m_Layer: 5
   m_Name: ZoomInText
   m_TagString: Untagged
@@ -9452,6 +9579,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1248974188258849753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2336894241026481299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2078816389358063288, guid: 2cab5f7b7b00f6c46b5da5796766e2ba, type: 3}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
+          m_TargetAssemblyTypeName: F_UISfx, Assembly-CSharp
+          m_MethodName: UISelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2336894241042341925
 GameObject:
   m_ObjectHideFlags: 0
@@ -11041,6 +11209,7 @@ GameObject:
   - component: {fileID: 2336894241311993374}
   - component: {fileID: 2336894241311993373}
   - component: {fileID: 2336894241311993372}
+  - component: {fileID: 794276174674653326}
   m_Layer: 5
   m_Name: MoveText
   m_TagString: Untagged
@@ -11236,6 +11405,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &794276174674653326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2336894241311993346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2078816389358063288, guid: 2cab5f7b7b00f6c46b5da5796766e2ba, type: 3}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
+          m_TargetAssemblyTypeName: F_UISfx, Assembly-CSharp
+          m_MethodName: UISelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2336894241319021493
 GameObject:
   m_ObjectHideFlags: 0
@@ -13180,6 +13390,7 @@ GameObject:
   - component: {fileID: 2336894241535520881}
   - component: {fileID: 2336894241535520880}
   - component: {fileID: 2336894241535520883}
+  - component: {fileID: 2664501552505845812}
   m_Layer: 5
   m_Name: RestartLevelText
   m_TagString: Untagged
@@ -13375,6 +13586,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a1e0cb03829e5498f8c964654cf846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2664501552505845812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2336894241535520884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2078816389358063288, guid: 2cab5f7b7b00f6c46b5da5796766e2ba, type: 3}
+          m_TargetAssemblyTypeName: OnDeselectButton, Assembly-CSharp
+          m_MethodName: OnDeselect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
+          m_TargetAssemblyTypeName: F_UISfx, Assembly-CSharp
+          m_MethodName: UISelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2336894241544023808
 GameObject:
   m_ObjectHideFlags: 0
