@@ -450,10 +450,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
-    - target: {fileID: 218361208092339307, guid: 61a4c0281ca455d4880d273c84c4bb78, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UIBack
-      objectReference: {fileID: 0}
     - target: {fileID: 218361208142386412, guid: 61a4c0281ca455d4880d273c84c4bb78, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -462,10 +458,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
-    - target: {fileID: 218361208142386412, guid: 61a4c0281ca455d4880d273c84c4bb78, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UIBack
-      objectReference: {fileID: 0}
     - target: {fileID: 218361209027331944, guid: 61a4c0281ca455d4880d273c84c4bb78, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -674,10 +666,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
-    - target: {fileID: 2551736358056594991, guid: 61a4c0281ca455d4880d273c84c4bb78, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UISelect
-      objectReference: {fileID: 0}
     - target: {fileID: 2627323506121748160, guid: 61a4c0281ca455d4880d273c84c4bb78, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -788,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 7524699655074833383, guid: 633975c8009af4c6cb19fb2796686151, type: 3}
     - target: {fileID: 8019286883808642851, guid: 61a4c0281ca455d4880d273c84c4bb78, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UISelect
+      value: UIBack
       objectReference: {fileID: 0}
     - target: {fileID: 8343482546761089742, guid: 61a4c0281ca455d4880d273c84c4bb78, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
