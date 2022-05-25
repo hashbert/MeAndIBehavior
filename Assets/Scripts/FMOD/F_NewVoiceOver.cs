@@ -4,13 +4,14 @@ using FMOD.Studio;
 
 public class F_NewVoiceOver : MonoBehaviour
 {
-    EventInstance dialogueEvent;
+    public EventInstance dialogueEvent;
     EventInstance dialoguePlaying;
 
     [SerializeField]
     private EventReference _vOLine;
 
-    private PLAYBACK_STATE _VoPb;
+    [HideInInspector]
+    public PLAYBACK_STATE voPb;
     private PLAYBACK_STATE _MusicEffectPb;
 
     void Start()
@@ -23,17 +24,17 @@ public class F_NewVoiceOver : MonoBehaviour
 
     private void Update()
     {
-        dialogueEvent.getPlaybackState(out _VoPb);
+        dialogueEvent.getPlaybackState(out voPb);
         dialoguePlaying.getPlaybackState(out _MusicEffectPb);
-        if (_VoPb == PLAYBACK_STATE.STARTING && _MusicEffectPb != PLAYBACK_STATE.PLAYING)
+        if (voPb == PLAYBACK_STATE.STARTING && _MusicEffectPb != PLAYBACK_STATE.PLAYING)
             dialoguePlaying.start();
-        else if (_VoPb == PLAYBACK_STATE.STOPPED)
+        else if (voPb == PLAYBACK_STATE.STOPPED)
             dialoguePlaying.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void ContinueVO()
     {
-        if (_VoPb == PLAYBACK_STATE.PLAYING)
+        if (voPb == PLAYBACK_STATE.PLAYING)
         {
             dialogueEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             dialogueEvent.start();
@@ -44,7 +45,8 @@ public class F_NewVoiceOver : MonoBehaviour
 
     private void OnDestroy()
     {
-        //dialogueEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        if (voPb != PLAYBACK_STATE.STOPPED)
+            dialogueEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         dialoguePlaying.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         dialogueEvent.release();
         dialoguePlaying.release();

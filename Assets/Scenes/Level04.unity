@@ -2284,6 +2284,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5339445733748187650, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
   m_PrefabInstance: {fileID: 7671835188579674863}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1714754042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7828943408056497240, guid: 16f1986881f768643945f62060f11d70, type: 3}
+  m_PrefabInstance: {fileID: 979746681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e06e728702c447ca3265095a1d765d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1734190930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3134916554520639930, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
@@ -3156,6 +3167,10 @@ PrefabInstance:
       propertyPath: resumeButton
       value: 
       objectReference: {fileID: 67987603}
+    - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
+      propertyPath: _newVoiceOver
+      value: 
+      objectReference: {fileID: 1714754042}
     - target: {fileID: 1567199710767027725, guid: 0c71b684d9592d44e964e1229c7d31f5, type: 3}
       propertyPath: gamepadButton
       value: 
