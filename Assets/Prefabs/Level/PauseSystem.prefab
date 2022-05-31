@@ -72,5 +72,6 @@ MonoBehaviour:
   photoObject: {fileID: 0}
   kidColorSwap: {fileID: 0}
   adultColorSwap: {fileID: 0}
-  photoColorSwap: {fileID: 0}
   switchCharacterScript: {fileID: 0}
+  fader: {fileID: 0}
+  _newVoiceOver: {fileID: 0}

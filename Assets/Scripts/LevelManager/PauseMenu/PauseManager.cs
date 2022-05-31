@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMOD.Studio;
 using FMODUnity;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -61,6 +62,11 @@ public class PauseManager : MonoBehaviour
     //make pretty
     [SerializeField] private GameObject fader;
 
+    [SerializeField]
+    private F_NewVoiceOver _newVoiceOver;
+
+    private bool _voPaused;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +90,11 @@ public class PauseManager : MonoBehaviour
         adultObject.GetComponent<SpriteRenderer>().material = plainMaterial;
         kidObject.GetComponent<SpriteRenderer>().material = plainMaterial;
         //photoObject.GetComponent<SpriteRenderer>().material = plainMaterial;
+
+        if (_newVoiceOver != null)
+            if(_newVoiceOver.voPb == PLAYBACK_STATE.PLAYING)
+                _newVoiceOver.dialogueEvent.setPaused(true);
+
     }
 
     #region Pause Menu
@@ -110,6 +121,8 @@ public class PauseManager : MonoBehaviour
             kidColorSwap.Swap();
             //photoColorSwap.ResetSwap();
         }
+        if (_newVoiceOver != null)
+            _newVoiceOver.dialogueEvent.setPaused(false);
     }
     public void OptionsButton()
     {
