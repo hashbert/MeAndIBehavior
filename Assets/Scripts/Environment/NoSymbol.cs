@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class NoSymbol : MonoBehaviour
 {
@@ -25,5 +26,6 @@ public class NoSymbol : MonoBehaviour
     private void PlayNoSymbol()
     {
         anim.Play("NoSymbol", -1, 0f);
+        RuntimeManager.PlayOneShotAttached("event:/SFX/UI/Cancel", gameObject);
     }
 }
