@@ -5,6 +5,7 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
+
     //private float rayDistance = 0.2f;
 
     private void OnCollisionEnter2D(Collision2D collision)
