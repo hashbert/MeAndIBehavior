@@ -45,7 +45,7 @@ public class BoxTrigger : MonoBehaviour
             var boxObject = collision.gameObject;
             boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             boxObject.transform.parent = null;
-            print("trigger entered!");
+            print("trigger as box exited!");
         }
     }
 }

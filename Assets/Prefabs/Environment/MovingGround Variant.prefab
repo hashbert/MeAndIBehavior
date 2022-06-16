@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 166.34
+      value: 133.72
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -67,6 +67,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5000061150989027383, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01865542
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000061150989027383, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0014210343
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000061150989027383, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5084847
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
 --- !u!1 &355757756115403523 stripped
@@ -84,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 355757756115403523}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 81c6284aec1cf1e40b9b63b742a69b52, type: 2}
+  m_Controller: {fileID: 9100000, guid: c9262a87b42dc4c4ab2d65477a92e3ea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
