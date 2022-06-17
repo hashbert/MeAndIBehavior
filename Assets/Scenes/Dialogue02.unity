@@ -881,6 +881,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 802668034}
     m_Modifications:
+    - target: {fileID: 893664755843217508, guid: 651874165845d9c429e6a8bbf9b9afa3, type: 3}
+      propertyPath: m_Color.a
+      value: 0.81960785
+      objectReference: {fileID: 0}
     - target: {fileID: 893664755843217514, guid: 651874165845d9c429e6a8bbf9b9afa3, type: 3}
       propertyPath: m_Name
       value: adultSpeechBubble
