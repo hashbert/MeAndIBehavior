@@ -27,7 +27,7 @@ public class BoxTrigger : MonoBehaviour
             boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             print("trigger entered!");
-            if (grabController.IsHoldingBox && collision.transform.parent!=null)
+            if (grabController.IsHoldingBox && collision.transform.parent != null)
             {
                 grabController.Drop();
             }
