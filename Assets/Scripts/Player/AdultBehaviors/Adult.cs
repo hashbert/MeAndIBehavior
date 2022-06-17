@@ -11,14 +11,18 @@ public class Adult : MonoBehaviour
     public Collider2D PlayerColl { get; private set; }
     #endregion
 
+    #region Start() variables
+    public Transform Kid { get; private set; }
+    #endregion
     #region Other Variables
-    
+
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private float horizontalInput;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private float slowdownFraction = .5f;
-    
+    [SerializeField] private float teleportHeight;
+
     [SerializeField] private InputActionReference jump;
     [SerializeField] private InputActionReference teleport;
     public bool IsFacingRight { get; private set; }
@@ -41,10 +45,15 @@ public class Adult : MonoBehaviour
         PlayerColl = GetComponent<Collider2D>();
         //grab.action.Disable();
     }
+
+    private void Start()
+    {
+        Kid = FindObjectOfType<Kid>().transform;
+    }
     private void Update()
     {
         Color color = Color.red;
-        Debug.DrawRay(PlayerColl.bounds.center, Vector2.down * (PlayerColl.bounds.extents.y + boxExtensionHeight), color);
+        //Debug.DrawRay(PlayerColl.bounds.center, Vector2.down * (PlayerColl.bounds.extents.y + boxExtensionHeight), color);
         Move();
     }
 
@@ -94,7 +103,9 @@ public class Adult : MonoBehaviour
     {
         if (context.started)
         {
-            OnTeleportNotAllowed?.Invoke();
+            //OnTeleportNotAllowed?.Invoke();
+            //LeanTween.move(gameObject, Kid.transform.position + new Vector3(0, teleportHeight), 1f);
+            transform.position = Kid.transform.position + new Vector3(0, teleportHeight);
         }
     }
     #endregion

@@ -99,5 +99,6 @@ public class GrabController : MonoBehaviour
         IsHoldingBox = false;
         boxCollider.SetActive(false);
         adultAnim.SetInteger("AdultState", 0);
+        print("box dropped in the GRABCONTROLLER");
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoxTrigger : MonoBehaviour
 {
-    [SerializeField] private LayerMask canBeParentedToBox;
+    [SerializeField] private LayerMask canBeParentOf;
     [SerializeField] private LayerMask boxLayerMask;
     [SerializeField] private Transform boxParent;
     [SerializeField] private GrabController grabController;
@@ -15,7 +15,7 @@ public class BoxTrigger : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((canBeParentedToBox.value & (1 << collision.transform.gameObject.layer)) > 0)
+        if ((canBeParentOf.value & (1 << collision.transform.gameObject.layer)) > 0)
         {
             collision.transform.SetParent(boxParent.transform);
             print("trigger entered!");
@@ -27,7 +27,7 @@ public class BoxTrigger : MonoBehaviour
             boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             print("trigger entered!");
-            if (grabController.IsHoldingBox && collision.transform.parent!=null)
+            if (grabController.IsHoldingBox && collision.transform.parent != null)
             {
                 grabController.Drop();
             }
@@ -35,7 +35,7 @@ public class BoxTrigger : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if ((canBeParentedToBox.value & (1 << collision.transform.gameObject.layer)) > 0)
+        if ((canBeParentOf.value & (1 << collision.transform.gameObject.layer)) > 0)
         {
             collision.transform.SetParent(null);
             print("trigger exited!");

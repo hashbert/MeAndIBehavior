@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 5623940659293367181}
   - component: {fileID: 9072692164263679208}
   - component: {fileID: 7730861583797917057}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8863e99ea62d7f942af5107902066f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeParentedToBox:
+  canBeParentOf:
     serializedVersion: 2
     m_Bits: 896
   boxLayerMask:
