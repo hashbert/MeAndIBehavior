@@ -2707,6 +2707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Adult
       objectReference: {fileID: 0}
+    - target: {fileID: 7707951616486463962, guid: 540ce01e612d5364da93d5bed3af1169, type: 3}
+      propertyPath: teleportHeight
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7707951616486463963, guid: 540ce01e612d5364da93d5bed3af1169, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -6,12 +6,14 @@ using UnityEngine.InputSystem;
 public class AdultPickup : StateMachineBehaviour
 {
     [SerializeField] private Adult adult;
+    [SerializeField] private InputActionReference grab;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         adult = GameObject.FindGameObjectWithTag("Adult").GetComponent<Adult>();
         adult.enabled = false;
+        grab.action.Disable();
         //InputManager.playerInput.actions["Jump"].Disable();
     }
 
@@ -25,6 +27,7 @@ public class AdultPickup : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         adult.enabled = true;
+        grab.action.Enable();
         //InputManager.playerInput.actions["Jump"].Enable();
     }
 
