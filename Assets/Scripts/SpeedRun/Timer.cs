@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     private float _timer = 0.0f;
     public static Timer instance;
     public Animator anim;
+    public GameObject TimerSingleton;
     private void Awake()
     {
         if (instance == null)
@@ -50,8 +51,12 @@ public class Timer : MonoBehaviour
         if (SceneManager.GetActiveScene().name.Equals("Speed01"))
         {
             ResetTimer();
+            StartTimer();
             anim.Play("ResetPosition", -1, 0f);
-            _isTimerOn = true;
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("MainMenuScene"))
+        {
+            Destroy(TimerSingleton);
         }
     }
     private void ShowFinalSpeedScore(Scene oldScene, Scene newScene)
