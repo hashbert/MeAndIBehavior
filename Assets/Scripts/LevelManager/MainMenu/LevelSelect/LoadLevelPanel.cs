@@ -32,7 +32,12 @@ public class LoadLevelPanel : MonoBehaviour
             question.SetActive(true);
         }
     }
-
+    public void SpeedRun()
+    {
+        fader.SetActive(true);
+        fader.GetComponent<Fader>().SetNextSceneName("Speed01");
+        playerInput.DeactivateInput();
+    }
     public void LevelChosen(int level)
     {
         fader.SetActive(true);
