@@ -9,6 +9,8 @@ public class GrabController : MonoBehaviour
     [SerializeField] private Transform grabDetect;
     [SerializeField] private Transform grabDetect1;
     [SerializeField] private Transform grabDetect2;
+    [SerializeField] private Transform grabDetect3;
+    [SerializeField] private Transform grabDetect4;
     [SerializeField] private Transform holdPosition;
     [SerializeField] private Animator adultAnim;
 
@@ -41,6 +43,8 @@ public class GrabController : MonoBehaviour
             RaycastHit2D grabCheck = Physics2D.Raycast(grabDetect.position, Vector2.right * transform.localScale.x, rayDist, boxLayerMask);
             RaycastHit2D grabCheck1 = Physics2D.Raycast(grabDetect1.position, Vector2.right * transform.localScale.x, rayDist, boxLayerMask);
             RaycastHit2D grabCheck2 = Physics2D.Raycast(grabDetect2.position, Vector2.right * transform.localScale.x, rayDist, boxLayerMask);
+            RaycastHit2D grabCheck3 = Physics2D.Raycast(grabDetect3.position, Vector2.right * transform.localScale.x, rayDist, boxLayerMask);
+            RaycastHit2D grabCheck4 = Physics2D.Raycast(grabDetect4.position, Vector2.right * transform.localScale.x, rayDist, boxLayerMask);
             if (IsHoldingBox && adultAnim.GetInteger("AdultState")==8)
             {
                 Drop();
@@ -65,6 +69,22 @@ public class GrabController : MonoBehaviour
             else if (!IsHoldingBox && grabCheck2.collider != null && adultAnim.GetInteger("AdultState") == 0)
             {
                 boxObject = grabCheck2.collider.gameObject;
+                boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                boxObject.transform.parent = holdPosition;
+                adultAnim.SetInteger("AdultState", 9);
+            }
+            else if (!IsHoldingBox && grabCheck3.collider != null && adultAnim.GetInteger("AdultState") == 0)
+            {
+                boxObject = grabCheck3.collider.gameObject;
+                boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                boxObject.transform.parent = holdPosition;
+                adultAnim.SetInteger("AdultState", 9);
+            }
+            else if (!IsHoldingBox && grabCheck4.collider != null && adultAnim.GetInteger("AdultState") == 0)
+            {
+                boxObject = grabCheck4.collider.gameObject;
                 boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                 boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 boxObject.transform.parent = holdPosition;
