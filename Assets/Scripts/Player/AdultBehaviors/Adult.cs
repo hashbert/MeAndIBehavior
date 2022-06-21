@@ -13,6 +13,8 @@ public class Adult : MonoBehaviour
 
     #region Start() variables
     public Transform Kid { get; private set; }
+    [SerializeField] private ParticleSystem _smoke;
+    [SerializeField] private CinemachineBehavior _cinemachineBehavior;
     #endregion
     #region Other Variables
 
@@ -49,6 +51,7 @@ public class Adult : MonoBehaviour
     private void Start()
     {
         Kid = FindObjectOfType<Kid>().transform;
+        _cinemachineBehavior = FindObjectOfType<CinemachineBehavior>();
     }
     private void Update()
     {
@@ -105,8 +108,17 @@ public class Adult : MonoBehaviour
         {
             //OnTeleportNotAllowed?.Invoke();
             //LeanTween.move(gameObject, Kid.transform.position + new Vector3(0, teleportHeight), 1f);
-            transform.position = Kid.transform.position + new Vector3(0, teleportHeight);
+            StartCoroutine(SmokeAndTeleport());
         }
+    }
+
+    private IEnumerator SmokeAndTeleport()
+    {
+        _smoke.Play();
+        yield return new WaitForSeconds(.75f);
+        StartCoroutine(_cinemachineBehavior.PlayKidCamera());
+        yield return new WaitForSeconds(.75f);
+        transform.position = Kid.transform.position + new Vector3(0, teleportHeight);
     }
     #endregion
 
