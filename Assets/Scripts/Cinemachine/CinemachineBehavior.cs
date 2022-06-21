@@ -62,6 +62,13 @@ public class CinemachineBehavior : MonoBehaviour
         }
     }
 
+    public IEnumerator PlayKidCamera()
+    {
+        animator.Play("KidCam" + camNum);
+        yield return new WaitForSeconds(0.75f);
+        animator.Play("AdultCam" + camNum);
+    }
+
     public void OnZoom(InputAction.CallbackContext context)
     {
         var zoom = context.ReadValue<Vector2>();

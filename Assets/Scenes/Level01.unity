@@ -7308,7 +7308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333194341974297455, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_Transitions.m_BlendHint
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2333194342220266751, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_Follow
