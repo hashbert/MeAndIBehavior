@@ -7139,12 +7139,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2333194340299278461, guid: b69d320fd1325254695e925963f65aa7, type: 3}
+      propertyPath: m_CustomBlends
+      value: 
+      objectReference: {fileID: 11400000, guid: d99f96165a89b1a49b466e046a79035e, type: 2}
+    - target: {fileID: 2333194340299278461, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_DefaultBlend.m_Style
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2333194340299278461, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_ChildCameras.Array.size
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2333194340299278461, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_ChildCameras.Array.data[0]
@@ -7301,6 +7305,10 @@ PrefabInstance:
     - target: {fileID: 2333194341974297455, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_StandbyUpdate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333194341974297455, guid: b69d320fd1325254695e925963f65aa7, type: 3}
+      propertyPath: m_Transitions.m_BlendHint
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2333194342220266751, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_Follow
