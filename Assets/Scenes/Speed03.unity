@@ -3303,7 +3303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1391171662430626020, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 18
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 2333194340220052393, guid: b69d320fd1325254695e925963f65aa7, type: 3}
       propertyPath: m_Follow
