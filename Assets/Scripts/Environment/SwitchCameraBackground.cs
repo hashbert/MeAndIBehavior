@@ -8,6 +8,7 @@ public class SwitchCameraBackground : MonoBehaviour
     private Color initialColor;
     private Color invertedColor;
     private Camera mainCamera;
+    private bool _startingColor = true;
     [SerializeField] private InputActionReference switchCharacterAction;
 
     // Start is called before the first frame update
@@ -27,14 +28,26 @@ public class SwitchCameraBackground : MonoBehaviour
     {
         if (context.started)
         {
-            if (mainCamera.backgroundColor == initialColor)
+            //if (mainCamera.backgroundColor == initialColor)
+            //{
+            //    mainCamera.backgroundColor = invertedColor;
+            //}
+            //else
+            //{
+            //    mainCamera.backgroundColor = initialColor;
+            //}
+            if (_startingColor)
             {
-                mainCamera.backgroundColor = invertedColor;
+                _startingColor = false;
+                mainCamera.gameObject.LeanColor(Color.black, 0.5f).setEase(LeanTweenType.easeOutQuint);
             }
             else
             {
-                mainCamera.backgroundColor = initialColor;
+                _startingColor = true;
+                mainCamera.gameObject.LeanColor(Color.white, 0.5f).setEase(LeanTweenType.easeOutQuint);
             }
+            
+            
         }
     }
 

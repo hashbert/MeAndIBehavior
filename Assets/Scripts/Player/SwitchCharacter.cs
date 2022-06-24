@@ -30,6 +30,8 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Color initialBackgroundColor;
     [SerializeField] private Color invertedBackgroundColor;
+    private bool _startingColor = true;
+    private float _backgroundChangeTime = 1f;
 
     //actions
     public static event Action OnSwitchNotAllowed;
@@ -120,14 +122,38 @@ public class SwitchCharacter : MonoBehaviour
 
     private void SwapColor()
     {
-        if (mainCamera.backgroundColor == initialBackgroundColor)
+        //if (mainCamera.backgroundColor == initialBackgroundColor)
+        //{
+        //    mainCamera.backgroundColor = invertedBackgroundColor;
+        //}
+        //else
+        //{
+        //    mainCamera.backgroundColor = initialBackgroundColor;
+        //}
+        if (_startingColor)
         {
-            mainCamera.backgroundColor = invertedBackgroundColor;
+            _startingColor = false;
+            LeanTween.value(mainCamera.gameObject, SetColorCallback, Color.white, Color.black, _backgroundChangeTime).setEase(LeanTweenType.easeOutQuint);
+
+            //mainCamera.backgroundColor.   gameObject.LeanColor(Color.black, 0.5f).setEase(LeanTweenType.easeOutQuint);
         }
         else
         {
-            mainCamera.backgroundColor = initialBackgroundColor;
+            _startingColor = true;
+            LeanTween.value(mainCamera.gameObject, SetColorCallback, Color.black, Color.white, _backgroundChangeTime).setEase(LeanTweenType.easeOutQuint);
+            //mainCamera.   gameObject.LeanColor(Color.white, 0.5f).setEase(LeanTweenType.easeOutQuint);
         }
+    }
+
+    private void SetColorCallback(Color c)
+    {
+        mainCamera.backgroundColor = c;
+
+        // For some reason it also tweens my image's alpha so to set alpha back to 1 (I have my color set from inspector). You can use the following
+
+        var tempColor = mainCamera.backgroundColor;
+        tempColor.a = 1f;
+        mainCamera.backgroundColor = tempColor;
     }
 
     public void OnSwitchCharacter(InputAction.CallbackContext context)
