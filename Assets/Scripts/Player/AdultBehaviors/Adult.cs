@@ -115,12 +115,12 @@ public class Adult : MonoBehaviour
     private IEnumerator SmokeAndTeleport()
     {
         _smoke.Play();
-        InputManager.playerInput.actions.Disable();
+        //InputManager.playerInput.actions.Disable();
         yield return new WaitForSeconds(.5f);
         StartCoroutine(_cinemachineBehavior.PlayKidCamera());
         yield return new WaitForSeconds(.75f);
         transform.position = Kid.transform.position + new Vector3(0, teleportHeight);
-        InputManager.playerInput.actions.Enable();
+        //InputManager.playerInput.actions.Enable();
 
     }
     #endregion
