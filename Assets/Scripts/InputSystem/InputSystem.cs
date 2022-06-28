@@ -245,28 +245,6 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""4f6b0aa8-40d3-4f07-8edc-63b02147b936"",
-                    ""path"": ""<Gamepad>/dpad/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""e1a2fe1c-3546-4474-b3ea-e9346670ef7d"",
-                    ""path"": ""<Gamepad>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""left"",
                     ""id"": ""a6859c07-c4bd-4cf3-a83d-c3e7a1ff57ce"",
                     ""path"": ""<Gamepad>/dpad/left"",
@@ -293,7 +271,7 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""id"": ""05aef2b1-3d74-463f-aaf2-6235e3322779"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": ""StickDeadzone(min=0.4)"",
+                    ""processors"": ""StickDeadzone(min=0.8)"",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
