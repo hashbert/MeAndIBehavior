@@ -5015,6 +5015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _smoke: {fileID: 1434765517}
   _cinemachineBehavior: {fileID: 0}
+  adult: {fileID: 0}
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 576
@@ -5025,6 +5026,7 @@ MonoBehaviour:
   teleportHeight: 0.74
   jump: {fileID: -4222187747311746522, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
   teleport: {fileID: -7015084892914633879, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
+  switchCharacters: {fileID: -1934039552845713043, guid: 1189a236f29495d4d9d80384c2c0cb9f, type: 3}
 --- !u!212 &7707951616486463964
 SpriteRenderer:
   m_ObjectHideFlags: 0
