@@ -15,6 +15,7 @@ public class Adult : MonoBehaviour
     public Transform Kid { get; private set; }
     [SerializeField] private ParticleSystem _smoke;
     [SerializeField] private CinemachineBehavior _cinemachineBehavior;
+    [SerializeField] private Adult adult;
     #endregion
     #region Other Variables
 
@@ -27,6 +28,7 @@ public class Adult : MonoBehaviour
 
     [SerializeField] private InputActionReference jump;
     [SerializeField] private InputActionReference teleport;
+    [SerializeField] private InputActionReference switchCharacters;
     public bool IsFacingRight { get; private set; }
     public bool SpaceHeld { get; private set; }
     //[SerializeField] private InputActionReference grab;
@@ -52,6 +54,8 @@ public class Adult : MonoBehaviour
     {
         Kid = FindObjectOfType<Kid>().transform;
         _cinemachineBehavior = FindObjectOfType<CinemachineBehavior>();
+        adult = gameObject.GetComponent<Adult>();
+
     }
     private void Update()
     {
@@ -114,14 +118,15 @@ public class Adult : MonoBehaviour
 
     private IEnumerator SmokeAndTeleport()
     {
+        switchCharacters.action.Disable();
+        teleport.action.Disable();
         _smoke.Play();
-        //InputManager.playerInput.actions.Disable();
         yield return new WaitForSeconds(.5f);
         StartCoroutine(_cinemachineBehavior.PlayKidCamera());
         yield return new WaitForSeconds(.75f);
         transform.position = Kid.transform.position + new Vector3(0, teleportHeight);
-        //InputManager.playerInput.actions.Enable();
-
+        switchCharacters.action.Enable();
+        teleport.action.Enable();
     }
     #endregion
 
