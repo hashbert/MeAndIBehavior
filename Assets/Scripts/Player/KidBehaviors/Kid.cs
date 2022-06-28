@@ -12,8 +12,7 @@ public class Kid : MonoBehaviour
     public GameObject AdultRb { get; private set; }
     public Collider2D PlayerColl { get; private set; }
     public Animator KidAnim { get; private set; }
-
-    private ParticleSystem teleportParticle; 
+    [SerializeField] private Kid kid;
     #endregion
 
     #region Other Variables
@@ -45,7 +44,7 @@ public class Kid : MonoBehaviour
         PlayerColl = GetComponent<BoxCollider2D>();
         AdultRb = GameObject.Find("Adult");
         KidAnim = GetComponent<Animator>();
-        teleportParticle = GetComponentInChildren<ParticleSystem>();
+        kid = gameObject.GetComponent<Kid>();
     }
 
     private void Update()
@@ -104,7 +103,7 @@ public class Kid : MonoBehaviour
         }
         if (context.started && KidAnim.GetInteger("KidState")==0 && KidAnim.enabled && IsOnGround())
         {
-            teleportParticle.Play();
+            kid.enabled = false;
             KidAnim.SetInteger("KidState", 5);
             RuntimeManager.PlayOneShotAttached("event:/SFX/Young/Teleport", gameObject);
         }
