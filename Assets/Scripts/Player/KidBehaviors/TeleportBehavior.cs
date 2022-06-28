@@ -5,15 +5,16 @@ using UnityEngine;
 public class TeleportBehavior : StateMachineBehaviour
 {
     [SerializeField] private Kid kid;
+    private ParticleSystem teleportParticle;
     //[SerializeField] private GroundCheck groundCheck;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         kid = GameObject.FindGameObjectWithTag("Kid").GetComponent<Kid>();
-        kid.enabled = false;
-        //groundCheck = GameObject.FindGameObjectWithTag("Kid").transform.Find("GroundCheck").GetComponent<GroundCheck>();
-        //InputManager.playerInput.actions["Jump"].Disable();
+        teleportParticle = kid.GetComponentInChildren<ParticleSystem>();
+        teleportParticle.Play();
+        Debug.Log("teleport played");
         InputManager.playerInput.actions["Teleport"].Disable();
     }
 
@@ -27,8 +28,8 @@ public class TeleportBehavior : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         kid.enabled = true;
-        //InputManager.playerInput.actions["Jump"].Enable();
         InputManager.playerInput.actions["Teleport"].Enable();
+        teleportParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

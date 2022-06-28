@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21ccd2e935a95d47bdccea31d407a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kid: {fileID: 0}
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 576
@@ -227,6 +228,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 361432446500154628}
     m_Modifications:
+    - target: {fileID: 6874482282220895881, guid: 134d8cf78127738438706e3c3cc1fda9, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874482282220895881, guid: 134d8cf78127738438706e3c3cc1fda9, type: 3}
+      propertyPath: useUnscaledTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6874482282220895882, guid: 134d8cf78127738438706e3c3cc1fda9, type: 3}
       propertyPath: m_RootOrder
       value: 0

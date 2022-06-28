@@ -18,7 +18,7 @@ public class BoxTrigger : MonoBehaviour
         if ((canBeParentOf.value & (1 << collision.transform.gameObject.layer)) > 0)
         {
             collision.transform.SetParent(boxParent.transform);
-            print("trigger entered!");
+            //print("trigger entered!");
         }
         if ((boxLayerMask.value & (1 << collision.transform.gameObject.layer)) > 0)
         {
@@ -26,7 +26,7 @@ public class BoxTrigger : MonoBehaviour
             var boxObject = collision.gameObject;
             boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             boxObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            print("trigger entered!");
+            //print("trigger entered!");
             if (grabController.IsHoldingBox && collision.transform.parent != null)
             {
                 grabController.Drop();
@@ -38,14 +38,14 @@ public class BoxTrigger : MonoBehaviour
         if ((canBeParentOf.value & (1 << collision.transform.gameObject.layer)) > 0)
         {
             collision.transform.SetParent(null);
-            print("trigger exited!");
+            //print("trigger exited!");
         }
         if ((boxLayerMask.value & (1 << collision.transform.gameObject.layer)) > 0)
         {
             var boxObject = collision.gameObject;
             boxObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             boxObject.transform.parent = null;
-            print("trigger as box exited!");
+            //print("trigger as box exited!");
         }
     }
 }
