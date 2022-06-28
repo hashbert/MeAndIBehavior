@@ -6,7 +6,6 @@ public class Fader : MonoBehaviour
 {
     [SerializeField] private string nextSceneName;
     private Animator anim;
-
     private void OnEnable()
     {
         anim = GetComponent<Animator>();
