@@ -27,7 +27,7 @@ public class PlatformAttach : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("ground triggered something");
+        //print("ground triggered something");
         if ((playerLayerMask.value & (1 << collision.transform.gameObject.layer)) > 0)
         {
             collision.transform.SetParent(transform);
