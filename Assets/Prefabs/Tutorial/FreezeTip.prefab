@@ -1,0 +1,231 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4673356818425305278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7452766990121536467}
+  m_Layer: 0
+  m_Name: FreezeTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7452766990121536467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673356818425305278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7954070518671793393}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4533712227581906773
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7452766990121536467}
+    m_Modifications:
+    - target: {fileID: 5803015382127363745, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382127363745, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382127363745, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382127363745, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382127363745, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382127363746, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c6e8b4d3988ffa4cb50421606ecb5f4, type: 3}
+    - target: {fileID: 5803015382127363746, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 127.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.93000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015382181319643, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_Name
+      value: FreezeTip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633912, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 35b6622bf6fcf154f9057ffd5c0eea5b, type: 3}
+    - target: {fileID: 5803015383281633912, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383281633919, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383580662168, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_Name
+      value: FreezeHowText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383580662169, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383580662169, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 10.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383580662169, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383580662170, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_text
+      value: "THE ADULT FREEZES \nWHILE HOLDING BOXES \nOR EVEN IN THE AIR!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383580662170, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383580662170, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_margin.z
+      value: 20.20688
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383580662170, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383963542701, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_Name
+      value: FreezeText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383963542702, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383963542702, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 8.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383963542702, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383963542703, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_text
+      value: FREEZE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383963542703, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803015383963542703, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+--- !u!4 &7954070518671793393 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
+  m_PrefabInstance: {fileID: 4533712227581906773}
+  m_PrefabAsset: {fileID: 0}

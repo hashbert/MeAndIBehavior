@@ -591,7 +591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_RootOrder
-      value: 45
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 5803015382181319588, guid: 996b2c8b8ff052348a8f7dad774aad13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2289,6 +2289,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
+--- !u!1001 &1323410459
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2269971864353719585, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_Name
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -87.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932489583330888830, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81dd6851f629a60468d34ec255a178ad, type: 3}
 --- !u!1 &1406815645 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7521037947719799087, guid: c99d83167a356d241b06cd0c9328a1b2, type: 3}
@@ -3237,11 +3294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.635539
+      value: 8.781956
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.8408
+      value: -17.2675
       objectReference: {fileID: 0}
     - target: {fileID: 3134916554520639943, guid: a7db779f3bedd1b4c89065535668042d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4095,7 +4152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752488, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: orthographic size
-      value: 19.2
+      value: 19.8
       objectReference: {fileID: 0}
     - target: {fileID: 6783725975530752489, guid: 2bf4a297e0b8736499d7f858f61f7591, type: 3}
       propertyPath: m_UpdateMethod
